@@ -2,7 +2,7 @@
 layout: post
 title: "搬运：英语自学"
 date:   2023-03-01
-tags: [Git]
+tags: [English]
 comments: true
 author: Arnold
 toc: true
