@@ -56,8 +56,13 @@ Total: 2 [<79.00 GiB] / in use: 1 [<19.00 GiB] / in no VG: 1 [60.00 GiB]
 可以看到，/dev/sda3 在卷组**ubuntu-vg**里，而 /dev/sda4 不在。
 
 ## 4. 用vgextend把新物理卷添加到卷组
+先前有描述错误，由[Wing0v0](https://github.com/Wing0v0)和[scchen9966](https://github.com/scchen9966)指出。先前的描述为：
 ```
 vgextend ubuntu=-vf /dev/sda4
+```
+应当是：
+```
+vgextend ubuntu-vg /dev/sda4
 ```
 
 ## 5. 用lvextend给逻辑卷扩容
