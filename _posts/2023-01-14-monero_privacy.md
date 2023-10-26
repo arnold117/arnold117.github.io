@@ -2,7 +2,7 @@
 layout: post
 title: "加密货币如何泄露隐私；门罗币(Monero, XMR)是如何保护隐私的"
 date:   2023-01-14
-tags: [加密货币，Monero，区块链]
+tags: [Crypto, Monero, BlockChain]
 comments: true
 author: Arnold
 toc: true
