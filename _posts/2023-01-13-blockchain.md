@@ -2,7 +2,7 @@
 layout: post
 title: "比特币和区块链技术简介"
 date:   2023-01-13
-tags: [加密货币，Bitcoin，区块链]
+tags: [Crypto, Bitcoin, BlockChain]
 comments: true
 author: Arnold
 toc: true
