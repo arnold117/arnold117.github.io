@@ -5,7 +5,7 @@ date:   2023-03-01
 tags: [Git]
 comments: true
 author: Arnold
-toc: true
+toc: false
 
 ---
 
