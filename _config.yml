@@ -45,7 +45,7 @@ footer-links:
   email: arnoldchow@outlook.com
   facebook:
   flickr:
-  github: dotponder 
+  github: arnold117 
   googleplus: # anything in your profile username that comes after plus.google.com/
   instagram:
   linkedin:
@@ -57,7 +57,7 @@ footer-links:
   youtube:
 
 # Text under the icons in footer
-footer-text: Copyright (c) 2023 Arnold
+footer-text: Copyright (c) 2025 Arnold
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
@@ -67,15 +67,15 @@ disqus: # fromendworld
 gitalk:
   clientID: 6eb551953fbc3116b8ff
   clientSecret: e0d5c604194814a2325c2092eba0728bf589d0db
-  repo: dotponder.github.io
-  owner: dotponder
+  repo: arnold117.github.io
+  owner: arnold117
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 # google_analytics: 
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://dotponder.github.io
+url: https://arnold117.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)

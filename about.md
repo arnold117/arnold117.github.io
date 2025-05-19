@@ -16,6 +16,8 @@ Ciallo～(∠・ω< )⌒☆
 
 当然啦，如果你对我的文章有什么意见或者建议，欢迎在文章下方留言，或者发邮件给我。我也想和大家交个朋友呀！
 
+感觉已经很久没更新了。。。诈尸一下(2025.5.20)
+
 ### 关于我
 ### 技能
 
@@ -23,7 +25,8 @@ Ciallo～(∠・ω< )⌒☆
 Cxx和Java入门ing...  
 会一点Python和MATLAB  
 ~~重度Ubuntu使用者~~(**已回归Windows+虚拟机**)  
-Update: **WSL真好用！！**(2023.1.1)
+~~Update: **WSL真好用！！**(2023.1.1)~~  
+什么时候微软解决Windows11和WSL2在localhost上的问题，我再考虑回去！！！
 
 ### 兴趣爱好
 喜欢听古典乐，尤其是莫扎特与李斯特的作品  
@@ -36,15 +39,20 @@ HiFi发烧友(谢谢！已经没有钱了！)
 
 ### 经历
 
-南昌航空大学测试与光电工程学院生物医学工程工学学士  
-MSc in Precision Health and Medicine, Yong Loo Lin School of Medicine, National University of Singapore  
-GEEKCON2023志愿者(DARKNAVY)  
+南昌航空大学工学学士  
+Master of Science, Yong Loo Lin School of Medicine, National University of Singapore  
 
+GEEKCON2023志愿者(DARKNAVY)  
+Research Assistant, TUMCREATE, Technical University of Munich
+
+#### 碎碎念
 **上大学了！！！！！**(2019.9.1)  
 **想去慕尼黑工业大学读研**( *理想很美好，对吧* )  
 Update：慕尼黑工业大学拒信到手，没戏了(2023.4.15)  
-**被新加坡国立大学录取了！**(2023.8.31)
-Update: 新加坡国立大学也就这样......(2024.2.1)
+**被新加坡国立大学录取了！**(2023.8.31)  
+Update: 新加坡国立大学也就这样......(2024.2.1)  
+加入TUMCREATE当RA啦！！！！好耶！！（2024.8.12）  
+什时候才能毕业啊！我已经快受不了了！(2024.4.1)
 
 ### 联系方式
 左下角，点邮箱图标，点开就知道了
