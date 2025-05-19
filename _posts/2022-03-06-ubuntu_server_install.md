@@ -78,10 +78,10 @@ emmm，其实本质上没什么区别，就是一个有图形界面，一个没�
 这个输密码是不显示的，不要以为没输进去，输完回车就好。安装完成！欸嘿嘿~
 ![](./../images/2022/03/06/ubuntu_server_install/ubuntu_done.png)
 
-然后按照我先前博客的方式配置ssh([点我访问！](https://dotponder.github.io/vmware_ssh/))，就可以在terminal下面连接ubuntu了，还是很方便的感觉。
+然后按照我先前博客的方式配置ssh([点我访问！](https://arnold117.github.io/vmware_ssh/))，就可以在terminal下面连接ubuntu了，还是很方便的感觉。
 ![](./../images/2022/03/06/ubuntu_server_install/terminal_ssh.png)
 接下来继续捣鼓Hadoop的安装与配置吧！
 
 此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
 Ciallo～(∠・ω< )⌒☆​  
-写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://dotponder.github.io/likes/)！
+写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！

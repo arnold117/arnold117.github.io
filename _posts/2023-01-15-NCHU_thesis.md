@@ -80,13 +80,13 @@ Overleaf 是一个十分方便的网页版在线 LaTeX 编辑器。如果是 Ove
 5. 如果是使用 MikTeX，中途会提示安装宏包。等左下角再次显示`√`，再点击，选择第二项`View LaTeX PDF`，即可进行预览。
 
 ## 各模板链接
-任务书: [dotponder/NCHU_Bachelor_Mission_Statement_Template](https://github.com/dotponder/NCHU_Bachelor_Mission_Statement_Template)
+任务书: [arnold117/NCHU_Bachelor_Mission_Statement_Template](https://github.com/arnold117/NCHU_Bachelor_Mission_Statement_Template)
 
-开题报告: [dotponder/NCHU_Bachelor_Proposal_Report_Template](https://github.com/dotponder/NCHU_Bachelor_Proposal_Report_Template)
+开题报告: [arnold117/NCHU_Bachelor_Proposal_Report_Template](https://github.com/arnold117/NCHU_Bachelor_Proposal_Report_Template)
 
-毕业论文（含原创性声明）: [dotponder/NCHU_Bachelor_Thesis_Template](https://github.com/dotponder/NCHU_Bachelor_Thesis_Template)
+毕业论文（含原创性声明）: [arnold117/NCHU_Bachelor_Thesis_Template](https://github.com/arnold117/NCHU_Bachelor_Thesis_Template)
 
-进度登记表: [dotponder/NCHU_Bachelor_Work_Records_Template](https://github.com/dotponder/NCHU_Bachelor_Work_Records_Template)
+进度登记表: [arnold117/NCHU_Bachelor_Work_Records_Template](https://github.com/arnold117/NCHU_Bachelor_Work_Records_Template)
 
 ## 引用说明
 上述模板均可免费使用，在使用时请在论文参考文献中引用：
@@ -142,8 +142,8 @@ Zhou, Yanuo. (2023). NCHU Bachelor Thesis Template. Zenodo. https://doi.org/10.5
 ```
 Zhou, Yanuo. (2023). NCHU Bachelor Work Records Template. Zenodo. https://doi.org/10.5281/zenodo.7538089
 
-并请在致谢中注明模板作者：[dotponder](https://dotponder.github.io/)。
+并请在致谢中注明模板作者：[arnold117](https://arnold117.github.io/)。
 
 此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
 Ciallo～(∠・ω< )⌒☆​  
-写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://dotponder.github.io/likes/)！
+写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！

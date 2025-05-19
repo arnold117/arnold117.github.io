@@ -89,4 +89,4 @@ MacOS与Linux的安装与配置与Windows下类似, 在此就介绍在Windows下
 
 此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
 Ciallo～(∠・ω< )⌒☆​  
-写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://dotponder.github.io/likes/)！
+写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！

@@ -56,7 +56,7 @@ toc: false
 
 首先你要在[github](https://github.com/)上有自己博客仓库，用来生成和存放博客文章。你可以直接fork我的博客仓库。这样你马上有了自己的博客仓库。
 
-[点这里我的博客地址](https://github.com/dotponder/dotponder.github.io)进去点击 fork，之后在你自己的仓库下会看到刚复制的仓库，以后的操作都在你自己的仓库进行，当然想感谢我写这个教程就帮我点个**start**吧！
+[点这里我的博客地址](https://github.com/arnold117/arnold117.github.io)进去点击 fork，之后在你自己的仓库下会看到刚复制的仓库，以后的操作都在你自己的仓库进行，当然想感谢我写这个教程就帮我点个**start**吧！
 
 ![fork博客](../images/2023/01/11/fork.png)
 
@@ -311,4 +311,4 @@ _include/svg-icons.html生成社交头像的链接
 
 此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
 Ciallo～(∠・ω< )⌒☆​  
-写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://dotponder.github.io/likes/)！
+写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！

@@ -280,4 +280,4 @@ SHA256(8ab9cd6ef43) = 0e879c8cbb03875a86f12a22f39ce6a35d51a6a9b90a7a7bb240b4841f
 
 此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
 Ciallo～(∠・ω< )⌒☆​  
-写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://dotponder.github.io/likes/)！
+写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！
