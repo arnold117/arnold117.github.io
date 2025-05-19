@@ -32,8 +32,3 @@ Hello There! Arnold here!
 地址：TN3cz7VAhwKYPio3p1HBupVPoSg7K5hXS4  
 二维码：  
 ![](./images/likes/TRON.png)
-### XMR 门罗币
-**该地址仅支持门罗币收款**  
-地址：8BqSpmNdvSSDsfHHoj4pdmCCEFKeQdax9MP5minsCWuX2FL7ZwspxuJNwuEV2wtgaMCPgq6Er95ZGbTTzZcmfr4P8482nKz  
-二维码：  
-![](./images/likes/XMR.png)
