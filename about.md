@@ -4,59 +4,40 @@ title: About
 permalink: /about/
 ---
 
-Hello There! Arnold here!
+## Hello! I'm Arnold 👋
 
-### 关于本博客
-Ciallo～(∠・ω< )⌒☆
+I'm a researcher and engineer passionate about leveraging **machine learning** to understand human health and behavior through **wearable sensing** and **digital phenotyping**. Currently, I'm working as a Research Assistant at **TUMCREATE** (Technical University of Munich), where I focus on developing AI-driven methods to analyze light exposure patterns and their impact on human well-being.
 
-最开始是用来记录学习笔记的，后来发现还可以用来写一些技术文章，于是就有了现在的样子。
+I hold a **Master of Science** from the **Yong Loo Lin School of Medicine** at the **National University of Singapore** and a **Bachelor of Engineering** from **Nanchang Hangkong University**.
 
-除了技术文章，还会写一些生活感悟，以及一些有趣的事情。
-总之就是一个杂七杂八的博客。
+### Research Interests
 
-当然啦，如果你对我的文章有什么意见或者建议，欢迎在文章下方留言，或者发邮件给我。我也想和大家交个朋友呀！
+My work sits at the intersection of:
+- **Digital Phenotyping** — using sensors and data to characterize behavior
+- **Wearable Technology** — spectral sensors, IMUs, physiological monitors
+- **Light & Health** — understanding circadian rhythms and environmental impacts
+- **Graph Machine Learning** — applying GNNs to biomedical knowledge graphs
 
-感觉已经很久没更新了。。。诈尸一下(2025.5.20)
+### Beyond Research
 
-### 关于我
-### 技能
+When I'm not coding or analyzing data, you'll find me:
+- 🎵 Listening to classical music (especially Mozart and Liszt)
+- 🎧 Exploring HiFi audio equipment
+- 🚴 Cycling on open roads
+- 📚 Reading across various genres
+- 🛠️ Tinkering with electronics and software
 
-不敢说精通C，只能说学得还算好。  
-Cxx和Java入门ing...  
-会一点Python和MATLAB  
-~~重度Ubuntu使用者~~(**已回归Windows+虚拟机**)  
-~~Update: **WSL真好用！！**(2023.1.1)~~  
-什么时候微软解决Windows11和WSL2在localhost上的问题，我再考虑回去！！！
+### Get in Touch
 
-### 兴趣爱好
-喜欢听古典乐，尤其是莫扎特与李斯特的作品  
-HiFi发烧友(谢谢！已经没有钱了！)  
-喜欢看电影，尤其是科幻片  
-公路骑行爱好者(又是一个烧钱的爱好)  
-喜欢看书，不挑食  
-食物的话，不吃水产，不吃内脏，其他都可以！  
-爱折腾电子设备和软件
+I'm always interested in collaborating on projects related to wearable sensing, digital health, or machine learning. Feel free to reach out!
 
-### 经历
+- **Email:** [arnoldchow@outlook.com](mailto:arnoldchow@outlook.com)
+- **GitHub:** [@arnold117](https://github.com/arnold117)
 
-南昌航空大学工学学士  
-Master of Science, Yong Loo Lin School of Medicine, National University of Singapore  
+---
 
-GEEKCON2023志愿者(DARKNAVY)  
-Research Assistant, TUMCREATE, Technical University of Munich
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="/cv" class="btn btn-primary">View My CV</a>
+  <a href="/projects" class="btn btn-secondary">See My Projects</a>
+</div>  
 
-#### 碎碎念
-**上大学了！！！！！**(2019.9.1)  
-**想去慕尼黑工业大学读研**( *理想很美好，对吧* )  
-Update：慕尼黑工业大学拒信到手，没戏了(2023.4.15)  
-**被新加坡国立大学录取了！**(2023.8.31)  
-Update: 新加坡国立大学也就这样......(2024.2.1)  
-加入TUMCREATE当RA啦！！！！好耶！！（2024.8.12）  
-什时候才能毕业啊！我已经快受不了了！(2024.4.1)
-
-### 联系方式
-左下角，点邮箱图标，点开就知道了
-
-### 版权声明
-
-博客文章是我原创文章，存档于`_posts`文件夹下，版权归我所有，转载请与我联系获得授权许可。

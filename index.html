@@ -1,104 +1,59 @@
 ---
 layout: default
 ---
-<div class="search-container">
-  <input type="text" id="search-input" placeholder="search blog posts..." style="width: 90%;
-    height: 35px;
-    color: #333;
-    background-color: rgba(227,231,236,.2);
-    line-height: 35px;
-    padding:0px 16px;
-    border: 1px solid #c0c0c0;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 17px;
-    outline: none;
-    box-sizing: border-box;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);">
-  <ul id="results-container"></ul>
-</div>
 
-<!--script src="https://unpkg.com/simple-jekyll-search/dest/simple-jekyll-search.min.js"></script-->
-<script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Arnold Zhou (周亚诺)</h1>
+  <p class="tagline">ML for Digital Phenotyping • Wearable Sensing • Light & Health</p>
+  
+  <div class="cta-buttons">
+    <a href="{{ site.baseurl }}/cv" class="btn btn-primary">View CV</a>
+    <a href="mailto:arnoldchow@outlook.com" class="btn btn-secondary">Email Me</a>
+    <a href="https://github.com/arnold117" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+  </div>
+</section>
 
-<script>
-	window.simpleJekyllSearch = new SimpleJekyllSearch({
-	searchInput: document.getElementById('search-input'),
-	resultsContainer: document.getElementById('results-container'),
-	json: '{{ site.baseurl }}/search.json',
-	searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
-	noResultsText: 'No results found',
-	limit: 10,
-	fuzzy: false,
-	exclude: ['Welcome']
-  })
-</script>
- 
-{% if site.posts.size == 0 %}
-  <h2>No post found</h2>
-{% endif %}
+<!-- Featured Projects Section -->
+<section class="featured-projects">
+  <h2 class="section-header">Featured Projects</h2>
+  
+  <div class="projects-grid">
+    {% assign featured = site.projects | where: "featured", true | sort: "date" | reverse %}
+    {% if featured.size > 0 %}
+      {% for project in featured limit: 6 %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    {% else %}
+      <p style="text-align: center; color: #666;">Projects coming soon...</p>
+    {% endif %}
+  </div>
+  
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="{{ site.baseurl }}/projects" class="btn btn-secondary">View All Projects</a>
+  </div>
+</section>
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  {% unless post.draft %}
-    <article class="post">
-      <h1>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      </h1>
-
-      <div clsss="meta">
-        <span class="date">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </span>
-
-        <ul class="tag">
-          {% for tag in post.tags %}
-          <li>
-            <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-              {{ tag }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="entry">
-        {{ post.excerpt | truncate: 200 }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endunless %}
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <span class="prev">
-      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="prev">
-        ← 上一页
-      </a>
-    </span>
-  {% endif %}
-  {% if paginator.next_page %}
-    <span class="next">
-      <a href="{{ site.baseurl}}{{ paginator.next_page_path }}" class="next">
-        下一页 →
-      </a>
-    </span>
-  {% endif %}
-</div>
-
-<!--不算子网站访客统计-->
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<!-- pv的方式，单个用户连续点击n篇文章，记录n次访问量 -->
-<div align="center">
-	<span id="busuanzi_container_site_pv" style="font-family:Consolas;color:Silver;font-size:12px;">
-		View:<span id="busuanzi_value_site_pv" style="font-family:Consolas;color:Silver;font-size:12px;"></span>
-	</span>
-	<!-- uv的方式，单个用户连续点击n篇文章，只记录1次访客数 -->
-	<span id="busuanzi_container_site_uv" style="font-family:Consolas;color:Silver;font-size:12px;">
-		User:<span id="busuanzi_value_site_uv" style="font-family:Consolas;color:Silver;font-size:12px;"></span>
-	</span>
-</div>
+<!-- Latest Updates Section -->
+<section style="margin-top: 4rem;">
+  <h2 class="section-header">Latest Updates</h2>
+  
+  <div style="max-width: 800px; margin: 0 auto;">
+    {% if site.posts.size > 0 %}
+      <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Recent Blog Posts</h3>
+      <ul style="list-style: none; padding: 0;">
+        {% for post in site.posts limit: 3 %}
+        <li style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e1e4e8;">
+          <a href="{{ site.baseurl }}{{ post.url }}" style="font-weight: 600; color: #0366d6; text-decoration: none;">
+            {{ post.title }}
+          </a>
+          <span style="color: #586069; font-size: 0.875rem; display: block; margin-top: 0.25rem;">
+            {{ post.date | date: "%B %d, %Y" }}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="{{ site.baseurl }}/blog" class="btn btn-ghost" style="margin-top: 1rem;">View All Posts</a>
+    {% endif %}
+  </div>
+</section>

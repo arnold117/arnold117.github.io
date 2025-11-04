@@ -1,0 +1,40 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+
+<div style="text-align: center; margin-bottom: 3rem;">
+  <p style="font-size: 1.1rem; color: #586069; max-width: 700px; margin: 0 auto;">
+    Here are some of the projects I've worked on, spanning machine learning, wearable sensing, digital health, and graph neural networks. Each project represents my exploration of how AI can help us understand human health and behavior.
+  </p>
+</div>
+
+<div class="projects-grid">
+  {% assign all_projects = site.projects | sort: "date" | reverse %}
+  {% if all_projects.size > 0 %}
+    {% for project in all_projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  {% else %}
+    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+      <h3 style="color: #666;">No projects yet</h3>
+      <p style="color: #999;">Check back soon for updates!</p>
+    </div>
+  {% endif %}
+</div>
+
+<div style="margin-top: 3rem; padding: 2rem; background-color: #f6f8fa; border-radius: 8px; text-align: center;">
+  <h3 style="margin-bottom: 1rem;">Interested in Collaboration?</h3>
+  <p style="color: #586069; margin-bottom: 1.5rem;">
+    I'm always open to discussing new projects, research ideas, or partnership opportunities in the areas of digital health, wearable sensing, and machine learning.
+  </p>
+  <a href="mailto:arnoldchow@outlook.com" class="btn btn-primary">Get in Touch</a>
+</div>
+
+<style>
+/* Override any padding from the page layout */
+.page .projects-grid {
+  margin-top: 2rem;
+}
+</style>
