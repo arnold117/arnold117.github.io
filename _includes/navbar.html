@@ -1,0 +1,82 @@
+<header class="navbar-container">
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <!-- Left: Brand/Name -->
+      <div class="nav-left">
+        <a href="{{ site.baseurl }}/" class="nav-brand">
+          <span class="brand-name">{{ site.name }}</span>
+        </a>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <div class="nav-center">
+        <div class="nav-links">
+          {% for nav in site.navigation %}
+            {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+              <a href="{{ nav.url }}" class="nav-link" target="_blank" rel="noopener">
+                {{ nav.name }}
+              </a>
+            {% else %}
+              {% assign nav_url = nav.url | prepend: site.baseurl %}
+              {% assign current_path = page.url | remove: 'index.html' %}
+              <a href="{{ nav_url }}" class="nav-link {% if current_path == nav_url or page.url contains nav.url %}active{% endif %}">
+                {{ nav.name }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Right: Social Icons + Theme Toggle -->
+      <div class="nav-right">
+        {% if site.footer-links.github %}
+          <a href="https://github.com/{{ site.footer-links.github }}" class="nav-icon" target="_blank" rel="noopener" title="GitHub">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </a>
+        {% endif %}
+
+        {% if site.footer-links.email %}
+          <a href="mailto:{{ site.footer-links.email }}" class="nav-icon" title="Email">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+            </svg>
+          </a>
+        {% endif %}
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle dark mode">
+          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+          </svg>
+          <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      {% for nav in site.navigation %}
+        {% if nav.url contains 'http://' or nav.url contains 'https://' %}
+          <a href="{{ nav.url }}" class="mobile-menu-link" target="_blank" rel="noopener">
+            {{ nav.name }}
+          </a>
+        {% else %}
+          <a href="{{ site.baseurl }}{{ nav.url }}" class="mobile-menu-link">
+            {{ nav.name }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </nav>
+</header>
