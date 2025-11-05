@@ -3,7 +3,7 @@ layout: post
 title: "使用ADB对Android应用程序进行保存数据的安全降级-微信为例"
 date:   2022-09-09
 tags: [Android]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

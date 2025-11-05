@@ -3,7 +3,7 @@ layout: post
 title: "Windows用SSH连接虚拟机Linux"
 date:   2021-04-29
 tags: [Linux]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---
@@ -34,7 +34,7 @@ toc: true
 ### 虚拟机 Ubuntu 20.04
 打开终端，输入命令: `ifconfig`  
 如果如图提示 `ifconfig not found`
-![ifconfig_not_found](../images/2021/04/29/vmware_ssh/Ubuntu_terminal_ifconfig_not_found.png)
+![ifconfig_not_found](/assets/img/post/2021/04/29/vmware_ssh/Ubuntu_terminal_ifconfig_not_found.png){: style="max-width: 100%; height: auto;" }  
 就`sudo apt install net-tools`就好了，可以再次执行命令  
 现在输出的是：
 ```bash
@@ -61,9 +61,9 @@ lo:    flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 然后，我们需要将主机与宿主机的ip映射到一起。  
 
 打开 编辑->虚拟网络编辑器，如图所示：  
-![Edit_menu](../images/2021/04/29/vmware_ssh/Edit_menu.png)  
+![Edit_menu](/assets/img/post/2021/04/29/vmware_ssh/Edit_menu.png){: style="max-width: 100%; height: auto;" }  
 然后选择**NAT模式**的连接，进入**NAT设置(S)**, 再点击**添加(A)**, 如图：  
-![Virtual_network_editor](../images/2021/04/29/vmware_ssh/Virtual_network_editor.png)  
+![Virtual_network_editor](/assets/img/post/2021/04/29/vmware_ssh/Virtual_network_editor.png){: style="max-width: 100%; height: auto;" }  
 弹出的**映射传入端口**中:  
 - 主机端口，默认是22，
 - 虚拟机ip地址，填写上面找到的虚拟机ip
@@ -80,7 +80,7 @@ lo:    flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 至此，成功安装ssh，并且可以通过ssh工具在宿主机上使用。
 
 如图所示：
-![SSH_command](../images/2021/04/29/vmware_ssh/SSH_command.png)
+![SSH_command](/assets/img/post/2021/04/29/vmware_ssh/SSH_command.png){: style="max-width: 100%; height: auto;" }  
 比如，我使用`Windows Terminal`中的ssh工具  
 直接在命令行输入:
 `ssh {虚拟机用户名}@{虚拟机ip}`，然后坚持要访问  
@@ -88,8 +88,8 @@ lo:    flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 
 我们来执行一个很基础的命令：  
 在控制台输出 `Hello World!`:
-![Echo_hello_world](../images/2021/04/29/vmware_ssh/Echo_hello_world.png)
+![Echo_hello_world](/assets/img/post/2021/04/29/vmware_ssh/Echo_hello_world.png){: style="max-width: 100%; height: auto;" }  
 
 此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
 Ciallo～(∠・ω< )⌒☆​  
-写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！)！
+写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！

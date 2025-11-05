@@ -3,7 +3,7 @@ layout: post
 title: "隐藏Android应用的ActionBar"
 date:   2023-02-27
 tags: [Andorid, Java, ActionBar]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

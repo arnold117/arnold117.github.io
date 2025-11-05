@@ -3,7 +3,7 @@ layout: post
 title: "简单好用的Python论文绘图专用工具包-SciencePlots"
 date:   2021-06-19
 tags: [Python]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---
@@ -68,11 +68,11 @@ ax.autoscale(tight=True)
 fig.savefig('./fig1.jpg', dpi=300)
 ```
 则产生的图片是这样的：
-![](../images/2021/06/20/fig.jpg)
+![](/assets/img/post/2021/06/20/fig.jpg){: style="max-width: 100%; height: auto;" }  
 是不是很，，对吧。
 
 而使用SciencePlots的话，则有这样的效果：
-![](./../images/2021/06/20/fig1.jpg)
+![](/assets/img/post/2021/06/20/fig1.jpg){: style="max-width: 100%; height: auto;" }  
 无论是坐标轴的刻度线，字体都变得高大上了很多。  
 具体是这样实现的：
 ``` python

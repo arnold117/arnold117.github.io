@@ -3,7 +3,7 @@ layout: post
 title: "给Ubuntu Server 20.04扩展磁盘空间"
 date:   2022-03-05
 tags: [Linux]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---
@@ -16,7 +16,7 @@ toc: true
 
 ## 1. 虚拟机磁盘扩充
 我使用的是VMware16Pro，选择需要扩展的虚拟机，打开设置
-![](./../images/2022/03/05/ubuntu_expand_disk/virtual_settings.png)
+![](/assets/img/post/2022/03/05/ubuntu_expand_disk/virtual_settings.png){: style="max-width: 100%; height: auto;" }  
 找到硬盘，选择扩展即可。因为我的机器是开着的，所以扩展的选项是灰色的。  
 为了运行云计算和大数据相关程序，**建议将硬盘留有50GB以上空间**，我这里还要安装其他应用，所以扩展成80GB。
 

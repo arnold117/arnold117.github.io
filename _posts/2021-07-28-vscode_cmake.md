@@ -3,7 +3,7 @@ layout: post
 title: "使用VSCode和CMake进行C语言或C++编程"
 date:   2021-07-28
 tags: [CMake, VSCode]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---
@@ -35,30 +35,30 @@ MacOS与Linux的安装与配置与Windows下类似, 在此就介绍在Windows下
 前往[VSCode官网](https://code.visualstudio.com/)下载并安装.  
 **注意!** 请选择系统安装包, 用户安装包安装好后有很多权限问题!!  
 将页面滑倒最下方, 选择 **System installer**  
-![](./../images/2021/07/28/vscode_cmake/选择系统安装包.png)
+![](/assets/img/post/2021/07/28/vscode_cmake/选择系统安装包.png){: style="max-width: 100%; height: auto;" }
 ### 2) 安装VSCode插件
-![](./../images/2021/07/28/vscode_cmake/搜索插件.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/搜索插件.png){: style="max-width: 100%; height: auto;" }  
 在右侧选择扩展, 搜索`C/C++ Extension Pack`, 然后安装  
-![](./../images/2021/07/28/vscode_cmake/安装插件.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/安装插件.png){: style="max-width: 100%; height: auto;" }  
 这个扩展包含有13个插件, 完美包含了开发C语言或者C++所需, 日后可能都需要用上. 如果不想安装太多, 安装`C/C++`, `CMake`, `CMake Tools`, 即可.
 ### 3) 安装编译器和调试器
 进入[Mingw-w64下载页面](https://sourceforge.net/projects/mingw-w64/files/mingw-w64/), 选择64位posix-seh的版本, 这里版本号选择`gcc-8.1.0`
-![](./../images/2021/07/28/vscode_cmake/Mingw64.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/Mingw64.png){: style="max-width: 100%; height: auto;" }  
 将其解压到C盘根目录, 并将其添加到系统环境变量:  
 `Win + S` 搜索框输入`env`, 进入系统环境变量编辑
-![](./../images/2021/07/28/vscode_cmake/搜索环境变量.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/搜索环境变量.png){: style="max-width: 100%; height: auto;" }  
 选择环境变量,然后在系统变量里找到`Path`, 点击编辑, 在里面新建一条, 输入安装路径, 我这是`C:\mingw64\bin`  
-![](./../images/2021/07/28/vscode_cmake/环境变量.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/环境变量.png){: style="max-width: 100%; height: auto;" }  
 这样, gcc的开发环境就配置好了. 建议重启一下, 然后打开`cmd`, 输入`gcc --version`验证安装  
 如果出现如图类似界面, 则说明安装成功. 
-![](./../images/2021/07/28/vscode_cmake/验证gcc.png)
+![](/assets/img/post/2021/07/28/vscode_cmake/验证gcc.png){: style="max-width: 100%; height: auto;" }  
 ### 4) 安装CMake
 去[CMake官网下载页面](https://cmake.org/download/), 选择 `Windows X64 installer`  
-![](./../images/2021/07/28/vscode_cmake/CMake下载.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/CMake下载.png){: style="max-width: 100%; height: auto;" }  
 将其安装在C盘根目录. 安装时记得勾选`Add CMake to the System PATH for all users`  
-![](./../images/2021/07/28/vscode_cmake/CMake安装.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/CMake安装.png){: style="max-width: 100%; height: auto;" }  
 同样, 安装完成后进行验证, 在`cmd`内输入`cmake --version`  
-![](./../images/2021/07/28/vscode_cmake/验证CMake.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/验证CMake.png){: style="max-width: 100%; height: auto;" }  
 出现如图字样就是安装成功.
 
 ## 3. 创建工程, 开始编程
@@ -66,23 +66,23 @@ MacOS与Linux的安装与配置与Windows下类似, 在此就介绍在Windows下
 在计算机上任意位置创建一个文件夹, 文件夹名称需要与工程名一致, 示例为`VSCodeCMake`, 用VScode打开它
 ### 2) 构建工程雏形
 打开命令面板, 输入 `cmake`, 选择`CMake Quick Start`  
-![](./../images/2021/07/28/vscode_cmake/命令面板.png)  
-![](./../images/2021/07/28/vscode_cmake/CMake入门命令.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/命令面板.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2021/07/28/vscode_cmake/CMake入门命令.png){: style="max-width: 100%; height: auto;" }  
 输入工程名, 需要与文件夹名对应.  
 需要生成可执行文件的话, 要选择`executable`  
-![](./../images/2021/07/28/vscode_cmake/exe.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/exe.png){: style="max-width: 100%; height: auto;" }  
 然后就会生成一些文件, 最主要的就是`CMakeList`和`main.cpp`  
-![](./../images/2021/07/28/vscode_cmake/生成文件.png)
+![](/assets/img/post/2021/07/28/vscode_cmake/生成文件.png){: style="max-width: 100%; height: auto;" }  
 ### 3) 编程
 关于CMake的语法和C语言的语法请先在网络上查询.
 ### 4) 运行与调试
 编程完成后, 调试与运行的按钮在屏幕下方: 红色箭头所指的虫形标志就是调试(DEBUG), 旁边蓝色箭头所指就是运行  
 在代码栏数字行标左侧点击, 就可以添加断点.  
-![](./../images/2021/07/28/vscode_cmake/按钮.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/按钮.png){: style="max-width: 100%; height: auto;" }  
 调试的界面如图所示  
-![](./../images/2021/07/28/vscode_cmake/调试界面.png)  
+![](/assets/img/post/2021/07/28/vscode_cmake/调试界面.png){: style="max-width: 100%; height: auto;" }  
 直接运行的话, 该程序会在控制台输出`Hello, World!`, 如图所示  
-![](./../images/2021/07/28/vscode_cmake/运行结果.png)
+![](/assets/img/post/2021/07/28/vscode_cmake/运行结果.png){: style="max-width: 100%; height: auto;" }  
 
 ## 恭喜!
 你已经完成了该章节学习, 一起进入C语言编程美丽世界吧!

@@ -3,7 +3,7 @@ layout: post
 title: "可能是最全面的github pages搭建个人博客教程"
 date:   2023-01-11
 tags: [geek]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: false
 ---
@@ -18,7 +18,7 @@ toc: false
 
 话不多说，直接上图先来看下我的博客整体效果，个人比较喜欢这种简约的博客风格，不要花里胡哨但该有的功也都有。
 
-![blogPage](../images/2023/01/11/blogPage.png)
+![blogPage](/assets/img/post/2023/01/11/blogPage.png){: style="max-width: 100%; height: auto;" }
 
 
 
@@ -58,7 +58,7 @@ toc: false
 
 [点这里我的博客地址](https://github.com/arnold117/arnold117.github.io)进去点击 fork，之后在你自己的仓库下会看到刚复制的仓库，以后的操作都在你自己的仓库进行，当然想感谢我写这个教程就帮我点个**start**吧！
 
-![fork博客](../images/2023/01/11/fork.png)
+![fork博客](/assets/img/post/2023/01/11/fork.png){: style="max-width: 100%; height: auto;" }
 
 **版权声明： fork之后_posts文件夹内容是我的博客文章，版权归我所有。你可以选择删除里面的文章替换上自己的博客文章，如需转载需要与我联系授权**。
 
@@ -68,7 +68,7 @@ toc: false
 
 进到你自己的博客仓库，**修改博客仓库名称成你自己的用户名**。因为 github page 解析的时候找的是这个 username.github.io的仓库名，**这一步非常重要**。
 
-![修改仓库名称](../images/2023/01/11/changeName.png)
+![修改仓库名称](/assets/img/post/2023/01/11/changeName.png){: style="max-width: 100%; height: auto;" }
 
 此时，不出意外的话，打开域名 https://username.github.io 就能看到你刚搭建的博客了。*注意替换 username成你自己的github 用户名*。
 
@@ -78,19 +78,19 @@ toc: false
 
 博客的配置文件是仓库根目录下的_config.yml文件，直接点开它编辑。
 
-![config文件](../images/2023/01/11/config.png)
+![config文件](/assets/img/post/2023/01/11/config.png){: style="max-width: 100%; height: auto;" }
 
 你还需要更改以下配置：
 
 ### 博客名称和描述
 
-![更改名称](../images/2023/01/11/description.png)
+![更改名称](/assets/img/post/2023/01/11/description.png){: style="max-width: 100%; height: auto;" }
 
 分别是博客名称和描述，自己任意写点啥。
 
 ### 博客社交链接
 
-![更改社交链接](../images/2023/01/11/links.png)
+![更改社交链接](/assets/img/post/2023/01/11/links.png){: style="max-width: 100%; height: auto;" }
 
 这里配置社交链接按钮，没配的不显示，我现在配了知乎、邮箱、github账号、推特这几个。其他你想加自己加上就可以。
 
@@ -110,7 +110,7 @@ gitalk:
 
 原理是利用github的issues评论文章。其中clientID和clientSecret需要[点击这里创建](https://github.com/settings/applications/new)
 
-![创建gitalk鉴权app](../images/2023/01/11/gitalk.png)
+![创建gitalk鉴权app](/assets/img/post/2023/01/11/gitalk.png){: style="max-width: 100%; height: auto;" }
 
 点绿色按钮创建，成功之后会得到以上两个id，修改配置即可。
 
@@ -132,7 +132,7 @@ url: https://yourname.github.io
 
 对_config.ymld的修改需要提交才能生效，点下图中绿色按钮提交。
 
-![配置提交](../images/2023/01/11/commit.png)
+![配置提交](/assets/img/post/2023/01/11/commit.png){: style="max-width: 100%; height: auto;" }
 
 **done! 现在输入上面提到的博客地址，回车，你拥有了自己的博客。**
 
@@ -197,7 +197,7 @@ url: https://yourname.github.io
 
 配置完成，打开博客，你得到这样一个搜索框。
 
-![search_block](../images/2023/01/11/search.png)
+![search_block](/assets/img/post/2023/01/11/search.png){: style="max-width: 100%; height: auto;" }
 
 ## 搜索框样式
 
@@ -242,7 +242,7 @@ footer-links:
 
 主要是`path d=` 内容的获取，这里其实是指定svg图片的内容，我们可以从 [这里](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/brands/)获取到大部分svg素材，比如知乎的svg[在这](https://github.com/FortAwesome/Font-Awesome/blob/master/svgs/brands/zhihu.svg)，点`raw` 按钮查看源文件，复制`path d=`后面的内容到上面的配置即可。
 
-![zhihuSvg](../images/2023/01/11/zhihu.png)
+![zhihuSvg](/assets/img/post/2023/01/11/zhihu.png){: style="max-width: 100%; height: auto;" }
 
 
 
@@ -288,7 +288,7 @@ eg.  `style="font-family:arial;color:Gainsboro;font-size:10px; text-align:right;
 
 在文章开头信息中心增加 `toc: true` 描述即可打开文章目录显示。效果如下：
 
-![文章带目录](../images/2023/01/11/toc.png)
+![文章带目录](/assets/img/post/2023/01/11/toc.png){: style="max-width: 100%; height: auto;" }
 
 ## 其他功能
 

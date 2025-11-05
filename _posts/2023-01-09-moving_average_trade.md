@@ -3,7 +3,7 @@ layout: post
 title: "以太坊教授币哥-Tradingview均线系统 代码解释，操作指示及风险提示"
 date:   2023-01-09
 tags: [TradingView, Trade, Crypto]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---
@@ -13,7 +13,7 @@ toc: true
 <!-- more -->
 
 该位Up，发布视频称视频发布日期前三周利用均线交易策略交易现货10笔，获利2587美元；和交易合约19笔，获利28371美元。
-![](../images/2023/01/09/moving_average_trade/profit.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/profit.png){: style="max-width: 100%; height: auto;" }
 在接下来的视频中他分享了他使用的交易策略。视频中的代码和操作指示是基于TradingView平台的。本文将对该视频中的代码进行解释，给出操作指示，并提示其风险。
 
 ## 1. Up提示
@@ -63,7 +63,7 @@ plot(cond?bl[60]:na,color=#FFC40C,linewidth=5,offset=-x60,style=plot.style_circl
 plot(cond?bl[120]:na,color=#FFC40C,linewidth=5,offset=-x120,style=plot.style_circles,transp=0)
 ```
 按照上述代码画出来的图为：
-![](../images/2023/01/09/moving_average_trade/TradingView.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/TradingView.png){: style="max-width: 100%; height: auto;" }  
 
 我们可以看出，这个代码用到了SMA和EMA两类指标，和其对应的抵扣价。各类指标的含义和计算方法在此不做说明。  
 
@@ -74,25 +74,25 @@ plot(cond?bl[120]:na,color=#FFC40C,linewidth=5,offset=-x120,style=plot.style_cir
 ## 3. 操作指示
 ### a. 将代码复制到TradingView上
 将上述代码复制到TradingView的`Pine Editor`，即可看到上文所示的带有指标的图表。
-![](../images/2023/01/09/moving_average_trade/pineEditor.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/pineEditor.png){: style="max-width: 100%; height: auto;" }  
 其中，黑线为SMA20，<font color=blue>蓝线</font>为SMA60，<font color=purple>紫线</font>为SMA120。EMA线段的颜色为对应的SMA线段颜色的半透明。  
 本文称黑线为快线，<font color=blue>蓝线</font>为中线，<font color=purple>紫线</font>为慢线。
 
 亦可以在图表工具上自行标注SMA(20,60,120)和EMA(20,60,120)，如本文作者使用AiCoin，标注效果如图：
-![](../images/2023/01/09/moving_average_trade/AiCoin.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/AiCoin.png){: style="max-width: 100%; height: auto;" }  
 
 ### b. 重要概念
 如图所示，当均线在一定时间内聚集在一起，像一股绳子拧在一起一样，即为均线密集；当均线在一定时间内发散开来时，即为均线发散。
-![](../images/2023/01/09/moving_average_trade/graphStat.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/graphStat.png){: style="max-width: 100%; height: auto;" }  
 当均线密集时，表示市场处于震荡状态，此时不适合做多或做空。当均线发散时，表示市场处于趋势状态，此时适合做多或做空。
 
 当快线高于中线高于慢线时，说明行情处于上涨趋势；当快线低于中线低于慢线时，说明行情处于下跌趋势。
 
 ### c. 交易信号
 出现均线密集，随后K线跌破均线密集，则认为有可能有下跌趋势，卖出现货或者做空。
-![](../images/2023/01/09/moving_average_trade/downSide.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/downSide.png){: style="max-width: 100%; height: auto;" }  
 出现均线密集，随后K线突破均线密集，则认为有可能有上涨趋势，买入现货或者做多。
-![](../images/2023/01/09/moving_average_trade/upSide.png)
+![](/assets/img/post/2023/01/09/moving_average_trade/upSide.png){: style="max-width: 100%; height: auto;" }  
 
 ### d. 交易建议
 仅选取**本金10%以下**资金进行交易，以免出现大额亏损。**开仓时**设置**止盈止损**，5min图上止盈**3-5%**，止损**1-2%**；15min图上止盈**5-8%**，止损**2-3%**；1h图上止盈**8-10%**，止损**3-5%**。  
