@@ -30,17 +30,20 @@ Traditional methods for assessing light exposure rely on simple lux measurements
 ## Methodology
 
 ### Data Collection
+
 - **Sensors:** Wearable spectroradiometers worn by participants
 - **Duration:** 7-14 days of continuous monitoring
 - **Features:** 36-channel spectral data (380-780nm), ambient temperature, accelerometry
 
 ### Feature Engineering
+
 - Calculated 5 α-opic irradiance values (melanopic, rhodopic, chloropic, cyanopic, erythropic)
 - Extracted spectral features (peak wavelength, spectral width, color temperature)
 - Temporal features (time of day, day of week, season)
 - Context features (indoor/outdoor likelihood, activity level)
 
 ### Model Architecture
+
 - **Base Model:** Gradient Boosting (XGBoost)
 - **Validation:** Participant-wise cross-validation to prevent data leakage
 - **Ensemble:** Stacked model with Random Forest and Neural Network
@@ -55,6 +58,7 @@ Traditional methods for assessing light exposure rely on simple lux measurements
 ## Impact & Applications
 
 This framework enables:
+
 - Personalized light exposure recommendations for circadian health
 - Large-scale epidemiological studies of light and health
 - Real-time feedback systems for wearable devices
@@ -63,6 +67,7 @@ This framework enables:
 ## Code & Resources
 
 The full implementation is available on [GitHub](https://github.com/arnold117/light-exposure-ml) (TODO: update link). The repository includes:
+
 - Data preprocessing pipelines
 - Feature extraction modules
 - Model training scripts

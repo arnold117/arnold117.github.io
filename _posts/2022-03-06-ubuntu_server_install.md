@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用VMware安装Ubuntu Server 18.04"
-date:   2022-03-06
+date: 2022-03-06
 tags: [Linux]
 giscus_comments: true
 author: Arnold
@@ -11,47 +11,52 @@ author: Arnold
 本文介绍了一种在VMware下安装Ubuntu Server 18.04 的方法。
 
 <!-- more -->
+
 大数据的路可太难走了，我用的大部分linux软件都已经适配Ubuntu 20.04了，但大数据相关的软件还没有，，，这不又得安装一下低版本？低版本比较新的是18.04，Hadoop的更新也表明支持该操作系统，就安装这个吧！
 
 ## 0. Ubuntu 和 Ubuntu Server的区别
+
 emmm，其实本质上没什么区别，就是一个有图形界面，一个没有图形界面。  
 我不习惯使用图形界面(都Linux了，不敲命令行？？？)，而且吧，服务器资源寸土寸金，装上图形界面系统负载就大了，为了运行效率和节约成本，一般不使用图形界面。
 
 ## 1. 准备工作
+
 需要自行安装VMware，我使用的版本是 VMware Workstation 16 Pro，如果是同学想找我拷贝虚拟机镜像，建议安装同样的版本。
 
-![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_version.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_version.png){: style="max-width: 100%; height: auto;" }
 
 需要去Ubuntu官网的下载界面下载Ubuntu Server([点此访问！](https://ubuntu.com/download/server))
 
 注意！它官网具有很大迷惑性！一定要选择**Option 2**才可以进入服务器下载界面！
 
-![](/assets/img/post/2022/03/06/ubuntu_server_install/server_official.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/server_official.png){: style="max-width: 100%; height: auto;" }
 
 进去以后往下滑，然后选择**Get Ubuntu Server 18.04 LTS**!
-![](/assets/img/post/2022/03/06/ubuntu_server_install/server_download.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/server_download.png){: style="max-width: 100%; height: auto;" }
 
 ## 2. VMware 创建虚拟机
+
 文件->新建虚拟机
 
 这里我选择典型安装：
-![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_guide_page.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_guide_page.png){: style="max-width: 100%; height: auto;" }
 
 在这一步，建议选择稍后安装系统，不然你体会不到安装系统的乐趣(bushi)  
 主要是，以后安装就是实体安装了，可没有快速安装这个选项！
-![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_later_install_sys.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_later_install_sys.png){: style="max-width: 100%; height: auto;" }
 
 随后的一步，选择Linux和Ubuntu 64位操作系统
-![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_choose_sys.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_choose_sys.png){: style="max-width: 100%; height: auto;" }
 
 名称自己定，这个无所谓的。然后指定磁盘容量，这里磁盘大小请保证为**50GB以上**，因为大数据要用的软件都比较大，还比较多！！同时，为了性能，请选择**储存为单个文件**
-![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_de_disk.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_de_disk.png){: style="max-width: 100%; height: auto;" }
 
 硬件配置就看自己电脑咯，推荐配置就够用了其实，不够自己随时调整一下就行！点完成，就创建好了！
 
-![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_ready.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_ready.png){: style="max-width: 100%; height: auto;" }
 
 ## 3. 虚拟机上安装Ubuntu Server 18.04
+
 首先，要编辑虚拟机设置，把安装镜像磁盘加入到虚拟光驱
 ![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_main.png){: style="max-width: 100%; height: auto;" }  
 ![](/assets/img/post/2022/03/06/ubuntu_server_install/vm_cd.png){: style="max-width: 100%; height: auto;" }  
@@ -76,12 +81,12 @@ emmm，其实本质上没什么区别，就是一个有图形界面，一个没�
 等待，如果界面弹出这样的，就说明安装好了！然后重启进入系统！
 ![](/assets/img/post/2022/03/06/ubuntu_server_install/ubuntu_complete.png){: style="max-width: 100%; height: auto;" }  
 这个输密码是不显示的，不要以为没输进去，输完回车就好。安装完成！欸嘿嘿~
-![](/assets/img/post/2022/03/06/ubuntu_server_install/ubuntu_done.png){: style="max-width: 100%; height: auto;" }  
+![](/assets/img/post/2022/03/06/ubuntu_server_install/ubuntu_done.png){: style="max-width: 100%; height: auto;" }
 
 然后按照我先前博客的方式配置ssh([点我访问！](https://arnold117.github.io/vmware_ssh/))，就可以在terminal下面连接ubuntu了，还是很方便的感觉。
 ![](/assets/img/post/2022/03/06/ubuntu_server_install/terminal_ssh.png){: style="max-width: 100%; height: auto;" }  
 接下来继续捣鼓Hadoop的安装与配置吧！
 
-此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
+此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^\*)))  
 Ciallo～(∠・ω< )⌒☆​  
 写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！

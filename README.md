@@ -13,7 +13,7 @@ This website is built using the [al-folio](https://github.com/alshedivat/al-foli
 ## Features
 
 - **Research Projects**: Showcase of current and past research work
-- **Blog**: Technical blog posts and research updates  
+- **Blog**: Technical blog posts and research updates
 - **Publications**: (Coming soon) Auto-generated from BibTeX
 - **CV**: Online curriculum vitae
 - **Light/Dark Mode**: Theme switcher for comfortable viewing

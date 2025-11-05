@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "简单好用的Python论文绘图专用工具包-SciencePlots"
-date:   2021-06-19
+date: 2021-06-19
 tags: [Python]
 giscus_comments: true
 author: Arnold
@@ -16,7 +16,7 @@ author: Arnold
 
 SciencePlots是一个专门为科研论文打造的轻量化的绘图工具包，安装SciencePlots最简单的方式是使用pip，使用的指令为：
 
-``` bash
+```bash
 # 安装最新版
 pip install git+https://github.com/garrettj403/SciencePlots.git
 
@@ -28,13 +28,16 @@ pip install SciencePlots
 
 安装完成后，使用SciencePlots也非常简单，只需要导入matplotlib工具包，选择相应的style即可。  
 例如，如果想要给Science投稿，那么只需要引入下列的主题：
-``` python
+
+```python
 import matplotlib.pyplot as plt
 
 plt.style.use('science')
 ```
+
 如果想使用IEEE格式，则只需要：
-``` python
+
+```python
 import matplotlib.pyplot as plt
 
 plt.style.use('science', 'ieee')
@@ -44,18 +47,19 @@ plt.style.use('science', 'ieee')
 
 接下来，用一些例子来展示一下SciencePlots的用法和具体的效果，首先，引入一些初始的数据并进行绘制。
 
-``` python
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
-def model(x, p): 
+def model(x, p):
    return x ** (2 * p + 1) / (1 + x ** (2 * p))
 
 x = np.linspace(0.75, 1.25, 201)
 ```
 
 如果不使用SciencePlots, 使用Matplotlib：
-``` python
+
+```python
 fig, ax = plt.subplots()
 
 for p in [10, 15, 20, 30, 50, 100]:
@@ -67,6 +71,7 @@ ax.set(ylabel='Current ($\mu$A)')
 ax.autoscale(tight=True)
 fig.savefig('./fig1.jpg', dpi=300)
 ```
+
 则产生的图片是这样的：
 ![](/assets/img/post/2021/06/20/fig.jpg){: style="max-width: 100%; height: auto;" }  
 是不是很，，对吧。
@@ -75,7 +80,8 @@ fig.savefig('./fig1.jpg', dpi=300)
 ![](/assets/img/post/2021/06/20/fig1.jpg){: style="max-width: 100%; height: auto;" }  
 无论是坐标轴的刻度线，字体都变得高大上了很多。  
 具体是这样实现的：
-``` python
+
+```python
 with plt.style.context(['science']):
     fig, ax = plt.subplots()
     for p in [10, 15, 20, 30, 50, 100]:
@@ -87,9 +93,8 @@ with plt.style.context(['science']):
     fig.savefig('figures/fig1.jpg', dpi=300)
 ```
 
-
 想要了解更多有关SciencePlots的内容，可以去SciencePlots的官方Github了解更多。[Github链接](https://github.com/garrettj403/SciencePlots)
 
-此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
+此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^\*)))  
 Ciallo～(∠・ω< )⌒☆​  
 写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！
