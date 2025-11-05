@@ -5,7 +5,7 @@ date:   2023-10-26
 tags: [Windows, Security Enhancement, UAC]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 前几天参加了1024程序员节，听了一场关于Windows系统安全性的分享，收获颇丰，于是决定将分享内容整理一下，分享给大家。

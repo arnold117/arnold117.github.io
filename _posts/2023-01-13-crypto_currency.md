@@ -5,7 +5,7 @@ date:   2023-01-13
 tags: [Crypto, BlockChain]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 加密货币通过把转账记录保存在区块链上，来确定每个账户中的余额。

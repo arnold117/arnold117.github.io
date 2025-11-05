@@ -5,7 +5,7 @@ date:   2022-09-09
 tags: [Android]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 简单的ADB操作实现保留数据的无损降级。
 

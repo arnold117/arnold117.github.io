@@ -5,7 +5,7 @@ date:   2023-01-13
 tags: [Crypto, Bitcoin, BlockChain]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 希腊在引入货币之后，很快就迎来了艺术、哲学、文学、建筑、天文、数学和民主等文化繁荣。或是模仿，或是独立发明，货币在世界范围内流行起来。与此同时，德国哲学家卡尔·雅斯贝尔斯（Karl Jaspers）提出的“轴心时代”（the Axial Age）也拉开了序幕。在轴心时代，“人类的精神基石同时分别在中国、印度、波斯、朱迪亚（Judea）和希腊奠定。时至今日，它们仍然是人类赖以生存的基础”。人类头脑中长期沉睡的一部分似乎突然因货币的到来苏醒了。

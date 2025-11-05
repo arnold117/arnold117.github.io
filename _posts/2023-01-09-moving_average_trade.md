@@ -5,7 +5,7 @@ date:   2023-01-09
 tags: [TradingView, Trade, Crypto]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 该文内展示的代码和操作指示源于[以太坊教授币哥](https://www.youtube.com/@user-nr1zq4oh1x)的[视频](https://www.youtube.com/watch?v=FtN6beIbtp8&t=226s)。  

@@ -5,7 +5,7 @@ date:   2023-01-15
 tags: [LaTex, Thesis, NCHU]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 此文是对南昌航空大学本科生毕业设计相关文件LaTex模板相关介绍、使用方法和链接。

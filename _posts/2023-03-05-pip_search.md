@@ -5,7 +5,7 @@ date:   2023-03-05
 tags: [Python, pip]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 出于一些奇奇怪怪的原因，pip好像不能用`search`了呢。。那么有什么方法能启用类似的搜索功能呢？安装`pip_search`就可以了！

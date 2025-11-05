@@ -5,7 +5,7 @@ date:   2021-04-29
 tags: [Linux]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 学习Linux是很痛苦的过程，不计其数的linux学习者前期开启虚拟机双系统，中期实体机Linux，但在后期投入了MacOS的怀抱或者回到了梦开始的地方--虚拟机。

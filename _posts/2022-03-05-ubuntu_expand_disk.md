@@ -5,7 +5,7 @@ date:   2022-03-05
 tags: [Linux]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 本文介绍了一种纯命令行形式的Ubuntu Server扩展磁盘空间的方法，在虚拟机里的Ubuntu Server 20.04下进行了验证。

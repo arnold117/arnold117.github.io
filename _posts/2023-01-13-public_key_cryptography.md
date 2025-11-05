@@ -5,7 +5,7 @@ date:   2023-01-13
 tags: [GPG, PGP, 公钥密码学]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 PGP是Pretty Good Privacy，一个用来加密和解密数据和管理密钥的工具。由于PGP是商业软件，所以现在大家一般用 GPG(GnuPG)，GPG是一个自由软件，功能和PGP是兼容的。

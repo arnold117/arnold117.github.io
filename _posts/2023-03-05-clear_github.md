@@ -5,7 +5,7 @@ date:   2023-03-05
 tags: [Git]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 把项目提交到 GitHub 上，有时候可能不小心提交了一些隐私信息，如密码和邮箱。如何删除这些记录，形成一个全新的仓库，并且保持代码不变呢？

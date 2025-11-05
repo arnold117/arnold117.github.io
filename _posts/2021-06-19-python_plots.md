@@ -5,7 +5,7 @@ date:   2021-06-19
 tags: [Python]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 对于一篇优质的论文而言，除了好的idea之外，好的绘图可以给人眼前一亮的感觉，让审稿人和读者一下子就可以记住你的论文和实验结果，为论文接收和被他人引用创造机会。

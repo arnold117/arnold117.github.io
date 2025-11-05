@@ -5,7 +5,7 @@ date:   2023-03-19
 tags: [Python, sklearn]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 明明用了pip安装sklearn，为什么报错呢？

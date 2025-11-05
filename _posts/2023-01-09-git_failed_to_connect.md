@@ -5,7 +5,7 @@ date:   2023-01-09
 tags: [Git]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 这类错误常见于使用了科学上网工具的童鞋。常见的错误代码有如下：

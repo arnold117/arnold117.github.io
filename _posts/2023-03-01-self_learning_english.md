@@ -5,7 +5,7 @@ date:   2023-03-01
 tags: [English]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 本文是[英语自学 bewaters.me](https://bewaters.me/limxtop/2021/08/18/English-introduction/)的搬运。作者[有梦书架](https://bewaters.me)。

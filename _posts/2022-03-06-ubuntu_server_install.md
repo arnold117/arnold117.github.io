@@ -5,7 +5,7 @@ date:   2022-03-06
 tags: [Linux]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 本文介绍了一种在VMware下安装Ubuntu Server 18.04 的方法。

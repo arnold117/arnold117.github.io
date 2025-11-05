@@ -5,7 +5,7 @@ date:   2022-04-02
 tags: [MATLAB, Python, Jupyter]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 在 MATLAB 里虽然有 **Live Script** 功能，但其只能在MATLAB里编辑，且渲染和导出都比较慢，尤其导出中文时会有格式错误，不便于阅读。  

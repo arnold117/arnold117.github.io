@@ -5,7 +5,7 @@ date:   2021-07-28
 tags: [CMake, VSCode]
 giscus_comments: true
 author: Arnold
-toc: true
+# toc: true
 ---
 
 本文介绍了一种通过使用`CMake`和`VSCode`进行**全平台一致的C语言或C++的开发**的方法, 并在Windows操作系统下进行了验证.
