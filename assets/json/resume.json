@@ -1,200 +1,551 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "ZHOU, YANUO (Arnold)",
+    "label": "Research Scientist & ML Engineer",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "yanuo.zhou@outlook.com",
+    "url": "https://arnold117.github.io/",
+    "summary": "MSc in Precision Health and Medicine (NUS) with expertise in machine learning, biomarker discovery, wearable signal processing, and reproducible ML pipelines. Focused on building audit-ready workflows for biomedical applications.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Singapore",
+      "countryCode": "SG"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "GitHub",
+        "username": "arnold117",
+        "url": "https://github.com/arnold117"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "yanuo-zhou-204055254",
+        "url": "https://linkedin.com/in/yanuo-zhou-204055254"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
+      "name": "TUM-CREATE (NRF Singapore research centre, collaborating with TUM, NUS and NTU)",
+      "position": "Research Assistant",
+      "startDate": "2024-08-01",
+      "endDate": "2025-10-01",
+      "summary": "Developing reproducible ML pipelines for wearable spectral data analysis with focus on circadian health digital phenotyping.",
+      "highlights": [
+        "Multi-sensor fusion and feature engineering for wearable spectral data",
+        "Circadian health digital phenotyping and biomarker discovery",
+        "Reproducible ML pipelines with audit-ready workflows",
+        "Supervisor: Prof. Dr. Manuel Spitschan (Technical University of Munich)"
+      ]
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "National University of Singapore (NUS), Yong Loo Lin School of Medicine",
+      "position": "Course-based Research Project",
+      "startDate": "2024-08-01",
+      "endDate": "2024-12-01",
+      "summary": "Machine Learning-Based Biomarker Discovery for Suicide Risk in Depression using RNA-seq data.",
+      "highlights": [
+        "Psychiatric biomarker discovery using RNA-seq and imbalanced learning",
+        "Cross-cohort validation and reproducible ML workflows",
+        "Pathway-based interpretation and clinical relevance analysis",
+        "Supervisor: A/Prof. Caroline Lee (Vice Dean & Programme Director, NUS Graduate School)"
+      ]
+    },
+    {
+      "name": "Key Laboratory of Non-Destructive Testing, Ministry of Education, China",
+      "position": "Research Assistant",
+      "startDate": "2019-10-01",
+      "endDate": "2023-06-01",
+      "summary": "Diverse research projects spanning wearable sensors, signal processing, and medical imaging.",
+      "highlights": [
+        "Wearable optical sweat analytics with microfluidics and colourimetry",
+        "ECG & EEG real-time signal detection systems",
+        "U-Net segmentation for dermatology imaging",
+        "Intelligent tunnel multi-parameter monitoring systems",
+        "Signal processing, computer vision, and embedded systems development"
+      ]
+    },
+    {
+      "name": "SEECEN TECHNOLOGY CO., LTD.",
+      "position": "Front-End Engineer (Intern)",
+      "startDate": "2023-02-01",
+      "endDate": "2023-03-01",
+      "location": "China",
+      "summary": "Front-end web development with focus on cross-browser compatibility.",
+      "highlights": [
+        "Front-end web development and cross-browser compatibility"
+      ]
     }
   ],
+  "volunteer": [],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "National University of Singapore (NUS)",
+      "location": "Singapore",
+      "url": "https://www.nus.edu.sg/",
+      "area": "Precision Health and Medicine",
+      "studyType": "Master of Science",
+      "startDate": "2024-01-01",
+      "endDate": "2025-12-31",
+      "score": "4.5/5.0",
+      "courses": ["AI & Machine Learning", "Applied Statistics", "High-Performance Computing", "Human Genomics", "Proteomics and Metabolomics", "Precision Biomarker", "Precision Diagnosis"]
+    },
+    {
+      "institution": "Nanchang Hangkong University (NCHU)",
+      "location": "Nanchang, China",
+      "url": "https://www.nchu.edu.cn/",
+      "area": "Biomedical Engineering",
+      "studyType": "Bachelor of Engineering",
+      "startDate": "2019-09-01",
+      "endDate": "2023-07-01",
+      "score": "84.481/100 (3.45/4.0)",
+      "courses": ["Biomedical Digital Signal Processing", "Medical Ultrasound", "Medical Electronics", "Foundation of Medical Software", "Medical Imaging Technology", "Principle of Medical Instrumentation Design"]
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "Precision Health & Medicine Scholarship (PRECISE, Singapore)",
+      "date": "2023-10-01",
+      "awarder": "National University of Singapore",
+      "summary": "Competitive scholarship for MSc program in Precision Health and Medicine"
+    },
+    {
+      "title": "Third Prize, 10th National Student Optoelectronic Design Competition",
+      "date": "2022-08-01",
+      "awarder": "China National Student Optoelectronic Design Competition",
+      "summary": "Awarded for Wearable Optical Sweat Analytics project"
+    },
+    {
+      "title": "Second Prize, 8th National Student Optoelectronic Design Competition (国奖)",
+      "date": "2020-08-01",
+      "awarder": "China National Student Optoelectronic Design Competition",
+      "summary": "Awarded for Intelligent Tunnel Multi-Parameter Monitoring System project"
+    },
+    {
+      "title": "Silver Award, 12th \"Challenge Cup\" Jiangxi Student Entrepreneurship Competition",
+      "date": "2020-09-01",
+      "awarder": "Jiangxi Provincial Education Department",
+      "summary": "Awarded for Tunnel Monitoring project"
     }
   ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
+  "certificates": [],
   "publications": [
     {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "Wearable tesla valve-based sweat collection device for sweat colorimetric analysis",
+      "publisher": "Talanta",
+      "releaseDate": "2022-01-01",
+      "summary": "Huanhuan Shi, Yu Cao, Yining Zeng, Yanuo Zhou, et al. Peer-reviewed, high-impact journal publication on wearable sweat analytics technology."
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Development and Application of Microfluidic Concentration Gradient Chip",
+      "publisher": "Chinese Journal of Medical Physics",
+      "releaseDate": "2021-01-01",
+      "summary": "Shi, H., Cao, Y., Zhou, Y., et al. Publication on microfluidic device development for drug susceptibility analysis."
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Machine Learning & Data Science",
+      "level": "Expert",
+      "icon": "fa-solid fa-brain",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Python (pandas, scikit-learn, PyTorch, PyTorch Geometric)",
+        "R, MATLAB",
+        "SVM, GBM, Logistic Regression, Random Forest",
+        "CNN (U-Net), GNN (RGCN)",
+        "Knowledge graphs, link prediction",
+        "Participant-wise 5-fold CV, Bayesian optimization",
+        "SMOTE-Tomek imbalanced learning",
+        "ROC-AUC, Hits@K, MRR metrics",
+        "Model interpretability"
+      ]
+    },
+    {
+      "name": "Bioinformatics & Omics",
+      "level": "Advanced",
+      "icon": "fa-solid fa-dna",
+      "keywords": [
+        "RNA-seq analysis (GEO cohorts)",
+        "KNN imputation, feature selection",
+        "Cross-cohort validation",
+        "KEGG pathway enrichment",
+        "Biomarker discovery (NR3C1a, HSPA1B)",
+        "Knowledge graphs (PrimeKG)",
+        "Drug repurposing",
+        "NGS pipelines"
+      ]
+    },
+    {
+      "name": "Feature Engineering & Wearable Pipelines",
+      "level": "Advanced",
+      "icon": "fa-solid fa-sliders",
+      "keywords": [
+        "α-opic/SPD conversion",
+        "Log/L2 normalization",
+        "Cyclic time features",
+        "Config-driven pipelines",
+        "Audit-ready workflows",
+        "Multi-sensor fusion",
+        "Circadian timing analysis"
+      ]
+    },
+    {
+      "name": "Signal Processing & Computer Vision",
+      "level": "Advanced",
+      "icon": "fa-solid fa-waveform-lines",
+      "keywords": [
+        "Wavelet/FFT filtering",
+        "Anomaly detection",
+        "U-Net segmentation",
+        "Data augmentation",
+        "Mean IoU, pixel accuracy, precision/recall metrics",
+        "Image preprocessing",
+        "Medical image analysis"
+      ]
+    },
+    {
+      "name": "Embedded Systems & Sensing",
+      "level": "Advanced",
+      "icon": "fa-solid fa-microchip",
+      "keywords": [
+        "STM32 microcontrollers",
+        "Android development (Kotlin)",
+        "Real-time signal processing",
+        "ECG/EEG acquisition",
+        "Sensor integration & calibration",
+        "IoT applications",
+        "Latency optimization (<50ms)"
+      ]
+    },
+    {
+      "name": "Microfluidics & Prototyping",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-flask",
+      "keywords": [
+        "Microfluidic device design",
+        "RGB colorimetry",
+        "Tesla valve optimization",
+        "PCB layout and validation",
+        "Rapid prototyping"
+      ]
+    },
+    {
+      "name": "Software & Front-End Development",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-code",
+      "keywords": [
+        "Qt/QML dashboards",
+        "HTML/JavaScript visualization",
+        "Web development",
+        "Cross-browser compatibility",
+        "Statistics & peak analysis",
+        "Curve fitting visualization"
+      ]
+    },
+    {
+      "name": "Quantitative & Financial Analysis",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-chart-line",
+      "keywords": [
+        "Investment strategy analysis",
+        "Cryptocurrency markets",
+        "Backtesting",
+        "Risk-return optimization",
+        "Technical analysis"
+      ]
+    },
+    {
+      "name": "Reproducibility & Tooling",
+      "level": "Expert",
+      "icon": "fa-solid fa-code-branch",
+      "keywords": [
+        "Git version control",
+        "Jupyter notebooks",
+        "Docker containers",
+        "Config-driven experiments",
+        "Seeded reproducible runs",
+        "Audit-ready artifacts",
+        "HPC, Nextflow workflows",
+        "AWS/Cloud computing"
+      ]
+    },
+    {
+      "name": "Study Operations & Clinical",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-hospital",
+      "keywords": [
+        "Study protocol design",
+        "Data collection & management",
+        "Controlled & free-living settings",
+        "Protocol adherence",
+        "Quality assurance",
+        "Clinical SOPs"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
+      "language": "English",
+      "fluency": "Fluent",
       "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
+      "language": "Chinese (Mandarin)",
+      "fluency": "Native speaker",
       "icon": ""
     }
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Precision Medicine & Health",
+      "icon": "fa-solid fa-heartbeat",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Biomarker discovery",
+        "Digital phenotyping",
+        "Circadian health",
+        "Wearable sensors",
+        "Precision diagnosis",
+        "Patient stratification"
+      ]
+    },
+    {
+      "name": "Machine Learning for Biomedicine",
+      "icon": "fa-solid fa-brain",
+      "keywords": [
+        "Reproducible ML pipelines",
+        "Biomedical data analysis",
+        "Graph neural networks",
+        "Drug discovery",
+        "Drug-disease link prediction",
+        "AI for healthcare"
+      ]
+    },
+    {
+      "name": "Wearable Technology & Sensors",
+      "icon": "fa-solid fa-watch",
+      "keywords": [
+        "Wearable signal processing",
+        "Multi-sensor fusion",
+        "Real-time monitoring",
+        "Circadian tracking",
+        "Photometry & light exposure",
+        "Physiological measurement"
+      ]
+    },
+    {
+      "name": "Computational Drug Discovery",
+      "icon": "fa-solid fa-flask",
+      "keywords": [
+        "Drug repurposing",
+        "Molecular knowledge graphs",
+        "Link prediction",
+        "AIDD approaches",
+        "Drug-target interactions"
+      ]
+    },
+    {
+      "name": "Biomedical Signal Processing",
+      "icon": "fa-solid fa-waveform-lines",
+      "keywords": [
+        "ECG/EEG analysis",
+        "Time-series analysis",
+        "Spectral methods",
+        "Temporal feature extraction",
+        "Embedded systems"
+      ]
+    },
+    {
+      "name": "Psychiatric & Mental Health Research",
+      "icon": "fa-solid fa-mind",
+      "keywords": [
+        "Suicide risk biomarkers",
+        "Depression research",
+        "Mental health phenotyping",
+        "Clinical outcomes",
+        "Precision psychiatry"
       ]
     }
   ],
   "references": [
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+        "name": "Prof Dr Manuel Spitschan",
+        "reference": "Current TUM-CREATE supervisor. Guided wearable spectral data analysis and circadian health research."
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+        "name": "A/Prof Caroline Lee",
+        "reference": "NUS course supervisor. Supervised RNA-seq biomarker discovery for psychiatric applications."
+    },
+    {
+        "name": "Prof Zhang Weiwei",
+        "reference": "Undergraduate research supervisor. Led Intelligent Tunnel Monitoring and Wearable Cortisol Detection projects."
+    },
+    {
+        "name": "A/Prof Shi Huanhuan",
+        "reference": "Undergraduate research supervisor. Co-authored Talanta Q1 paper on sweat analytics; supervised National Innovation Project."
+    },
+    {
+        "name": "Prof Jiang Shaofeng",
+        "reference": "Undergraduate mentor. Observed academic growth over 4 years; endorsed for PhD in biomedical engineering."
     }
   ],
   "projects": [
+      {
+      "name": "PrimeKG-RGCN: Drug-Disease Link Prediction",
+      "summary": "Independent research project implementing relational graph convolutional networks for drug-disease link prediction using PrimeKG biomedical knowledge graph.",
+      "highlights": [
+        "Knowledge graph-based drug discovery",
+        "RGCN link prediction model implementation",
+        "Drug repurposing candidate identification",
+        "Complete pipeline: preprocessing → training → evaluation → validation",
+        "GPU-accelerated batch processing",
+        "Attention visualization and model interpretability",
+        "Scalable for large-scale biomedical networks"
+      ],
+      "startDate": "2025-10-25",
+      "url": "https://github.com/arnold117/PrimeKG-RGCN-LinkPrediction"
+    },
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "AI-Driven Classification of Biologically Relevant Light Exposure",
+      "summary": "MSc Capstone & TUM-CREATE research project developing ML models for wearable spectral data classification with focus on circadian health phenotyping.",
+      "highlights": [
+        "AUC 0.93+ performance on light exposure classification",
+        "Config-driven pipelines with 288-configuration grid search",
+        "Circadian timing and melanopic sensitivity feature importance",
+        "Medoid aggregation for robust model selection",
+        "Audit-ready workflows with full reproducibility"
+      ],
+      "startDate": "2024-08-01",
+      "endDate": "2025-10-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Machine Learning-Based Biomarker Discovery for Suicide Risk in Depression",
+      "summary": "Course-based research project identifying psychiatric biomarkers using RNA-seq data with cross-cohort validation and reproducible ML workflows.",
+      "highlights": [
+        "RNA-seq count-level models with external validation",
+        "Cross-cohort validation and model robustness assessment",
+        "4-class to binary mapping for clinical relevance",
+        "Model screening criteria (CV < 0.5)",
+        "Pathway-based interpretation for clinical insight",
+        "KEGG enrichment and biological relevance analysis"
+      ],
+      "startDate": "2024-08-01",
+      "endDate": "2024-12-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Wearable Optical Sweat Analytics - Microfluidics + RGB Colorimetry",
+      "summary": "National innovation project developing wearable optical sweat collection and analysis device with microfluidics and colorimetric detection.",
+      "highlights": [
+        "3rd Prize (10th National Student Optoelectronic Design Competition, 2022)",
+        "Talanta journal publication (2022) - peer-reviewed high-impact",
+        "Tesla valve-based sweat collection optimization",
+        "RGB colorimetry signal processing for biomarker detection",
+        "NCHU 'Three Small Projects' award",
+        "Funded by Outstanding Young Scientist Project (20192BCB23011)"
+      ],
+      "startDate": "2020-09-01",
+      "endDate": "2022-07-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "ECG & EEG Real-Time Signal Detection System",
+      "summary": "Real-time physiological signal acquisition and processing platform with multi-protocol dashboard for ECG and EEG monitoring.",
+      "highlights": [
+        "Hardware acquisition from STM32 microcontroller",
+        "Real-time signal conditioning and filtering",
+        "Qt/QML + HTML/JavaScript visualization dashboards",
+        "Cross-platform deployment",
+        "Sub-50ms latency for clinical monitoring",
+        "Multi-modal signal analysis"
+      ],
+      "startDate": "2022-02-01",
+      "endDate": "2022-07-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Android-Based Sleep Quality Monitoring System",
+      "summary": "BEng graduation project developing smartphone-based sleep monitoring using built-in sensors without external devices.",
+      "highlights": [
+        "Kotlin-based Android implementation",
+        "3-axis accelerometer, illumination, and microphone sensor fusion",
+        "Comparable performance to commercial wearables",
+        "Minimal resource consumption",
+        "Unexpected user benefit: improved sleep quality during study",
+        "Validation with volunteer cohorts"
+      ],
+      "startDate": "2022-09-01",
+      "endDate": "2023-06-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "U-Net Segmentation for Dermatology Images",
+      "summary": "Deep learning-based segmentation for dermatological imaging with small-sample optimization.",
+      "highlights": [
+        "U-Net architecture implementation",
+        "Class-specific IoU breakdown for lesion analysis",
+        "Data augmentation strategies for limited datasets",
+        "Medical imaging workflow optimization",
+        "Biomedical image preprocessing"
+      ],
+      "startDate": "2021-02-01",
+      "endDate": "2021-06-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Intelligent Tunnel Multi-Parameter Monitoring System",
+      "summary": "Early-stage IoT project for real-time multi-sensor monitoring of tunnel infrastructure conditions.",
+      "highlights": [
+        "Silver Award (12th 'Challenge Cup' Jiangxi Student Entrepreneurship, 2020)",
+        "2nd Prize (8th National Student Optoelectronic Design Competition - 国奖, 2020)",
+        "Multi-sensor data fusion",
+        "Real-time monitoring and alerting",
+        "Infrastructure condition assessment"
+      ],
+      "startDate": "2019-10-01",
+      "endDate": "2020-09-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Microfluidic Concentration Gradient Chip for Microbial Drug Susceptibility",
+      "summary": "Research project developing microfluidic device for gradient-based microbial drug susceptibility testing.",
+      "highlights": [
+        "1 invention patent + 1 utility model patent",
+        "Published in Chinese Journal of Medical Physics (2021)",
+        "Microfluidic device fabrication and optimization",
+        "Biochemical analysis platform development",
+        "Clinical microbiology application",
+        "Funded by PhD Research Startup Fund (EA202008205)"
+      ],
+      "startDate": "2019-12-01",
+      "endDate": "2021-12-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Thermal Cycling Device for Fluorescence Quantitative PCR Instrument",
+      "summary": "Research project designing thermal cycling system for qPCR instrumentation.",
+      "highlights": [
+        "Successful Participant (2021 National Undergraduate Biomedical Engineering Innovation Design Competition)",
+        "Thermal control optimization",
+        "PCR instrumentation design",
+        "Precision temperature management"
+      ],
+      "startDate": "2021-02-01",
+      "endDate": "2021-06-01",
+      "url": "https://github.com/arnold117"
+    },
+    {
+      "name": "Quantitative Investment Strategies in Cryptocurrency Markets",
+      "summary": "Course project analyzing and implementing quantitative trading strategies for cryptocurrency market dynamics.",
+      "highlights": [
+        "Strategy backtesting and performance analysis",
+        "Portfolio optimization",
+        "Risk-return analysis",
+        "Market dynamics understanding",
+        "Strategy adaptation importance demonstrated"
+      ],
+      "startDate": "2022-09-01",
+      "endDate": "2022-12-01",
+      "url": "https://github.com/arnold117"
     }
   ]
 }

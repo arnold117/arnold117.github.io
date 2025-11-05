@@ -2,64 +2,95 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: ZHOU, YANUO (Arnold)
+    - name: Email
+      value: yanuo.zhou@outlook.com
+    - name: GitHub
+      value: <a href="https://github.com/arnold117">github.com/arnold117</a>
+    - name: LinkedIn
+      value: <a href="https://linkedin.com/in/yanuo-zhou-204055254">linkedin.com/in/yanuo-zhou-204055254</a>
     - name: Languages
-      value: English, German
+      value: English, Chinese (Mandarin)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Master of Science in Precision Health and Medicine
+      institution: National University of Singapore (NUS)
+      year: 2024 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Yong Loo Lin School of Medicine
+        - GPA; 4.5/5.0
+        - Scholarship; PRECISE Scholarship
+        - title: Core Modules
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+            - AI & Machine Learning
+            - Applied Statistics
+            - High-Performance Computing
+            - Human Genomics
+            - Proteomics and Metabolomics
+            - Precision Biomarker
+            - Precision Diagnosis
+        - title: Capstone Project
+          contents:
+            - AI-Driven Classification of Biologically Relevant Light Exposure from Wearable Spectral Data
+    - title: Bachelor of Engineering in Biomedical Engineering
+      institution: Nanchang Hangkong University (NCHU)
+      year: 2019 - 2023
       description:
-        - Description 1.
-        - Description 2.
+        - School of Measuring and Optical Engineering
+        - GPA; 84.481/100 (3.45/4.0)
+        - title: Core Modules
+          contents:
+            - Biomedical Digital Signal Processing
+            - Medical Ultrasound
+            - Medical Electronics
+            - Foundation of Medical Software
+            - Medical Imaging Technology
+            - Principle of Medical Instrumentation Design
+        - title: Graduation Project
+          contents:
+            - Research on Android-Based Sleep Quality Monitoring Technology
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Research Assistant
+      institution: TUM-CREATE (NRF Singapore research centre, collaborating with TUM, NUS and NTU)
+      year: 2024 - 2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Supervisor; Prof. Dr. Manuel Spitschan (Technical University of Munich)
+        - Multi-sensor fusion and feature engineering for wearable spectral data
+        - Circadian health digital phenotyping and biomarker discovery
+        - Reproducible ML pipelines with audit-ready workflows
+        - Associated project; AI-Driven Classification of Biologically Relevant Light Exposure
+
+    - title: Course-based Research Project
+      institution: National University of Singapore (NUS), Yong Loo Lin School of Medicine
+      year: 2024 - 2025 (Aug - Dec 2024)
       description:
-        - Description 1.
-        - Description 2.
+        - Supervisor; A/Prof. Caroline Lee (Vice Dean & Programme Director, NUS Graduate School)
+        - Machine Learning-Based Biomarker Discovery for Suicide Risk in Depression
+        - Psychiatric biomarker discovery using RNA-seq and imbalanced learning
+        - Cross-cohort validation and reproducible ML workflows
+        - Pathway-based interpretation and clinical relevance analysis
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Research Assistant
+      institution: Key Laboratory of Non-Destructive Testing, Ministry of Education, China
+      year: 2019 - 2023
       description:
+        - Wearable optical sweat analytics with microfluidics and colourimetry
+        - ECG & EEG real-time signal detection systems
+        - U-Net segmentation for dermatology imaging
+        - Intelligent tunnel multi-parameter monitoring systems
+        - Signal processing, computer vision, and embedded systems development
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: Front-End Engineer (Intern)
+      institution: SEECEN TECHNOLOGY CO., LTD.
+      year: 2023 (Feb - Mar)
+      description:
+        - Front-end web development and cross-browser compatibility
+        - Location; China
 
 - title: Open Source Projects
   type: time_table
@@ -71,13 +102,22 @@
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2023
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Precision Health & Medicine Scholarship (PRECISE, Singapore)
+    - year: 2022
       items:
-        - Max Planck Medal
+        - Second Prize in Scholarships of Nanchang Hangkong University
+        - Third Prize, 10th National Student Optoelectronic Design Competition (Sweat Analytics)
+    - year: 2021
+      items:
+        - Third Prize in Scholarships of Nanchang Hangkong University
+    - year: 2020
+      items:
+        - Grand Prize in Scholarships of MedicalSystem Biotechnology Co Ltd
+        - Second Prize in Scholarships of Nanchang Hangkong University
+        - Silver Award, 12th "Challenge Cup" Jiangxi Student Entrepreneurship Competition (Tunnel Monitoring)
+        - Second Prize, 8th National Student Optoelectronic Design Competition (Tunnel Monitoring, 国奖)
 
 - title: Academic Interests
   type: nested_list
