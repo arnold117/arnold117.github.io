@@ -1,34 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   {% include head.html %}
   <body>
-    {% include nav.html %}
+    <!-- Top Navigation Bar -->
+    {% include navbar.html %}
 
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content h_max=3%}
-      </aside>
-    {% endif %}
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+      <div class="content-container">
+        {% if page.toc==true %}
+          <div class="content-with-toc">
+            <!-- Table of Contents Sidebar -->
+            <aside class="toc-sidebar">
+              <div class="toc-wrapper">
+                <h3 class="toc-title">Table of Contents</h3>
+                <nav class="toc-nav">
+                  {% include toc.html html=content h_max=3%}
+                </nav>
+              </div>
+            </aside>
 
-    <div id="main" role="main" class="wrapper-content">
-      <div class="container">
-        {{ content }}
+            <!-- Main Content Area -->
+            <article class="main-article">
+              {{ content }}
+            </article>
+          </div>
+        {% else %}
+          <!-- Full Width Content -->
+          <div class="content-full">
+            {{ content }}
+          </div>
+        {% endif %}
       </div>
-    </div>
+    </main>
 
-    {% include analytics.html %}
-  </body>
-
-  {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
-  {% endif %}
-
-  <div class="wrapper-footer-mobile">
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="site-footer">
       {% include footer.html %}
     </footer>
 
+    {% include analytics.html %}
 
+    <!-- Theme Toggle Script -->
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      // Load saved theme or default to light
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      htmlElement.setAttribute('data-theme', savedTheme);
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = htmlElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+          htmlElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+
+      // Mobile menu toggle
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('active');
+          mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
