@@ -30,12 +30,13 @@ pagination:
   {% endif %}
 
 {% comment %}
-  Show up to the top 4 tags by post count. If there are fewer than 4 tags, show all.
-  This picks the highest-count tags iteratively without requiring external filters.
+Show up to the top 4 tags by post count. If there are fewer than 4 tags, show all.
+This picks the highest-count tags iteratively without requiring external filters.
 {% endcomment %}
 {% assign all_tags = site.tags %}
 {% assign chosen = "" | split: "" %}
 {% if all_tags and all_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
+
   <div class="tag-category-list">
     <ul class="p-0 m-0">
       {% comment %} pick up to 4 tags with largest post counts {% endcomment %}
@@ -87,6 +88,7 @@ pagination:
     <div style="margin-top:0.5rem">
       <a href="{{ '/tags/' | relative_url }}">View all tags</a>
     </div>
+
   </div>
 {% endif %}
 

@@ -23,6 +23,7 @@ Hi! I'm (Arnold) Yanuo Zhou (周亚诺), a researcher focused on applying machin
 ## Research Interests
 
 My research sits at the intersection of:
+
 - **Machine Learning for Digital Phenotyping**: Developing computational methods to characterize health and behavior from digital data
 - **Wearable Sensing**: Leveraging wearable devices to capture continuous physiological and behavioral signals
 - **Light & Health**: Understanding how light exposure patterns impact human well-being and circadian rhythms
@@ -30,6 +31,7 @@ My research sits at the intersection of:
 ## Current Work
 
 I'm currently working on projects that use machine learning to:
+
 - Analyze light exposure patterns from wearable sensors
 - Develop predictive models for health outcomes based on digital phenotypes
 - Create tools for personalized health monitoring and intervention

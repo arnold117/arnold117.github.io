@@ -21,13 +21,17 @@ This project applies **Relational Graph Convolutional Networks (R-GCN)** to the 
 ## Background
 
 ### What is PrimeKG?
+
 PrimeKG (Precision Medicine Knowledge Graph) is a comprehensive resource that integrates:
+
 - 129,000+ nodes (diseases, drugs, proteins, pathways, etc.)
 - 4.2M+ edges across 30 relation types
 - Data from 20+ biomedical databases (DrugBank, OMIM, UniProt, etc.)
 
 ### Why Link Prediction?
+
 Link prediction can help:
+
 - Discover new drug-disease associations (drug repurposing)
 - Identify disease mechanisms and pathways
 - Prioritize candidates for experimental validation
@@ -54,16 +58,18 @@ Output: Predicted edge probabilities
 ```
 
 ### Key Design Decisions
+
 - **Model:** R-GCN (handles heterogeneous edge types)
 - **Decoder:** DistMult (efficient bilinear scoring)
 - **Negative Sampling:** Corrupted triplets (1:5 ratio)
 - **Loss Function:** Binary cross-entropy with L2 regularization
 
 ### Training Setup
+
 - **Framework:** PyTorch Geometric
 - **Hardware:** NVIDIA RTX 3090 (24GB VRAM)
 - **Training Time:** ~6 hours for full graph
-- **Hyperparameters:** 
+- **Hyperparameters:**
   - Hidden dim: 128
   - Learning rate: 0.001
   - Dropout: 0.3
@@ -72,14 +78,17 @@ Output: Predicted edge probabilities
 ## Results
 
 ### Link Prediction Performance
-| Metric | Drug-Disease | Protein-Disease | Drug-Protein |
-|--------|--------------|-----------------|--------------|
-| MRR    | 0.342        | 0.287           | 0.419        |
-| Hits@10| 0.521        | 0.458           | 0.634        |
-| Hits@1 | 0.201        | 0.164           | 0.289        |
+
+| Metric  | Drug-Disease | Protein-Disease | Drug-Protein |
+| ------- | ------------ | --------------- | ------------ |
+| MRR     | 0.342        | 0.287           | 0.419        |
+| Hits@10 | 0.521        | 0.458           | 0.634        |
+| Hits@1  | 0.201        | 0.164           | 0.289        |
 
 ### Case Study: Drug Repurposing
+
 Top 10 predicted drug-disease associations for COVID-19 included:
+
 - **Remdesivir** (known treatment, correctly predicted)
 - **Dexamethasone** (known treatment, correctly predicted)
 - **Metformin** (literature-supported, novel prediction)
@@ -88,6 +97,7 @@ Top 10 predicted drug-disease associations for COVID-19 included:
 ## Implementation Details
 
 The project is implemented in **Python** with:
+
 - `torch_geometric` for R-GCN layers
 - `networkx` for graph preprocessing
 - `pandas` for data loading and analysis
@@ -98,11 +108,13 @@ Key code snippets available in the [GitHub repository](https://github.com/arnold
 ## Challenges & Learnings
 
 ### Challenges
+
 1. **Memory constraints:** Full PrimeKG doesn't fit in GPU memory → used subgraph sampling
 2. **Class imbalance:** Far more negative examples than positive → weighted loss
 3. **Evaluation metrics:** Standard accuracy misleading → focused on MRR and Hits@K
 
 ### Key Learnings
+
 - Relation-specific message passing is crucial for heterogeneous graphs
 - Pre-training on auxiliary tasks (e.g., node classification) improves results
 - Interpretability matters: attention mechanisms help explain predictions

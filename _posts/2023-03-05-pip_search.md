@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "重新启用pip search"
-date:   2023-03-05
+date: 2023-03-05
 tags: [Python, pip]
 giscus_comments: true
 author: Arnold
@@ -64,9 +64,7 @@ funcsave pip
 - rich
 - requests
 
-
-
-此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))
+此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^\*)))
 Ciallo～(∠・ω< )⌒☆
 
 **如果本文令你受益匪浅，愿意慷慨解囊，可以点击[这里](https://arnold117.github.io/likes/)，然后扫描二维码，一分也是爱。分享推荐给身边的朋友，不胜感激**。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "南昌航空大学本科生毕业设计相关文件LaTex模板"
-date:   2023-01-15
+date: 2023-01-15
 tags: [LaTex, Thesis, NCHU]
 giscus_comments: true
 author: Arnold
@@ -29,15 +29,17 @@ author: Arnold
 模板均使用LaTex编写，使用方法见下文。
 
 ## 使用方法
+
 有两种方式进行编辑和编译：
 
-* Overleaf 在线编译
-* 本地编译
+- Overleaf 在线编译
+- 本地编译
 
 > 推荐使用 Overleaf 在线编译的方式。
 
 ### Overleaf 在线编译
-**强烈建议大家使用**  
+
+**强烈建议大家使用**
 
 Overleaf 是一个十分方便的网页版在线 LaTeX 编辑器。如果是 Overleaf 会员用户的话，甚至可以与 Github 同步。
 
@@ -75,11 +77,12 @@ Overleaf 是一个十分方便的网页版在线 LaTeX 编辑器。如果是 Ove
 
 4. 选择`Recipe: latexmk (xelatex)`
 
-    即在 Tex Live 环境下，使用xekatexmk进行编译
+   即在 Tex Live 环境下，使用xekatexmk进行编译
 
 5. 如果是使用 MikTeX，中途会提示安装宏包。等左下角再次显示`√`，再点击，选择第二项`View LaTeX PDF`，即可进行预览。
 
 ## 各模板链接
+
 任务书: [arnold117/NCHU_Bachelor_Mission_Statement_Template](https://github.com/arnold117/NCHU_Bachelor_Mission_Statement_Template)
 
 开题报告: [arnold117/NCHU_Bachelor_Proposal_Report_Template](https://github.com/arnold117/NCHU_Bachelor_Proposal_Report_Template)
@@ -89,9 +92,12 @@ Overleaf 是一个十分方便的网页版在线 LaTeX 编辑器。如果是 Ove
 进度登记表: [arnold117/NCHU_Bachelor_Work_Records_Template](https://github.com/arnold117/NCHU_Bachelor_Work_Records_Template)
 
 ## 引用说明
+
 上述模板均可免费使用，在使用时请在论文参考文献中引用：
+
 ### 任务书
-``` bibtex
+
+```bibtex
 @article{zhou7538093,
   author = {Zhou, Yanuo},
   title = {NCHU Bachelor Mission Statement Template},
@@ -101,36 +107,42 @@ Overleaf 是一个十分方便的网页版在线 LaTeX 编辑器。如果是 Ove
   month={Jan}
 }
 ```
+
 Zhou, Yanuo. (2023). NCHU Bachelor Mission Statement Template. Zenodo. https://doi.org/10.5281/zenodo.7538093
 
 ### 开题报告
-``` bibtex
+
+```bibtex
 @article{zhou7538095,
   author = {Zhou, Yanuo},
   title = {NCHU Bachelor Proposal Report Template},
   year = {2023},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.7538095},
-  month={Jan} 
+  month={Jan}
 }
 ```
+
 Zhou, Yanuo. (2023). NCHU Bachelor Proposal Report Template. Zenodo. https://doi.org/10.5281/zenodo.7538095
 
 ### 毕业论文
-``` bibtex
+
+```bibtex
 @article{zhou7538087,
   author = {Zhou, Yanuo},
   title = {NCHU Bachelor Thesis Template},
   year = {2023},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.7538087},
-  month={Jan} 
+  month={Jan}
 }
 ```
+
 Zhou, Yanuo. (2023). NCHU Bachelor Thesis Template. Zenodo. https://doi.org/10.5281/zenodo.7538087
 
 ### 进度登记表
-``` bibtex
+
+```bibtex
 @article{zhou7538089,
   author = {Zhou, Yanuo},
   title = {NCHU Bachelor Work Records Template},
@@ -140,10 +152,11 @@ Zhou, Yanuo. (2023). NCHU Bachelor Thesis Template. Zenodo. https://doi.org/10.5
   month={Jan}
 }
 ```
+
 Zhou, Yanuo. (2023). NCHU Bachelor Work Records Template. Zenodo. https://doi.org/10.5281/zenodo.7538089
 
 并请在致谢中注明模板作者：[arnold117](https://arnold117.github.io/)。
 
-此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^*)))  
+此文就到此结束啦！欢迎大家在评论区留言哦ヾ(^▽^\*)))  
 Ciallo～(∠・ω< )⌒☆​  
 写文不易，如果你觉得我的文章对你有帮助，欢迎[打赏](https://arnold117.github.io/likes/)！
