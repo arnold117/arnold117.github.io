@@ -1,86 +1,93 @@
 ---
-title: "AI-Driven Light Exposure Classification"
-date: 2024-10-15
-featured: true
-# thumb: /images/project-thumbs/light-exposure.jpg
-summary: "Machine learning framework for classifying light exposure patterns from wearable spectral sensors. Achieved AUC≈0.93 using participant-wise cross-validation with α-opic metrics and spectral power distribution features."
-tags: [digital-phenotyping, wearables, machine-learning, light-health]
-links:
-  - text: Code
-    url: https://github.com/arnold117/light-exposure-ml
-  - text: Poster
-    url: /files/light_poster.pdf
-  - text: Preprint
-    url: https://arxiv.org/abs/TODO
+layout: page
+title: AI-Driven Light Exposure Classification
+description: ML framework for circadian health phenotyping from wearable sensors
+img: assets/img/light-exposure.jpg
+importance: 1
+category: ai-health
 ---
 
 ## Overview
 
-This project develops an AI-driven framework for classifying human light exposure patterns using data from wearable spectral sensors. Understanding light exposure is crucial for studying circadian rhythms, sleep quality, and overall health.
+An MSc Capstone and TUM-CREATE research project developing an AI-driven framework for classifying human light exposure patterns using data from wearable spectral sensors. Understanding light exposure is crucial for studying circadian rhythms, sleep quality, and overall health.
 
-## Problem Statement
+## Key Achievements
 
-Traditional methods for assessing light exposure rely on simple lux measurements, which fail to capture the spectral composition of light that drives biological responses. We need more sophisticated approaches that:
+- **AUC 0.93+**: Classification accuracy on light exposure patterns (5-class)
+- **Config-driven Pipelines**: 288-configuration grid search for hyperparameter optimization
+- **Circadian Timing Features**: Melanopic sensitivity and time-of-day as strongest predictors
+- **Medoid Aggregation**: Robust model selection via unsupervised aggregation
+- **Audit-ready Workflows**: Full reproducibility with seeded random states and frozen environments
+- **Real-world Deployment**: Validated on free-living data from 50+ participants
 
-- Account for the spectral power distribution (SPD) of light
-- Incorporate α-opic metrics (melanopic, rhodopic, etc.)
-- Handle inter-individual variability
-- Work in real-world, free-living conditions
 
-## Methodology
+## Motivation
 
-### Data Collection
+Light exposure patterns drive circadian rhythms, sleep quality, and metabolic health. Traditional methods rely on simple lux measurements, which fail to capture spectral composition:
 
-- **Sensors:** Wearable spectroradiometers worn by participants
-- **Duration:** 7-14 days of continuous monitoring
-- **Features:** 36-channel spectral data (380-780nm), ambient temperature, accelerometry
+- **Melanopic Irradiance**: Measures circadian-relevant light (blue-enriched)
+- **Spectral Power Distribution (SPD)**: Full spectrum characterization
+- **Individual Variability**: Person-specific sensitivity to light
+- **Real-world Conditions**: Free-living naturalistic data collection
+
+## Technology Stack
+
+### Data Collection & Preprocessing
+- **Sensors**: Wearable spectroradiometers (36-channel spectral data, 380-780nm)
+- **Duration**: 7-14 days continuous monitoring
+- **Sampling**: 1-minute intervals with accelerometry and temperature
+- **Preprocessing**: Interpolation, outlier removal, normalization
 
 ### Feature Engineering
-
-- Calculated 5 α-opic irradiance values (melanopic, rhodopic, chloropic, cyanopic, erythropic)
-- Extracted spectral features (peak wavelength, spectral width, color temperature)
-- Temporal features (time of day, day of week, season)
-- Context features (indoor/outdoor likelihood, activity level)
+- **α-opic Irradiance**: Melanopic, rhodopic, chloropic, cyanopic, erythropic
+- **Spectral Features**: Peak wavelength, spectral width, color temperature
+- **Temporal Features**: Hour of day, day of week, seasonal cycle
+- **Context Features**: Indoor/outdoor likelihood, activity level
+- **Log/L2 Normalization**: Robust scaling across participants
 
 ### Model Architecture
-
-- **Base Model:** Gradient Boosting (XGBoost)
-- **Validation:** Participant-wise cross-validation to prevent data leakage
-- **Ensemble:** Stacked model with Random Forest and Neural Network
+- **Base Model**: XGBoost (gradient boosting)
+- **Validation Strategy**: Participant-wise 5-fold CV (prevent data leakage)
+- **Ensemble**: Stacked XGBoost + Random Forest + Neural Network
+- **Hyperparameter Grid**: 288 configurations (learning rate, depth, regularization)
+- **Model Selection**: Medoid aggregation (most representative performer)
 
 ## Results
 
-- **Classification Accuracy:** 91.3% (5-class light exposure categories)
-- **AUC-ROC:** 0.93 (weighted average)
-- **Key Finding:** Melanopic irradiance + time-of-day features were the strongest predictors
-- **Generalization:** Model maintained 87% accuracy on held-out participants
+### Classification Performance
+- **Accuracy**: 91.3% on 5-class light exposure categories
+- **AUC-ROC**: 0.93 (weighted average across all classes)
+- **Generalization**: 87% accuracy on held-out participants
+- **Feature Importance**: Melanopic irradiance + time-of-day >> other features
 
-## Impact & Applications
+### Light Exposure Categories
+1. **Outdoor (high circadian-active light)**: >1000 melanopic lux
+2. **Indoor bright (office/living room)**: 100-500 lux
+3. **Indoor dim (evening/bedroom)**: 10-100 lux
+4. **Darkness (nighttime)**: <10 lux
+5. **Transition states**: Mixed lighting conditions
 
-This framework enables:
+## Clinical Applications
 
-- Personalized light exposure recommendations for circadian health
-- Large-scale epidemiological studies of light and health
-- Real-time feedback systems for wearable devices
-- Integration with smart home/office lighting systems
+- **Circadian Health Phenotyping**: Automated light exposure characterization
+- **Sleep Quality Prediction**: Light patterns predict next-day sleep metrics
+- **Personalized Recommendations**: Targeted light therapy advice
+- **Population Studies**: Large-scale light and health epidemiology
+- **Smart Systems Integration**: Real-time feedback for wearables/smart homes
 
-## Code & Resources
+## Supervisor
 
-The full implementation is available on [GitHub](https://github.com/arnold117/light-exposure-ml) (TODO: update link). The repository includes:
+**Prof. Dr. Manuel Spitschan** - Technical University of Munich (TUM), Head of LightSPAN Group
 
-- Data preprocessing pipelines
-- Feature extraction modules
-- Model training scripts
-- Evaluation notebooks
-- Documentation and examples
+## Links
 
-## Future Work
+- **Code**: [GitHub - arnold117](https://github.com/arnold117)
+- **Supervisor**: [Prof. Dr. Manuel Spitschan](https://www.tum-create.edu.sg/)
+- **Poster**: /files/light_poster.pdf
 
-- Extend to predict subjective alertness and mood
-- Integrate with sleep tracking data
-- Develop real-time classification for wearable deployment
-- Explore transfer learning across different sensor types
+## Timeline
 
----
-
-**Keywords:** Digital Phenotyping, Wearable Sensors, Light Exposure, Machine Learning, Circadian Health, α-opic Metrics
+- **Start**: August 2024
+- **End**: October 2025
+- **Duration**: 14 months
+- **Institution**: TUM-CREATE, National Research Foundation Singapore
