@@ -3,7 +3,7 @@ layout: post
 title: "给Ubuntu Server 20.04扩展磁盘空间"
 date:   2022-03-05
 tags: [Linux]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

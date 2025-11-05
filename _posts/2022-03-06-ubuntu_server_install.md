@@ -3,7 +3,7 @@ layout: post
 title: "使用VMware安装Ubuntu Server 18.04"
 date:   2022-03-06
 tags: [Linux]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "以太坊教授币哥-Tradingview均线系统 代码解释，操作指示及风险提示"
 date:   2023-01-09
 tags: [TradingView, Trade, Crypto]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

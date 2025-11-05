@@ -3,7 +3,7 @@ layout: post
 title: "南昌航空大学本科生毕业设计相关文件LaTex模板"
 date:   2023-01-15
 tags: [LaTex, Thesis, NCHU]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

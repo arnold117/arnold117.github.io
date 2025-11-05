@@ -3,7 +3,7 @@ layout: post
 title: "清除Github上Commit记录"
 date:   2023-03-05
 tags: [Git]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

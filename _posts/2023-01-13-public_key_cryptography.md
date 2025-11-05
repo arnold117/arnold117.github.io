@@ -3,7 +3,7 @@ layout: post
 title: "什么是公钥密码学、PGP、数字签名"
 date:   2023-01-13
 tags: [GPG, PGP, 公钥密码学]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

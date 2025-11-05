@@ -3,7 +3,7 @@ layout: post
 title: "No module named sklearn报错的解决方案"
 date:   2023-03-19
 tags: [Python, sklearn]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

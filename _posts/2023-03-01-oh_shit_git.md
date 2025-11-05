@@ -3,7 +3,7 @@ layout: post
 title: "Oh Shit, Git!?!中文和谐版搬运"
 date:   2023-03-01
 tags: [Git]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: false
 

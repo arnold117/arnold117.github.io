@@ -3,7 +3,7 @@ layout: post
 title: "搬运：英语自学"
 date:   2023-03-01
 tags: [English]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

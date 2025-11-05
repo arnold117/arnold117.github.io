@@ -3,7 +3,7 @@ layout: post
 title: "在Python 和 Jupyter 中使用 MATLAB"
 date:   2022-04-02
 tags: [MATLAB, Python, Jupyter]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

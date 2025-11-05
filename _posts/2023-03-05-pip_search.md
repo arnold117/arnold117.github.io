@@ -3,7 +3,7 @@ layout: post
 title: "重新启用pip search"
 date:   2023-03-05
 tags: [Python, pip]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

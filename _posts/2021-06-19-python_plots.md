@@ -3,7 +3,7 @@ layout: post
 title: "简单好用的Python论文绘图专用工具包-SciencePlots"
 date:   2021-06-19
 tags: [Python]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

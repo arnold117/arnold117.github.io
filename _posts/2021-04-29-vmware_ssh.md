@@ -3,7 +3,7 @@ layout: post
 title: "Windows用SSH连接虚拟机Linux"
 date:   2021-04-29
 tags: [Linux]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

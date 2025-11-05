@@ -3,7 +3,7 @@ layout: post
 title: "Git使用SSH报错：Failed to connect to github.com port 22 (或443) 的解决方案"
 date:   2023-01-09
 tags: [Git]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

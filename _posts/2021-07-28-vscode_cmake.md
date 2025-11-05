@@ -3,7 +3,7 @@ layout: post
 title: "使用VSCode和CMake进行C语言或C++编程"
 date:   2021-07-28
 tags: [CMake, VSCode]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

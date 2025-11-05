@@ -3,7 +3,7 @@ layout: post
 title: "什么是加密货币、地址和钱包"
 date:   2023-01-13
 tags: [Crypto, BlockChain]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---

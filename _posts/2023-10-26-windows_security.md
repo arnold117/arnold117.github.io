@@ -3,7 +3,7 @@ layout: post
 title: "增强Windows系统安全性的小妙招"
 date:   2023-10-26
 tags: [Windows, Security Enhancement, UAC]
-comments: true
+giscus_comments: true
 author: Arnold
 toc: true
 ---
