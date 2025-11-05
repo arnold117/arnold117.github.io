@@ -21,10 +21,10 @@ toc: true
 该套模板包括任务书、开题报告、毕业论文（含原创性声明）、进度登记表四个部分。
 
 各文档预览：
-![](../images/2023/01/15/mission.png)
-![](../images/2023/01/15/Pr.png)
-![](../images/2023/01/15/thesis.png)
-![](../images/2023/01/15/records.png)
+![](/assets/img/post/2023/01/15/mission.png){: style="max-width: 100%; height: auto;" }
+![](/assets/img/post/2023/01/15/Pr.png){: style="max-width: 100%; height: auto;" }
+![](/assets/img/post/2023/01/15/thesis.png){: style="max-width: 100%; height: auto;" }
+![](/assets/img/post/2023/01/15/records.png){: style="max-width: 100%; height: auto;" }
 
 模板均使用LaTex编写，使用方法见下文。
 
@@ -41,7 +41,7 @@ toc: true
 
 Overleaf 是一个十分方便的网页版在线 LaTeX 编辑器。如果是 Overleaf 会员用户的话，甚至可以与 Github 同步。
 
-![](https://i.loli.net/2021/01/31/OMbfg7Pza3xdGlR.png)
+![](https://i.loli.net/2021/01/31/OMbfg7Pza3xdGlR.png){: style="max-width: 100%; height: auto;" }
 
 1. 在项目界面，选择 Download ZIP
 2. 在 Overleaf 页面的 New Project，Upload Project，上传第 1 步下载的 zip 文件
