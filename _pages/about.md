@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Arnold Zhou (周亚诺)</p>
+    <p>(Arnold) Yanuo Zhou (周亚诺)</p>
     <p>ML for Digital Phenotyping</p>
     <p>Wearable Sensing • Light & Health</p>
 
@@ -18,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I'm Arnold Zhou (周亚诺), a researcher focused on applying machine learning to digital phenotyping, wearable sensing, and understanding the effects of light on human health.
+Hi! I'm (Arnold) Yanuo Zhou (周亚诺), a researcher focused on applying machine learning to digital phenotyping, wearable sensing, and understanding the effects of light on human health.
 
 ## Research Interests
 
@@ -36,4 +36,4 @@ I'm currently working on projects that use machine learning to:
 
 ## Get in Touch
 
-Feel free to reach out via email at [arnoldchow@outlook.com](mailto:arnoldchow@outlook.com) or connect with me on GitHub [@arnold117](https://github.com/arnold117).
+Feel free to reach out via email at [yanuo.zhou@outlook.com](mailto:yanuo.zhou@outlook.com) or connect with me on GitHub [@arnold117](https://github.com/arnold117).
