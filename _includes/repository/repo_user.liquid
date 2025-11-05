@@ -1,14 +1,13 @@
 <div class="repo p-2 text-center">
   <a href="https://github.com/{{ include.username }}">
+    {% assign light_src = "https://github-readme-stats.vercel.app/api/?username=" | append: include.username | append: "&theme=" | append: site.repo_theme_light | append: "&show_icons=true" %}
+    {% assign dark_src = "https://github-readme-stats.vercel.app/api/?username=" | append: include.username | append: "&theme=" | append: site.repo_theme_dark | append: "&show_icons=true" %}
     <img
-      class="repo-img-light w-100"
+      class="repo-img w-100"
       alt="{{ include.username }}"
-      src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true"
-    >
-    <img
-      class="repo-img-dark w-100"
-      alt="{{ include.username }}"
-      src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true"
+      src="{{ light_src }}"
+      data-light-src="{{ light_src }}"
+      data-dark-src="{{ dark_src }}"
     >
   </a>
 </div>

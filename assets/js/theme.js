@@ -81,6 +81,26 @@ let applyTheme = () => {
       background: getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color") + "ee", // + 'ee' for trasparency.
     });
   }
+  // Update repository images (single <img> elements with data-light-src / data-dark-src)
+  setRepoImagesTheme(theme);
+};
+
+// Swap src for repository images that include both light and dark URLs in data attributes
+let setRepoImagesTheme = (theme) => {
+  const imgs = document.querySelectorAll('img[data-dark-src]');
+  imgs.forEach((img) => {
+    try {
+      const light = img.getAttribute('data-light-src');
+      const dark = img.getAttribute('data-dark-src');
+      if (theme === 'dark' && dark) {
+        if (img.src !== dark) img.src = dark;
+      } else if (light) {
+        if (img.src !== light) img.src = light;
+      }
+    } catch (e) {
+      // ignore
+    }
+  });
 };
 
 let setHighlight = (theme) => {
