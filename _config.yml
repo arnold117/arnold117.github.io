@@ -132,8 +132,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: 🦊 Dialogues with Huhu (狐狐) the Fox # blog_name will be displayed in your blog page
+blog_description: Reflections, notes, and quiet experiments — a conversation between thought and memory.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -245,7 +245,7 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
-  - vendor
+  - vendor/
 keep_files:
   - CNAME
   - .nojekyll
@@ -303,7 +303,6 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
 display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------

@@ -29,32 +29,66 @@ pagination:
   </div>
   {% endif %}
 
-{% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
-
+{% comment %}
+  Show up to the top 4 tags by post count. If there are fewer than 4 tags, show all.
+  This picks the highest-count tags iteratively without requiring external filters.
+{% endcomment %}
+{% assign all_tags = site.tags %}
+{% assign chosen = "" | split: "" %}
+{% if all_tags and all_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
   <div class="tag-category-list">
     <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
+      {% comment %} pick up to 4 tags with largest post counts {% endcomment %}
+      {% for i in (1..4) %}
+        {% assign max_tag = "" %}
+        {% assign max_count = 0 %}
+        {% for tag_pair in all_tags %}
+          {% assign tag = tag_pair[0] %}
+          {% assign count = tag_pair[1].size %}
+          {% unless chosen contains tag %}
+            {% if count > max_count %}
+              {% assign max_count = count %}
+              {% assign max_tag = tag %}
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+        {% if max_tag != "" %}
+          {% assign chosen = chosen | push: max_tag %}
+        {% endif %}
+      {% endfor %}
+
+      {% for tag in chosen %}
+        {% assign posts_for_tag = site.tags[tag] %}
+        {% assign tag_slug = tag | slugify %}
         <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
+          <i class="fa-solid fa-hashtag fa-sm"></i>
+          <a href="{{ '/blog/tag/' | append: tag_slug | relative_url }}">{{ tag }}</a>
+          <small class="text-muted">&nbsp;({{ posts_for_tag.size }})</small>
         </li>
         {% unless forloop.last %}
           <p>&bull;</p>
         {% endunless %}
       {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
+
+      {% if site.display_categories.size > 0 and chosen.size > 0 %}
         <p>&bull;</p>
       {% endif %}
+
       {% for category in site.display_categories %}
         <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
+          <i class="fa-solid fa-tag fa-sm"></i>
+          <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
         </li>
         {% unless forloop.last %}
           <p>&bull;</p>
         {% endunless %}
       {% endfor %}
     </ul>
+    <div style="margin-top:0.5rem">
+      <a href="{{ '/tags/' | relative_url }}">View all tags</a>
+    </div>
   </div>
-  {% endif %}
+{% endif %}
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
@@ -154,7 +188,8 @@ pagination:
           {% if tags != "" %}
           &nbsp; &middot; &nbsp;
             {% for tag in post.tags %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl}}">
+            {% assign tag_slug = tag | slugify %}
+            <a href="{{ '/blog/tag/' | append: tag_slug | relative_url }}">
               <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
               {% unless forloop.last %}
                 &nbsp;
