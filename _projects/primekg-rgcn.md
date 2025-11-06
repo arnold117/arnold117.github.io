@@ -2,7 +2,7 @@
 layout: page
 title: PrimeKG-RGCN Drug-Disease Link Prediction
 description: Graph neural networks for computational drug discovery
-img: assets/img/primekg.jpg
+# img: assets/img/primekg.jpg
 importance: 2
 category: ai-health
 ---
@@ -13,11 +13,11 @@ An independent research project implementing Relational Graph Convolutional Netw
 
 ## Key Achievements
 
-- **Knowledge Graph-based Drug Discovery**: RGCN link prediction on 129K+ nodes, 4.2M+ edges
+- **Knowledge Graph-based Drug Discovery**: RGCN link prediction on 30,926 nodes, 849,456 edges
 - **Drug Repurposing Candidate Identification**: Predicted novel drug-disease associations
 - **Complete Pipeline**: Preprocessing → training → evaluation → validation
-- **GPU-Accelerated Processing**: Efficient batch processing on NVIDIA GPUs
-- **Attention Visualization**: Interpretability through attention mechanisms
+- **GPU-Accelerated Processing**: Efficient batch processing on NVIDIA GTX 1070
+- **High Performance**: Achieved AUC-ROC 0.9781 and F1-Score 0.9526
 - **Scalable Architecture**: Extensible to large-scale biomedical networks
 
 ## Background
@@ -26,8 +26,8 @@ An independent research project implementing Relational Graph Convolutional Netw
 
 PrimeKG (Precision Medicine Knowledge Graph) is a comprehensive resource that integrates:
 
-- 129,000+ nodes (diseases, drugs, proteins, pathways, etc.)
-- 4.2M+ edges across 30 relation types
+- 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes/proteins)
+- 849,456 edges across 3 relation types (drug-gene, gene-gene, gene-disease)
 - Data from 20+ biomedical databases (DrugBank, OMIM, UniProt, etc.)
 
 ### Why Link Prediction?
@@ -69,105 +69,120 @@ Output: Link probability predictions
 
 **Training Configuration**:
 - **Framework**: PyTorch Geometric
-- **Hardware**: NVIDIA RTX 3090 (24GB VRAM)
+- **Hardware**: NVIDIA GTX 1070 (8GB VRAM)
 - **Hyperparameters**:
+  - Embedding dimensions: 64
   - Hidden dimensions: 128
   - Learning rate: 0.001 (Adam optimizer)
-  - Dropout: 0.3
+  - Dropout: 0.5
   - Epochs: 100 with early stopping
-- **Training Time**: ~6 hours for full graph
-- **Batch Processing**: 1024-node subgraph batches
+- **Training Time**: ~4-5 hours for full training
+- **Batch Processing**: 1024-edge batches for efficiency
 
 ### PrimeKG Knowledge Graph
 
 **Dataset Characteristics**:
-- **129,000+ nodes**: Diseases, drugs, proteins, pathways, side effects
-- **4.2M+ edges**: 30 relation types
-- **Data Sources**: 20+ biomedical databases (DrugBank, OMIM, UniProt, Reactome, etc.)
-- **Coverage**: Comprehensive biomedical entity landscape
+- **30,926 nodes**: 6,282 drugs, 5,593 diseases, 19,051 genes/proteins
+- **849,456 edges**: 3 relation types (drug-gene, gene-gene, gene-disease)
+- **Data Sources**: PrimeKG integrates 20+ biomedical databases (DrugBank, OMIM, UniProt, Reactome, etc.)
+- **Coverage**: Comprehensive precision medicine knowledge graph
 
 ## Results & Validation
 
 ### Link Prediction Performance
 
-| Relation Type | MRR | Hits@10 | Hits@1 | Interpretation |
-|---|---|---|---|---|
-| **Drug-Disease** | 0.342 | 0.521 | 0.201 | Top-ranked predictions capture major treatment patterns |
-| **Protein-Disease** | 0.287 | 0.458 | 0.164 | Pathway relevance well-captured |
-| **Drug-Protein** | 0.419 | 0.634 | 0.289 | Target prediction most accurate |
+| Metric | Value | Interpretation |
+|---|---|---|
+| **AUC-ROC** | 0.9781 | Excellent classification performance |
+| **AUC-PR** | 0.9663 | High precision across all recall levels |
+| **Hits@10** | 0.0410 | 4.1% of correct predictions in top-10 |
+| **Hits@50** | 0.1551 | 15.5% of correct predictions in top-50 |
+| **MRR** | 0.0187 | Mean reciprocal rank of correct predictions |
+| **F1-Score** | 0.9526 | Balanced precision and recall |
 
 **Metrics Explanation**:
-- **MRR (Mean Reciprocal Rank)**: Average inverse rank of first correct prediction
+- **AUC-ROC**: Area under ROC curve - measures classification ability
+- **AUC-PR**: Area under Precision-Recall curve - important for imbalanced data
 - **Hits@K**: Proportion of correct predictions in top-K results
-- **Hits@1**: Strict accuracy (correct answer must be #1)
+- **MRR**: Mean Reciprocal Rank - average inverse rank of first correct prediction
+- **F1-Score**: Harmonic mean of precision and recall
 
-### Case Study: COVID-19 Drug Repurposing
+### Performance Analysis
 
-**Top 10 Predicted Drug-Disease Associations for COVID-19**:
+**Strengths:**
+- Excellent binary classification (AUC-ROC > 0.97)
+- High precision in top predictions
+- Robust to graph sparsity
+- Captures multi-hop relationships effectively
 
-1. **Remdesivir** ✓ (Known treatment, correctly ranked #2)
-2. **Dexamethasone** ✓ (Known treatment, correctly ranked #4)
-3. **Metformin** (Literature-supported, novel prediction)
-4. **Colchicine** (Clinical trials ongoing, novel prediction)
-5. **Azithromycin** ✓ (Known used off-label)
-6. **Interferon-beta** ✓ (Clinical trials, correctly predicted)
-7. **Baricitinib** ✓ (FDA approved, correctly predicted)
-8. **Lopinavir** (Tested clinically, novel prediction)
-9. **Tocilizumab** ✓ (Known treatment, correctly predicted)
-10. **Hydroxychloroquine** (Literature-supported, novel prediction)
+**Limitations:**
+- Ranking metrics (Hits@K, MRR) show room for improvement
+- Performance varies by disease frequency in training data
+- May over-predict for high-degree nodes (hub bias)
 
-**Key Validation Finding**: 7/10 predictions were subsequently validated in clinical literature or trials.
+### Case Study: Drug Repurposing
+
+The model was evaluated on disease-specific drug predictions. While specific COVID-19 results are not included in the repository, the framework enables systematic drug repurposing analysis for any disease in the knowledge graph.
+
+**Analysis Capabilities**:
+- Top-K drug predictions for any disease
+- Known vs novel prediction identification
+- Multi-hop pathway analysis (drug → gene → gene → disease)
+- Prediction confidence scoring
+- Biological plausibility assessment
 
 ## Technical Implementation
 
 ### Data Processing Pipeline
 
 1. **Graph Construction**:
-   - Load PrimeKG TSV format
-   - Heterogeneous entity and relation typing
-   - Bidirectional edge conversion for undirected relations
+   - Load PrimeKG CSV format
+   - Filter drug-gene-disease subgraph from full PrimeKG
+   - Extract 3 relation types: drug-gene, gene-gene, gene-disease
 
 2. **Preprocessing**:
-   - Relation type embedding
+   - Build node and relation mappings
    - Train/validation/test split (70/15/15)
-   - Negative sampling for training
+   - Convert to PyTorch Geometric format
 
 3. **Model Training**:
    - Forward pass through R-GCN layers
    - DistMult scoring on entity embeddings
-   - Backpropagation with gradient clipping
+   - Negative sampling (1:1 ratio, corrupt head or tail)
+   - Binary cross-entropy loss with gradient clipping
 
 4. **Evaluation**:
-   - Ranking metrics computation (MRR, Hits@K)
-   - Per-relation-type performance analysis
-   - Attention weight extraction
+   - Classification metrics (AUC-ROC, AUC-PR, F1-Score)
+   - Ranking metrics (MRR, Hits@K)
+   - Batch processing (1024 edges per batch)
 
 ### Code Architecture
 
 **Technologies**:
 - `torch_geometric`: R-GCN layer implementation
-- `pandas`: Data loading and analysis
-- `networkx`: Graph preprocessing
+- `pandas`: Data loading and preprocessing
+- `networkx`: Graph structure analysis
 - `scikit-learn`: Evaluation metrics
-- `matplotlib`: Visualization
+- `matplotlib`: Visualization and plotting
+- `tqdm`: Progress tracking
 
 ## Challenges & Solutions
 
 ### Challenge 1: Memory Constraints
-- **Problem**: Full PrimeKG doesn't fit in GPU memory
-- **Solution**: Subgraph sampling with node-wise batching
+- **Problem**: GTX 1070 has limited 8GB VRAM for large graphs
+- **Solution**: Batch processing (1024 edges), gradient accumulation, periodic cache clearing
 
 ### Challenge 2: Class Imbalance
-- **Problem**: Far more negative examples than positive
-- **Solution**: Weighted loss function and careful negative sampling
+- **Problem**: Need balanced positive/negative samples for training
+- **Solution**: 1:1 negative sampling by randomly corrupting head or tail entities
 
 ### Challenge 3: Evaluation Metrics
-- **Problem**: Standard accuracy misleading for link prediction
-- **Solution**: Focused on ranking metrics (MRR, Hits@K)
+- **Problem**: Standard accuracy misleading for link prediction tasks
+- **Solution**: Combined classification metrics (AUC-ROC, F1) and ranking metrics (MRR, Hits@K)
 
-### Challenge 4: Interpretability
-- **Problem**: Black-box predictions not clinically actionable
-- **Solution**: Attention mechanisms to highlight important subgraphs
+### Challenge 4: Invalid Edges
+- **Problem**: Node indices can exceed graph size during processing
+- **Solution**: Edge filtering to validate all indices < num_nodes
 
 ## Clinical & Research Applications
 

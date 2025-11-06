@@ -11,7 +11,7 @@ profile:
   more_info: >
     <p>(Arnold) Yanuo Zhou (周亚诺)</p>
     <p>AI for Health & Biomedicine</p>
-    <p>Digital Phenotyping • AIDD • Precision Health</p>
+    <p>AIDD • Precision Medicine • Biomedical Engineering</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
