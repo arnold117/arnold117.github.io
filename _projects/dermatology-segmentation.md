@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-Complete U-Net implementation for automatic skin lesion segmentation, from data annotation to PyQt5 GUI deployment. Achieves 0.87 mIoU and 0.92 Dice coefficient for objective lesion boundary detection in dermatological images.
+Complete U-Net implementation for automatic skin lesion segmentation, from data annotation to PyQt5 GUI deployment. Achieves 0.759 mIoU (lesion 0.62, background 0.90) and 0.8708 mean pixel accuracy on 161 annotated dermatology images for objective lesion boundary detection.
 
 ## Problem Statement
 
@@ -20,23 +20,31 @@ Dermatological assessment relies on subjective visual inspection, causing incons
 ## Methodology
 
 ### Pipeline Architecture
-1. **Data Annotation**: LabelMe tool for polygon-based lesion labeling (JSON → PNG masks)
+1. **Data Annotation**: LabelMe tool for polygon-based lesion labeling (JSON → PNG masks), 161 annotated images
 2. **Model Training**: U-Net (encoder-decoder with skip connections), batch size 16, 200 epochs, Dice + Cross-Entropy loss
-3. **Validation**: mIoU, Precision, Recall, Dice coefficient metrics
+3. **Validation**: mIoU, Precision, Recall, pixel accuracy metrics
 4. **GUI Deployment**: PyQt5 interface for real-time segmentation visualization
 
 ### Technical Details
+- **Dataset**: 161 annotated dermatology images (local dataset)
 - **Stack**: PyTorch, torchvision, scikit-learn, PyQt5
-- **Data Augmentation**: Multiple strategies for small-sample robustness
-- **GPU Acceleration**: 50-100x faster than CPU training
+- **Preprocessing**: FFT denoising + data augmentation for small-sample robustness
+- **GPU Acceleration**: 50-100× faster than CPU training
 
 ## Results
 
-**Segmentation Performance**:
-- mIoU: 0.87 ± 0.05 | Dice: 0.92 ± 0.03
-- Sensitivity: 0.89 | Specificity: 0.95
-- Boundary accuracy: 2-3 pixels median error
-- Real-time inference on 512×512 images
+**Segmentation Performance** (from confusion matrix):
+- **Mean IoU**: 0.759
+  - Lesion (nidus) IoU: 0.62
+  - Background IoU: 0.90
+- **Mean Pixel Accuracy**: 0.8708
+- **Precision**: 0.844 mean (nidus 0.731, background 0.957)
+- **Recall**: 0.871 mean (nidus 0.807, background 0.935)
+- **Real-time inference** on 512×512 images
+
+**Confusion Matrix Details**:
+- Background: TP 639,513,107 | FP 29,028,863
+- Nidus (lesion): TP 121,361,231 | FP 44,670,125
 
 ## Applications
 
@@ -54,9 +62,13 @@ Dermatological assessment relies on subjective visual inspection, causing incons
 ## Achievements & Recognition
 
 ### Key Metrics
-- 0.87 mIoU, 0.92 Dice coefficient
-- End-to-end pipeline from annotation to GUI deployment
-- GPU-accelerated real-time inference
+- **Mean IoU**: 0.759 (calculated from confusion matrix)
+- **Class-specific IoU**: Lesion 0.62, Background 0.90
+- **Mean Pixel Accuracy**: 0.8708
+- **Mean Precision**: 0.844 | **Mean Recall**: 0.871
+- **Dataset**: 161 annotated images (local dataset)
+- End-to-end pipeline from annotation (LabelMe) to GUI deployment (PyQt5)
+- GPU-accelerated real-time inference (50-100× speedup)
 
 ### References
 - Ronneberger et al. (2015). "U-Net: Convolutional Networks for Biomedical Image Segmentation"
