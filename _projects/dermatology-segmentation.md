@@ -1,103 +1,67 @@
 ---
 layout: page
-title: U-Net Segmentation for Dermatology Images
-description: Deep learning for medical image segmentation
-img: assets/img/dermatology.jpg
+title: U-Net for Skin Lesion Segmentation
+description: Complete implementation with LabelMe annotation, model training, validation, and PyQt5 GUI
+# img: assets/img/dermatology.jpg
 importance: 7
 category: ai-health
+toc:
+  sidebar: left
 ---
 
 ## Overview
 
-A computer vision project implementing U-Net architecture for automated lesion segmentation in dermatological images, with focus on handling small-sample datasets common in medical imaging.
+Complete U-Net implementation for automatic skin lesion segmentation, from data annotation to PyQt5 GUI deployment. Achieves 0.87 mIoU and 0.92 Dice coefficient for objective lesion boundary detection in dermatological images.
 
-## Clinical Significance
+## Problem Statement
 
-Dermatological image segmentation enables:
-- Automated lesion boundary detection
-- Size and morphology quantification
-- Follow-up comparison and monitoring
-- Melanoma risk assessment
-- Objective treatment response evaluation
-
-## Key Achievements
-
-- **Small-Sample Optimization**: High performance with <500 labeled images
-- **Class-Specific IoU Breakdown**: Separate performance metrics for skin, lesion, background
-- **Data Augmentation**: Custom strategies for medical image domain
-- **Generalization**: Cross-validation on diverse skin types and lesion morphologies
+Dermatological assessment relies on subjective visual inspection, causing inconsistent boundary detection, difficulty quantifying morphology changes, and high inter-observer variability. Automated segmentation provides objective, quantitative, and standardized lesion monitoring.
 
 ## Methodology
 
-### Dataset Preparation
-- **Source**: Public dermatology image datasets (ISIC Archive)
-- **Preprocessing**: 
-  - Standardization to 512×512 resolution
-  - Histogram equalization for consistency
-  - Manual annotation verification
-- **Size**: 450 training, 100 validation, 100 test images
+### Pipeline Architecture
+1. **Data Annotation**: LabelMe tool for polygon-based lesion labeling (JSON → PNG masks)
+2. **Model Training**: U-Net (encoder-decoder with skip connections), batch size 16, 200 epochs, Dice + Cross-Entropy loss
+3. **Validation**: mIoU, Precision, Recall, Dice coefficient metrics
+4. **GUI Deployment**: PyQt5 interface for real-time segmentation visualization
 
-### Data Augmentation Strategy
-- **Geometric Transformations**: Rotation (0-90°), flipping, elastic deformation
-- **Intensity Modifications**: Brightness/contrast adjustment, Gaussian blur
-- **Domain Shifts**: Color space variations, synthetic shadow/lighting changes
-- **Mixup**: Blending augmented samples for improved robustness
-
-### Model Architecture
-
-```
-Input: 512×512 RGB Image
-  ↓
-Encoder: 4-level downsampling (64 → 512 filters)
-  ↓
-Bottleneck: Convolutional blocks
-  ↓
-Decoder: 4-level upsampling with skip connections
-  ↓
-Output: 512×512 binary segmentation mask
-```
-
-### Training Configuration
-- **Optimizer**: Adam (learning rate 0.001)
-- **Loss**: Dice Loss + Cross-Entropy (weighted combination)
-- **Batch Size**: 16
-- **Epochs**: 200 with early stopping
-- **Validation**: 5-fold cross-validation
+### Technical Details
+- **Stack**: PyTorch, torchvision, scikit-learn, PyQt5
+- **Data Augmentation**: Multiple strategies for small-sample robustness
+- **GPU Acceleration**: 50-100x faster than CPU training
 
 ## Results
 
-### Segmentation Performance
-- **Mean IoU**: 0.87 ± 0.05
-- **Dice Coefficient**: 0.92 ± 0.03
-- **Sensitivity**: 0.89 (lesion detection)
-- **Specificity**: 0.95 (false positive suppression)
+**Segmentation Performance**:
+- mIoU: 0.87 ± 0.05 | Dice: 0.92 ± 0.03
+- Sensitivity: 0.89 | Specificity: 0.95
+- Boundary accuracy: 2-3 pixels median error
+- Real-time inference on 512×512 images
 
-### Class-Specific Metrics
-- **Skin (Background)**: IoU = 0.94
-- **Lesion**: IoU = 0.87
-- **Boundary Accuracy**: 2-3 pixels median error
-
-## Clinical Applications
+## Applications
 
 - Melanoma screening support systems
-- Treatment response monitoring (chemotherapy, immunotherapy)
+- Treatment response monitoring
 - Surgical planning and margin definition
 - Population-level skin disease epidemiology
 
-## Future Work
+## Limitations & Future Work
 
 - Multi-class segmentation (lesion type classification)
 - 3D reconstruction from multiple views
-- Integration with dermoscopy features
-- Clinical trial deployment
+- Clinical trial deployment and validation
 
-## Links
+## Achievements & Recognition
 
-- **Code**: [GitHub - arnold117](https://github.com/arnold117)
-- **Dataset**: [ISIC Archive](https://www.isic-archive.com)
+### Key Metrics
+- 0.87 mIoU, 0.92 Dice coefficient
+- End-to-end pipeline from annotation to GUI deployment
+- GPU-accelerated real-time inference
+
+### References
+- Ronneberger et al. (2015). "U-Net: Convolutional Networks for Biomedical Image Segmentation"
+- LabelMe annotation tool (Wkentaro)
 
 ## Timeline
 
-- **Start**: February 2021
-- **End**: June 2021
-- **Duration**: 5 months
+**Duration**: February - June 2021 (5 months)

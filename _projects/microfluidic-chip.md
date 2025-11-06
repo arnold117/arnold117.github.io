@@ -1,101 +1,74 @@
 ---
 layout: page
 title: Microfluidic Concentration Gradient Chip for Drug Susceptibility
-description: Device engineering for microbial testing
-img: assets/img/microfluidics.jpg
+description: Dean vortex secondary flow mixing for high-throughput biochemical applications
+# img: assets/img/microfluidics.jpg
 importance: 9
 category: wearable-sensing
+toc:
+  sidebar: left
 ---
 
 ## Overview
 
-A research project developing a microfluidic concentration gradient chip for rapid and cost-effective gradient-based microbial drug susceptibility testing, with applications in clinical microbiology and antimicrobial resistance monitoring.
+Microfluidic concentration gradient chip using Dean vortex secondary flow mixing for rapid drug susceptibility testing. Reduces mixing length to 1/3 of traditional methods (12mm → 4mm) via lateral elliptical protrusions on channel sidewalls, enabling high-throughput antimicrobial resistance detection.
 
-## Intellectual Property
+## Problem Statement
 
-- **1 Invention Patent**: Microfluidic device with gradient generation
-- **1 Utility Model Patent**: Manufacturing and assembly optimization
+Traditional microbial drug susceptibility testing requires 24-72 hours, large sample volumes, and manual preparation, leading to reproducibility issues and delayed treatment decisions. Concentration gradient variability further complicates accurate MIC (minimum inhibitory concentration) determination.
 
-## Publication
+## Methodology
 
-Published in *Chinese Journal of Medical Physics*, 2021.
+### Equivalent Circuit Design
+- Flow resistance in microchannels modeled as electrical circuits (Kirchhoff's laws)
+- Optimized network creates 6-outlet gradients (C₀=0 to C₅=1)
+- Simplified channel design reduces length and pressure drop
 
-Shi, H., Cao, Y., **Zhou, Y.**, et al. "Development and Application of Microfluidic Concentration Gradient Chip"
+### Dean Vortex Mixing
+- **Innovation**: Semicircular protrusions (50-100 μm radius) on sidewalls generate Dean vortex
+- **Efficiency**: 1/3 mixing length of straight channels (4mm vs. 12mm)
+- **Staggered distribution**: Alternating protrusions maximize flow disturbance
+- **CFD Validation**: Computational fluid dynamics verified concentration distribution
 
-## Funding
+## Results
 
-**PhD Research Startup Fund**: EA202008205
+**Performance**:
+- Mixing length reduced by 67% (12mm → 4mm)
+- 6-level concentration gradients generated
+- Channel dimensions: 50-200 μm width, 50-200 μm depth
+- CFD-validated pressure drop and concentration uniformity
 
-## Clinical Significance
+## Applications
 
-Traditional microbial drug susceptibility testing faces challenges:
-- **Time-consuming**: 24-72 hour culture requirement
-- **Resource intensive**: Large sample volumes needed
-- **Labor demanding**: Manual preparation and interpretation
-- **Reproducibility issues**: Concentration gradient variability
+- Rapid antimicrobial resistance detection and MIC determination
+- High-throughput drug screening (dose-response analysis)
+- Chemotaxis assays and cell migration studies
+- Enzyme kinetics and protein-ligand binding studies
+- Toxicity evaluation and environmental monitoring
 
-## Key Innovations
+## Achievements & Recognition
 
-### Device Design
-- **Gradient Generation**: Passive mixing via diffusion and hydrodynamic focusing
-- **Concentration Range**: 8-point logarithmic gradient (1-1000 µM)
-- **Precision**: ±5% concentration uniformity across gradient
-- **Integration**: Multiple testing zones on single chip
+### Patents
+**Invention Patent** (CN112473758A): "Equivalent Circuit Microfluidic Concentration Gradient Chip with Simplified Channel" (Filed Nov 2020, Published Mar 2021, Under examination)
 
-### Microfluidic Principles
-- **Laminar Flow**: Reynolds number control for stable gradients
-- **Channel Design**: Optimized geometry for rapid equilibration
-- **Valve Integration**: On-chip sample loading and routing
-- **Biocompatibility**: PDMS substrate with surface coatings
+**Utility Model Patent** (CN214159656U): "Microfluidic Chip Based on Dean Vortex Secondary Flow Mixing" (Filed Nov 2020, **Granted Sep 2021**)
 
-## Experimental Validation
+### Publications
+Shi, H., Cao, Y., **Zhou, Y.**, et al. "Development and Application of Microfluidic Concentration Gradient Chip." *Chinese Journal of Medical Physics*, 2021.
 
-### Performance Metrics
-- **Concentration Linearity**: R² > 0.98
-- **Temporal Stability**: <2% drift over 4 hours
-- **Spatial Uniformity**: ±3% across transverse direction
-- **Reproducibility**: Inter-chip CV < 5%
+### Key Metrics
+- 2 patents filed
+- 67% mixing length reduction
+- 1 peer-reviewed publication
 
-### Microbial Testing
-- **Organism Coverage**: *E. coli*, *S. aureus*, *P. aeruginosa*
-- **Drug Panels**: Aminoglycosides, fluoroquinolones, β-lactams
-- **MIC Accuracy**: ±1 dilution of reference (EUCAST)
-- **Time Reduction**: 6-8 hours vs. 24-72 hours traditional
+## Team & Collaboration
 
-## Clinical Applications
-
-- **Antibiotic Stewardship**: Rapid resistance detection
-- **Point-of-Care Testing**: Decentralized susceptibility assessment
-- **Infection Control**: Quick turnaround for severe infections
-- **Epidemiology**: Large-scale resistance surveillance
-
-## Manufacturing
-
-- **Fabrication Method**: Soft lithography with PDMS molding
-- **Scale-Up**: Compatible with mass production
-- **Cost**: <$5 per chip vs. >$20 for traditional methods
-- **Shelf Life**: 12+ months at 4°C
-
-## Collaborators
-
-**A/Prof. Shi Huanhuan** - Associate Professor, Department of Biomedical Engineering
-
-## Future Directions
-
-- Multi-pathogen detection panels
-- Integration with smartphone microscopy
-- Real-time growth kinetics monitoring
-- AI-assisted result interpretation
-
-## Links
-
-- **Publication**: [Chinese Journal of Medical Physics, 2021](https://doi.org/xxxx)
-- **Patent Database**: Chinese Patent Office
-- **GitHub**: [arnold117](https://github.com/arnold117)
+**Principal Investigator**: A/Prof. Shi Huanhuan (石环环)  
+**Institution**: Department of Biomedical Engineering, Nanchang Hangkong University  
+**Core Contributors**: Zhou Yanuo (chip design, CFD simulation), Zhang Jiahao (circuit modeling)  
+**Collaborators**: Wan Yaru, Lu Enyong, Yuan Lin, Yu Yuehua, Tao Linjie, Cao Y.  
+**Funding**: PhD Research Startup Fund (EA202008205)
 
 ## Timeline
 
-- **Start**: December 2019
-- **End**: December 2021
-- **Duration**: 24 months
-- **Publication**: 2021
+**Duration**: December 2019 - December 2021 (24 months)

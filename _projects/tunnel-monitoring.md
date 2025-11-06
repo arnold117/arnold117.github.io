@@ -1,110 +1,75 @@
 ---
 layout: page
-title: Intelligent Tunnel Multi-Parameter Monitoring System
-description: IoT for infrastructure condition assessment
-img: assets/img/tunnel-monitoring.jpg
+title: Fluorescence-Based Fire Safety Monitoring System
+description: Smart monitoring system using fluorescence sensing for temperature, humidity, and fire detection in buildings and tunnels
+# img: assets/img/tunnel-monitoring.jpg
 importance: 8
 category: instrumentation
+toc:
+  sidebar: left
 ---
 
 ## Overview
 
-An early-stage IoT project developing a comprehensive real-time monitoring system for tunnel infrastructure, integrating multiple sensors for structural health assessment and environmental monitoring.
-
-## Awards & Recognition
-
-- **Silver Award** - 12th "Challenge Cup" Jiangxi Student Entrepreneurship Competition (2020)
-- **2nd Prize (国奖)** - 8th National Student Optoelectronic Design Competition (2020)
+Fluorescence-based fire safety monitoring system for buildings and tunnels, using optical fiber sensor networks to detect temperature and humidity changes. Leverages existing fluorescent coatings as dual-purpose ambient lighting and sensing elements for distributed, real-time monitoring without structural modifications.
 
 ## Problem Statement
 
-Tunnel infrastructure monitoring is critical for:
-- Public safety assurance
-- Early detection of structural degradation
-- Optimization of maintenance scheduling
-- Cost-effective monitoring versus manual inspection
+Traditional fire monitoring has limited coverage (blind spots), environmental sensitivity (moisture, EMI), slow manual inspection (inefficient for 10s-100s km tunnels), and high maintenance costs. Fluorescence sensing offers electromagnetic immunity, superior temperature/humidity sensitivity, and distributed deployment via optical fibers.
 
-## Key Features
+## Methodology
 
-### Multi-Sensor Integration
-- **Structural Health**:
-  - Accelerometers: Vibration monitoring, structural resonance
-  - Strain gauges: Concrete/steel stress assessment
-  - Displacement sensors: Settlement tracking
+### Fluorescence Sensing System
+- **Optical Path**: Laser (45° incidence) → Dichroic filters → Fluorescent materials (rare-earth/thymol coatings) → Photodetectors (CCD/CMOS)
+- **Signal Processing**: Intensity ratio calculation, spectral peak/centroid shift detection → mathematical transformation to temperature/humidity
+- **Control**: Computer-based monitoring center, real-time visualization, alert system
 
-- **Environmental Monitoring**:
-  - Temperature sensors: Thermal stress detection
-  - Humidity sensors: Water infiltration risks
-  - Air quality: CO, CO₂, dust levels (traffic safety)
-
-- **Security**:
-  - Motion detection: Unauthorized access
-  - Cameras: Visual monitoring and incident documentation
-
-### Real-Time Data Processing
-- **Edge Computing**: Local processing and aggregation
-- **Anomaly Detection**: Threshold-based and statistical alerts
-- **Data Compression**: Efficient transmission to cloud
-- **Time-Stamping**: Synchronized multi-sensor data
-
-### Alerting & Response
-- **Real-Time Notifications**: Immediate alert to operators
-- **Severity Classification**: Priority-based response
-- **Automated Triggers**: Threshold exceedance handling
-- **Historical Analysis**: Trend detection and predictive maintenance
-
-## System Architecture
-
-```
-Tunnel Sensors (100+ nodes)
-    ↓
-Edge Gateway (Local Processing)
-    ↓
-Cloud Backend (Data Aggregation)
-    ↓
-Web Dashboard / Mobile App
-    ↓
-Operators & Maintenance Teams
-```
-
-## Pilot Deployment
-
-- **Location**: Jiangxi Province tunnel network
-- **Coverage**: 2 km tunnel section, 50+ measurement points
-- **Uptime**: >99.5% over 12-month operation
-- **Alert Accuracy**: 94% (minimal false positives)
+### Fire Detection Logic
+- **Alert Level 1**: Temperature rising + humidity decreasing → Potential fire (notify personnel)
+- **Alert Level 2**: Rapid temp increase + rapid humidity decrease → Confirmed fire (emergency response)
+- **Escalation**: Failed intervention → Multi-channel alerts (popup, alarm, broadcast, SMS)
 
 ## Results
 
-- Successfully detected 3 maintenance issues early (concrete spalling, temperature anomalies, humidity infiltration)
-- 30% reduction in scheduled maintenance needs through predictive analysis
-- Zero safety incidents in monitored sections
-- Cost-benefit analysis: ROI achieved within 18 months
+**System Capabilities**:
+- Distributed monitoring across optical fiber networks
+- Multi-parameter sensing (temperature, humidity, trend analysis)
+- Electromagnetic interference immunity
+- Dual-purpose fluorescent coatings (lighting + sensing)
 
-## Technology Stack
+## Applications
 
-- **IoT Platform**: Arduino/STM32 microcontrollers
-- **Communication**: LoRaWAN, 4G LTE backup
-- **Backend**: MQTT broker, TimescaleDB
-- **Frontend**: React-based web dashboard
+**Target Deployments**:
+- Public spaces (malls, transportation hubs, sports venues, hospitals)
+- Critical infrastructure (airports, power plants, government facilities, chemical plants)
+- Tunnels and underground infrastructure
+- High-rise buildings and historical structures
 
-## Collaborators
+**Market**: ~300,000 hazardous chemical units in China with substantial fire safety demand
 
-**Prof. Zhang Weiwei** - Department of Biomedical Engineering
+## Achievements & Recognition
 
-## Publications & Documentation
+### Awards
+- **Silver Award** - 12th "Challenge Cup" Jiangxi Student Entrepreneurship Competition (2020)
+- **2nd Prize** - 8th National Student Optoelectronic Design Competition (2020)
 
-- Project report and technical documentation available
-- Competition submission materials archived
+### Key Metrics
+- 6 patents filed and published
+- Prototype systems and semi-finished products developed
+- Distributed optical fiber network integration
 
-## Links
+### Strategic Partnership
+Collaboration with **Anhui Beyondesign Intelligence Technology Co., Ltd.**
 
-- **Code**: [GitHub - arnold117](https://github.com/arnold117)
-- **Advisor**: Prof. Zhang Weiwei
+## Team & Collaboration
+
+**Principal Investigator**: Prof. Zhang Weiwei (张巍巍)  
+**Institution**: Department of Optical Engineering, Nanchang Hangkong University  
+**Core Contributors**: [Zhou Yanuo](https://arnold117.github.io/) (data acquisition and analysis, sensor characterization), Wang Jiahao (circuit design, debugging), Wan Lu (project management, system design)  
+**Collaborators**: Yu Yangyang (market research, business development)  
+**Funding**: National Natural Science Foundation ("Steady-State Fluorescence Method for Temperature Sensing")
 
 ## Timeline
 
-- **Start**: October 2019
-- **End**: September 2020
-- **Duration**: 12 months
-- **Competition**: August 2020
+**Duration**: October 2019 - September 2020 (12 months)  
+**Competitions**: August 2020
