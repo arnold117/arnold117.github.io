@@ -115,7 +115,7 @@
       "summary": "Awarded for Wearable Optical Sweat Analytics project"
     },
     {
-      "title": "Second Prize, 8th National Student Optoelectronic Design Competition (国奖)",
+      "title": "Second Prize, 8th National Student Optoelectronic Design Competition",
       "date": "2020-08-01",
       "awarder": "China National Student Optoelectronic Design Competition",
       "summary": "Awarded for Intelligent Tunnel Multi-Parameter Monitoring System project"
@@ -296,72 +296,75 @@
   ],
   "interests": [
     {
-      "name": "Precision Medicine & Health",
+      "name": "AI for Health (AI4Health)",
       "icon": "fa-solid fa-heartbeat",
       "keywords": [
-        "Biomarker discovery",
         "Digital phenotyping",
-        "Circadian health",
-        "Wearable sensors",
-        "Precision diagnosis",
-        "Patient stratification"
+        "Precision medicine",
+        "Healthcare ML applications",
+        "Biomarker discovery",
+        "Wearable health monitoring",
+        "Behavioral pattern recognition"
       ]
     },
     {
-      "name": "Machine Learning for Biomedicine",
-      "icon": "fa-solid fa-brain",
-      "keywords": [
-        "Reproducible ML pipelines",
-        "Biomedical data analysis",
-        "Graph neural networks",
-        "Drug discovery",
-        "Drug-disease link prediction",
-        "AI for healthcare"
-      ]
-    },
-    {
-      "name": "Wearable Technology & Sensors",
-      "icon": "fa-solid fa-watch",
-      "keywords": [
-        "Wearable signal processing",
-        "Multi-sensor fusion",
-        "Real-time monitoring",
-        "Circadian tracking",
-        "Photometry & light exposure",
-        "Physiological measurement"
-      ]
-    },
-    {
-      "name": "Computational Drug Discovery",
+      "name": "AI-Driven Drug Discovery (AIDD)",
       "icon": "fa-solid fa-flask",
       "keywords": [
+        "Graph neural networks",
+        "Drug-disease link prediction",
         "Drug repurposing",
-        "Molecular knowledge graphs",
-        "Link prediction",
-        "AIDD approaches",
-        "Drug-target interactions"
+        "Biomedical knowledge graphs",
+        "Molecular interactions",
+        "Computational drug design"
+      ]
+    },
+    {
+      "name": "Digital Phenotyping & Wearable Sensing",
+      "icon": "fa-solid fa-mobile-screen-button",
+      "keywords": [
+        "Continuous health monitoring",
+        "Circadian rhythm analysis",
+        "Wearable biosensors",
+        "Multi-sensor fusion",
+        "Real-time physiological signals",
+        "Light exposure classification"
+      ]
+    },
+    {
+      "name": "Bioinformatics & Omics Analysis",
+      "icon": "fa-solid fa-dna",
+      "keywords": [
+        "RNA-seq biomarker discovery",
+        "Pathway enrichment",
+        "Cross-cohort validation",
+        "NGS pipelines",
+        "Precision health genomics",
+        "Clinical relevance analysis"
       ]
     },
     {
       "name": "Biomedical Signal Processing",
-      "icon": "fa-solid fa-waveform-lines",
+      "icon": "fa-solid fa-wave-square",
       "keywords": [
         "ECG/EEG analysis",
-        "Time-series analysis",
-        "Spectral methods",
-        "Temporal feature extraction",
-        "Embedded systems"
+        "Embedded systems",
+        "Sensor fusion",
+        "Real-time processing",
+        "Physiological monitoring",
+        "Time-series analysis"
       ]
     },
     {
-      "name": "Psychiatric & Mental Health Research",
-      "icon": "fa-solid fa-mind",
+      "name": "Wearable Non-Invasive Diagnosis & Therapeutics",
+      "icon": "fa-solid fa-stethoscope",
       "keywords": [
-        "Suicide risk biomarkers",
-        "Depression research",
-        "Mental health phenotyping",
-        "Clinical outcomes",
-        "Precision psychiatry"
+        "Microfluidic devices",
+        "Point-of-care diagnostics",
+        "Non-invasive biosensors",
+        "Colorimetric detection",
+        "Real-time biomarker analysis",
+        "Wearable health tech"
       ]
     }
   ],
@@ -388,164 +391,168 @@
     }
   ],
   "projects": [
-      {
-      "name": "PrimeKG-RGCN: Drug-Disease Link Prediction",
-      "summary": "Independent research project implementing relational graph convolutional networks for drug-disease link prediction using PrimeKG biomedical knowledge graph.",
-      "highlights": [
-        "Knowledge graph-based drug discovery",
-        "RGCN link prediction model implementation",
-        "Drug repurposing candidate identification",
-        "Complete pipeline: preprocessing → training → evaluation → validation",
-        "GPU-accelerated batch processing",
-        "Attention visualization and model interpretability",
-        "Scalable for large-scale biomedical networks"
-      ],
-      "startDate": "2025-10-25",
-      "url": "https://github.com/arnold117/PrimeKG-RGCN-LinkPrediction"
-    },
     {
-      "name": "AI-Driven Classification of Biologically Relevant Light Exposure",
-      "summary": "MSc Capstone & TUM-CREATE research project developing ML models for wearable spectral data classification with focus on circadian health phenotyping.",
+      "name": "AI-Driven Light Exposure Classification",
+      "summary": "ML framework for circadian health phenotyping from wearable sensors. MSc Capstone project achieving 88.1% accuracy (AUC 0.938) in distinguishing natural from artificial light.",
       "highlights": [
-        "AUC 0.93+ performance on light exposure classification",
-        "Config-driven pipelines with 288-configuration grid search",
-        "Circadian timing and melanopic sensitivity feature importance",
-        "Medoid aggregation for robust model selection",
-        "Audit-ready workflows with full reproducibility"
+        "88.1% accuracy (AUC 0.938) for natural vs. artificial light classification",
+        "288-configuration grid search with participant-wise generalization",
+        "Spectral shape prioritization over absolute intensity",
+        "L2 normalization with hour-medoid aggregation",
+        "Reproducible pipeline with fixed seeds and environment hashes",
+        "Transparent negative evidence reporting (PCA, SMOTE-Tomek limitations)"
       ],
       "startDate": "2024-08-01",
       "endDate": "2025-10-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/light-exposure-ml/"
     },
     {
-      "name": "Machine Learning-Based Biomarker Discovery for Suicide Risk in Depression",
-      "summary": "Course-based research project identifying psychiatric biomarkers using RNA-seq data with cross-cohort validation and reproducible ML workflows.",
+      "name": "Machine Learning Biomarkers for Suicide Risk Assessment in Depression",
+      "summary": "Course-based research identifying psychiatric biomarkers (NR3C1a, HSPA1B) from RNA-seq with cross-cohort validation and imbalanced learning.",
       "highlights": [
-        "RNA-seq count-level models with external validation",
-        "Cross-cohort validation and model robustness assessment",
+        "NR3C1a, HSPA1B as top biomarkers for suicide risk in depression",
+        "Cross-cohort validation (primary + 3 external cohorts)",
+        "Imbalanced learning with SMOTE-Tomek",
+        "KEGG pathway enrichment analysis",
         "4-class to binary mapping for clinical relevance",
-        "Model screening criteria (CV < 0.5)",
-        "Pathway-based interpretation for clinical insight",
-        "KEGG enrichment and biological relevance analysis"
+        "Reproducible ML workflow with audit-ready artifacts"
       ],
       "startDate": "2024-08-01",
       "endDate": "2024-12-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/biomarker-depression/"
     },
     {
-      "name": "Wearable Optical Sweat Analytics - Microfluidics + RGB Colorimetry",
-      "summary": "National innovation project developing wearable optical sweat collection and analysis device with microfluidics and colorimetric detection.",
+      "name": "PrimeKG-RGCN Drug-Disease Link Prediction",
+      "summary": "Graph neural networks for computational drug discovery. Independent research implementing RGCN for drug repurposing on PrimeKG knowledge graph.",
+      "highlights": [
+        "0.978 AUC-ROC for drug-disease link prediction on PrimeKG",
+        "RGCN on 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes) with 849,456 edges",
+        "3 relation types: drug-gene, gene-gene, gene-disease interactions",
+        "Complete pipeline: preprocessing → training → evaluation → validation",
+        "Hits@10: 0.041, MRR: 0.019 ranking metrics",
+        "GPU-accelerated with PyTorch Geometric (NVIDIA GTX 1070)"
+      ],
+      "startDate": "2025-10-25",
+      "url": "https://arnold117.github.io/projects/primekg-rgcn/"
+    },
+    {
+      "name": "Wearable Optical Sweat Analytics",
+      "summary": "Microfluidics and RGB colorimetry for biomarker detection. National innovation project with Talanta publication and competition awards.",
       "highlights": [
         "3rd Prize (10th National Student Optoelectronic Design Competition, 2022)",
-        "Talanta journal publication (2022) - peer-reviewed high-impact",
+        "Talanta Q1 journal publication (2022, co-author)",
         "Tesla valve-based sweat collection optimization",
-        "RGB colorimetry signal processing for biomarker detection",
+        "RGB colorimetry signal processing",
         "NCHU 'Three Small Projects' award",
         "Funded by Outstanding Young Scientist Project (20192BCB23011)"
       ],
       "startDate": "2020-09-01",
       "endDate": "2022-07-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/sweat-analytics/"
     },
     {
-      "name": "ECG & EEG Real-Time Signal Detection System",
-      "summary": "Real-time physiological signal acquisition and processing platform with multi-protocol dashboard for ECG and EEG monitoring.",
+      "name": "Android Sleep Quality Monitoring System",
+      "summary": "BEng thesis achieving 80% accurate sleep quality monitoring using phone sensors with volunteer validation. No external devices required.",
       "highlights": [
-        "Hardware acquisition from STM32 microcontroller",
-        "Real-time signal conditioning and filtering",
-        "Qt/QML + HTML/JavaScript visualization dashboards",
-        "Cross-platform deployment",
-        "Sub-50ms latency for clinical monitoring",
-        "Multi-modal signal analysis"
-      ],
-      "startDate": "2022-02-01",
-      "endDate": "2022-07-01",
-      "url": "https://github.com/arnold117"
-    },
-    {
-      "name": "Android-Based Sleep Quality Monitoring System",
-      "summary": "BEng graduation project developing smartphone-based sleep monitoring using built-in sensors without external devices.",
-      "highlights": [
+        "80% sleep quality classification accuracy",
         "Kotlin-based Android implementation",
-        "3-axis accelerometer, illumination, and microphone sensor fusion",
-        "Comparable performance to commercial wearables",
+        "3-axis accelerometer, illumination, microphone sensor fusion",
+        "Volunteer cohort validation",
         "Minimal resource consumption",
-        "Unexpected user benefit: improved sleep quality during study",
-        "Validation with volunteer cohorts"
+        "Comparable performance to commercial wearables"
       ],
       "startDate": "2022-09-01",
       "endDate": "2023-06-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/sleep-monitoring/"
     },
     {
-      "name": "U-Net Segmentation for Dermatology Images",
-      "summary": "Deep learning-based segmentation for dermatological imaging with small-sample optimization.",
+      "name": "Multi-Parameter Physiological Monitoring System",
+      "summary": "Real-time monitoring of ECG, SpO2, respiration, temperature, and blood pressure with Qt/QML desktop and web interfaces.",
+      "highlights": [
+        "5-parameter monitoring (ECG, SpO2, respiration, temperature, BP)",
+        "STM32 hardware acquisition",
+        "Real-time signal conditioning and filtering",
+        "Qt/QML + HTML/JavaScript dashboards",
+        "Sub-50ms latency",
+        "Cross-platform deployment"
+      ],
+      "startDate": "2022-02-01",
+      "endDate": "2022-07-01",
+      "url": "https://arnold117.github.io/projects/ecg-eeg-system/"
+    },
+    {
+      "name": "U-Net for Skin Lesion Segmentation",
+      "summary": "Complete implementation with LabelMe annotation, model training, validation, and PyQt5 GUI for dermatological image analysis.",
       "highlights": [
         "U-Net architecture implementation",
-        "Class-specific IoU breakdown for lesion analysis",
-        "Data augmentation strategies for limited datasets",
-        "Medical imaging workflow optimization",
-        "Biomedical image preprocessing"
+        "LabelMe manual annotation workflow",
+        "Class-specific IoU breakdown",
+        "Data augmentation for limited datasets",
+        "PyQt5 GUI for inference",
+        "Medical imaging preprocessing pipeline"
       ],
       "startDate": "2021-02-01",
       "endDate": "2021-06-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/dermatology-segmentation/"
     },
     {
-      "name": "Intelligent Tunnel Multi-Parameter Monitoring System",
-      "summary": "Early-stage IoT project for real-time multi-sensor monitoring of tunnel infrastructure conditions.",
+      "name": "Fluorescence-Based Fire Safety Monitoring System",
+      "summary": "Smart monitoring system using fluorescence sensing for temperature, humidity, and fire detection in buildings and tunnels.",
       "highlights": [
         "Silver Award (12th 'Challenge Cup' Jiangxi Student Entrepreneurship, 2020)",
-        "2nd Prize (8th National Student Optoelectronic Design Competition - 国奖, 2020)",
-        "Multi-sensor data fusion",
-        "Real-time monitoring and alerting",
-        "Infrastructure condition assessment"
+        "2nd Prize (8th National Student Optoelectronic Design Competition, 2020)",
+        "6 patents filed and published",
+        "Distributed optical fiber network integration",
+        "Multi-parameter sensing (temperature, humidity, trend analysis)",
+        "Electromagnetic interference immunity"
       ],
       "startDate": "2019-10-01",
       "endDate": "2020-09-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/tunnel-monitoring/"
     },
     {
-      "name": "Microfluidic Concentration Gradient Chip for Microbial Drug Susceptibility",
-      "summary": "Research project developing microfluidic device for gradient-based microbial drug susceptibility testing.",
+      "name": "Microfluidic Concentration Gradient Chip for Drug Susceptibility",
+      "summary": "Dean vortex secondary flow mixing for high-throughput biochemical applications. 2 patents and journal publication.",
       "highlights": [
         "1 invention patent + 1 utility model patent",
         "Published in Chinese Journal of Medical Physics (2021)",
-        "Microfluidic device fabrication and optimization",
-        "Biochemical analysis platform development",
-        "Clinical microbiology application",
+        "Dean vortex secondary flow optimization",
+        "Gradient-based drug susceptibility testing",
+        "High-throughput biochemical analysis",
         "Funded by PhD Research Startup Fund (EA202008205)"
       ],
       "startDate": "2019-12-01",
       "endDate": "2021-12-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/microfluidic-chip/"
     },
     {
-      "name": "Thermal Cycling Device for Fluorescence Quantitative PCR Instrument",
-      "summary": "Research project designing thermal cycling system for qPCR instrumentation.",
+      "name": "Thermal Cycling Device for Fluorescence Quantitative PCR",
+      "summary": "Research project on thermal cycling system design for qPCR instrumentation with precision temperature control.",
       "highlights": [
-        "Successful Participant (2021 National Undergraduate Biomedical Engineering Innovation Design Competition)",
+        "Successful Participant (2021 National Undergraduate BME Innovation Design Competition)",
         "Thermal control optimization",
         "PCR instrumentation design",
-        "Precision temperature management"
+        "Precision temperature management",
+        "System integration and testing"
       ],
       "startDate": "2021-02-01",
       "endDate": "2021-06-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/qpcr-device/"
     },
     {
       "name": "Quantitative Investment Strategies in Cryptocurrency Markets",
-      "summary": "Course project analyzing and implementing quantitative trading strategies for cryptocurrency market dynamics.",
+      "summary": "Research on profitability of different investment strategies in cryptocurrency trading with backtesting and risk analysis.",
       "highlights": [
-        "Strategy backtesting and performance analysis",
-        "Portfolio optimization",
-        "Risk-return analysis",
+        "4 quantitative strategies implemented and compared",
+        "Backtesting framework development",
+        "Risk-return optimization analysis",
         "Market dynamics understanding",
-        "Strategy adaptation importance demonstrated"
+        "Strategy adaptation importance demonstrated",
+        "Portfolio performance evaluation"
       ],
       "startDate": "2022-09-01",
       "endDate": "2022-12-01",
-      "url": "https://github.com/arnold117"
+      "url": "https://arnold117.github.io/projects/crypto-trading/"
     }
   ]
 }
