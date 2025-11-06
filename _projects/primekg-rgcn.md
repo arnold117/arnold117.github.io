@@ -5,6 +5,8 @@ description: Graph neural networks for computational drug discovery
 # img: assets/img/primekg.jpg
 importance: 2
 category: ai-health
+toc:
+  sidebar: left
 ---
 
 ## Overview

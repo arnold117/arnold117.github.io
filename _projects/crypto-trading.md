@@ -1,147 +1,162 @@
 ---
 layout: page
 title: Quantitative Investment Strategies in Cryptocurrency Markets
-description: Algorithmic trading and portfolio optimization
-img: assets/img/crypto-trading.jpg
+description: Research on profitability of different investment strategies in cryptocurrency trading
+# img: assets/img/crypto-trading.jpg
 importance: 11
 category: other
+toc:
+  sidebar: left
 ---
 
 ## Overview
 
-A course project analyzing and implementing quantitative trading strategies for cryptocurrency markets, exploring market dynamics, strategy backtesting, and the importance of strategy adaptation in volatile asset classes.
-
-## Course Context
-
-Advanced Topics in Machine Learning and Data Science  
-Duration: September - December 2022
+A comprehensive course project investigating the performance of four quantitative trading strategies in cryptocurrency markets. The study explores whether traditional financial market strategies can be directly applied to cryptocurrency trading, and demonstrates the critical importance of parameter optimization for strategy profitability.
 
 ## Research Objectives
 
-1. Understand cryptocurrency market microstructure and dynamics
-2. Develop and implement quantitative trading strategies
-3. Backtest strategies on historical data with realistic parameters
-4. Evaluate performance metrics and risk-adjusted returns
-5. Analyze strategy robustness across market regimes
+1. Implement and backtest quantitative trading strategies on cryptocurrency markets
+2. Investigate whether existing strategies with common parameters work directly in crypto markets
+3. Optimize strategy parameters using grid search methodology
+4. Compare profitability across different strategy types and market conditions
+5. Evaluate the necessity of parameter adaptation for sustainable performance
 
-## Market Analysis
+## Methodology
 
-### Cryptocurrency Characteristics
-- **24/7 Trading**: No market closure, continuous price discovery
-- **High Volatility**: Bitcoin: 50-100% annual volatility vs. 15-20% S&P 500
-- **Retail-Driven**: High impact of retail trading and social media
-- **Emerging Patterns**: New asset class with evolving dynamics
-- **Limited History**: Shorter historical data than traditional assets
+### Investment Product Selection
 
-### Dataset
-- **Assets**: Bitcoin (BTC), Ethereum (ETH), major altcoins
-- **Timeframe**: 2018-2022 (including COVID crash, bull runs)
-- **Frequency**: 1-minute, 1-hour, daily candles
-- **Features**: OHLCV + order book data when available
+**Selected**: Binance ETH-USDT-SWAP perpetual contract (1x leverage)
+- High liquidity and volatility
+- 24/7 trading, no price limits
+- Lower fees than spot trading
 
-## Strategy Development
+### Strategy Selection
 
-### Strategy 1: Momentum-Based Trading
-- **Logic**: Buy when 20-day momentum > threshold, sell when < -threshold
-- **Implementation**: SMA/EMA crossovers, momentum indicators
-- **Backtest Results**:
-  - Return: 25-40% annually (market dependent)
-  - Sharpe: 0.8-1.2
-  - Max Drawdown: 30-45%
+**Short-term Strategies** (1-hour bars):
+1. **SMA Crossover**: Moving average crossover signals
+2. **EWMAC**: Volatility-adjusted EMA crossover from *Systematic Trading*
 
-### Strategy 2: Mean Reversion
-- **Logic**: Identify overbought/oversold conditions, trade reversals
-- **Implementation**: Bollinger Bands, RSI divergence
-- **Backtest Results**:
-  - Return: 15-30% annually
-  - Sharpe: 0.6-0.9
-  - Max Drawdown: 20-35%
+**Long-term Strategies** (daily bars):
+3. **Trend Following**: Donchian Channels + EMA filter from *Following the Trend*
+4. **MA Trend Following**: Simplified EMA crossover variant
 
-### Strategy 3: Ensemble Approach
-- **Combine multiple signals**: Momentum + mean reversion + volume
-- **Weighted voting**: Higher confidence signals given more weight
-- **Backtest Results**:
-  - Return: 30-50% annually
-  - Sharpe: 1.0-1.5
-  - Max Drawdown: 25-40%
+### Backtesting Setup
+
+- **Short-term period**: May 9-14, 2020 (price: -0.27%)
+- **Long-term period**: May 1 - Aug 1, 2020 (price: +31.83%)
+- **Commission**: 0.04% (Binance taker fee)
+- **Initial capital**: $10,000 (short-term), $20,000 (long-term)
+
+## Strategy Implementation & Results
+
+### Strategy 1: SMA Crossover
+
+**Logic**: Golden cross (fast MA > slow MA) signals uptrend
+
+**Results** (May 9-14, 2020):
+- Unoptimized: +4.40%, Sharpe 0.269, Annualized 267.95%
+- **Optimized**: +6.25%, Sharpe 0.837, Annualized 253.47%
+- Best params: MA128/MA256
+
+### Strategy 2: EWMAC
+
+**Logic**: Volatility-adjusted EMA crossover with forecast capping at [-20, 20]
+
+**Results** (May 9-14, 2020):
+- Unoptimized: +6.13%, Sharpe 0.406, Annualized 372.81%
+- **Optimized**: +10.68%, Sharpe 0.806, Annualized 433.13%
+- Best params: EWMAC64/EWMAC1024
+
+### Strategy 3: Trend Following (Clenow)
+
+**Logic**: Donchian breakout + EMA confirmation + ATR trailing stop
+
+**Results** (May 1 - Aug 1, 2020):
+- Unoptimized: **-3.13%**, Sharpe -0.502 ❌
+- **Optimized**: +9.53%, Sharpe 1.267, Annualized 38.66%
+- Best params: EMA132/528, DC33/132, ATR528
+
+### Strategy 4: MA Trend Following
+
+**Logic**: EMA crossover + trend filter + ATR trailing stop
+
+**Results** (May 1 - Aug 1, 2020):
+- Unoptimized: **-20.84%**, Sharpe -3.377 ❌
+- **Optimized**: +21.26%, Sharpe 1.996, Annualized 86.22%
+- Best params: EMA168/840, MA42/168, ATR840
 
 ## Key Findings
 
-### Strategy Adaptation Importance
-- **Market Regime Changes**: Strategies that work in 2021 failed in 2022
-- **Trend Following Problem**: Works in bull markets, disastrous in crashes
-- **Parameter Sensitivity**: Small threshold changes dramatically affect returns
-- **Dynamic Adjustment**: Necessary for consistent out-of-sample performance
+### Parameter Optimization is Critical
 
-### Performance Metrics
-- **Sharpe Ratio**: Risk-adjusted return metric
-- **Sortino Ratio**: Downside volatility penalization
-- **Maximum Drawdown**: Worst-case loss from peak
-- **Win Rate / Profit Factor**: Win/loss trade statistics
-- **Calmar Ratio**: Return per unit of drawdown
+**Short-term strategies** showed resilience but benefited from optimization:
+- SMA Crossover: +4.40% → +6.25% (+42% improvement)
+- EWMAC: +6.13% → +10.68% (+74% improvement)
+
+**Long-term strategies FAILED without optimization**:
+- Trend Following: -3.13% → +9.53% (**+304% turnaround**)
+- MA Trend Following: -20.84% → +21.26% (**+202% turnaround**)
+
+### Performance Summary
+
+| Strategy | Unoptimized | Optimized | Grid Search |
+|----------|-------------|-----------|-------------|
+| SMA Crossover | +4.40% | +6.25% | 9 combinations |
+| EWMAC | +6.13% | +10.68% | 9 combinations |
+| Trend Following | -3.13% ❌ | +9.53% ✓ | 270 combinations |
+| MA Trend Following | -20.84% ❌ | +21.26% ✓ | 2,880 combinations |
+
+All optimized strategies beat inflation (8.3%) and conservative investments (max 7.15% APY).
 
 ## Risk Management
 
-### Position Sizing
-- **Kelly Criterion**: Optimal fraction of capital per trade
-- **Fixed Fractional**: 2-5% risk per trade
-- **Dynamic**: Adjusted based on volatility
+### Position Sizing (Long-term Strategies)
+```
+Max Loss = Capital × Risk Factor (0.2%)
+Position Size = Max Loss / ATR
+```
 
-### Stop Loss & Take Profit
-- **Stop Loss**: 2-3% below entry (prevent catastrophic losses)
-- **Take Profit**: 3-5% above entry (lock in gains)
-- **Trailing Stops**: Move stop with price to protect profits
+### Trailing Stop Loss
+```
+Stop Price = Entry ± (ATR × 3)
+```
+- Moves with favorable price action
+- Locks in profits while allowing trend continuation
 
-### Portfolio Allocation
-- **Diversification**: 5-10 cryptocurrencies across different categories
-- **Correlation Analysis**: Minimize asset correlations
-- **Rebalancing**: Quarterly or volatility-triggered
+### Entry/Exit Rules
+- **Trend Following**: Donchian breakout + EMA confirmation
+- **MA Trend Following**: EMA crossover + trend filter
 
-## Portfolio Optimization
+## Conclusions
 
-### Efficient Frontier
-- Maximized Sharpe ratio for given return target
-- Minimum variance portfolios
-- Risk-return tradeoff visualization
+1. **Parameter adaptation is essential**: Direct application of traditional parameters to crypto markets often causes losses
 
-### Results
-- **Historical Returns**: 8-12% annualized (on holdings)
-- **With Trading**: 20-35% annualized (high volatility period dependent)
-- **Correlation**: Bitcoin correlation to altcoins: 0.3-0.7
+2. **Optimization enables profitability**: All four strategies became profitable after proper parameter tuning
 
-## Lessons Learned
+3. **Strategy resilience varies**: Short-term strategies more robust; long-term strategies require careful optimization
 
-1. **Market Dynamics Matter**: Cryptocurrency markets are fundamentally different from traditional markets
-2. **Strategy Drift**: Strategies must adapt to changing market conditions
-3. **Over-Optimization Risk**: Backtested performance often exceeds real-world returns
-4. **Volatility is a Feature**: High volatility provides trading opportunities but requires risk management
-5. **Transaction Costs**: Often overlooked, can consume significant profits
-6. **Regime Detection**: Identifying market regimes crucial for strategy switching
+4. **Best performer**: MA Trend Following (21.26% in 3 months, Sharpe 1.996)
 
-## Technical Stack
+### Practical Implications
+- Always backtest before deployment
+- Monitor and adjust parameters regularly  
+- Consider market regime changes
+- Be aware of overfitting risks
 
-- **Language**: Python
-- **Libraries**: pandas, numpy, scikit-learn, TA-Lib
-- **Backtesting**: Backtrader, PyAlgoTrade
-- **Data**: Binance API, CoinGecko API
-- **Visualization**: Matplotlib, Plotly
+## Technical Implementation
 
-## Visualizations & Results
+**Stack**: Python, Backtrader, pandas, numpy, matplotlib, multiprocessing
 
-- Strategy equity curves and underwater plots
-- Portfolio composition and rebalancing decisions
-- Risk metrics across time windows
-- Market regime identification plots
-- Performance attribution analysis
+**Grid Search**: Exhaustive parameter search optimized by Sharpe Ratio
+- Parallel execution across all CPU cores
+- 9 to 2,880 parameter combinations per strategy
 
-## Code & Resources
+**Key References**:
+- Carver, R. (2015). *Systematic Trading*
+- Clenow, A. (2013). *Following the Trend*
+- Murphy, J.J. (1999). *Technical Analysis of the Financial Markets*
 
-- **GitHub**: [arnold117](https://github.com/arnold117)
-- **Course Materials**: NUS Graduate School
+## Project Timeline
 
-## Timeline
-
-- **Start**: September 2022
-- **End**: December 2022
-- **Duration**: 4 months
-- **Presentation**: December 2022
+September - December 2022 (4 months)  
+College of Optoelectronic Engineering (Now: School of Instrument Science and Optical Engineering), NCHU
