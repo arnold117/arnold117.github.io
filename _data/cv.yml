@@ -65,16 +65,6 @@
         - Reproducible ML pipelines with audit-ready workflows
         - Associated project; AI-Driven Classification of Biologically Relevant Light Exposure
 
-    - title: Course-based Research Project
-      institution: National University of Singapore (NUS), Yong Loo Lin School of Medicine
-      year: 2024 - 2025 (Aug - Dec 2024)
-      description:
-        - Supervisor; A/Prof. Caroline Lee (Vice Dean & Programme Director, NUS Graduate School)
-        - Machine Learning-Based Biomarker Discovery for Suicide Risk in Depression
-        - Psychiatric biomarker discovery using RNA-seq and imbalanced learning
-        - Cross-cohort validation and reproducible ML workflows
-        - Pathway-based interpretation and clinical relevance analysis
-
     - title: Research Assistant
       institution: Key Laboratory of Non-Destructive Testing, Ministry of Education, China
       year: 2019 - 2023
@@ -117,7 +107,7 @@
         - Grand Prize in Scholarships of MedicalSystem Biotechnology Co Ltd
         - Second Prize in Scholarships of Nanchang Hangkong University
         - Silver Award, 12th "Challenge Cup" Jiangxi Student Entrepreneurship Competition (Tunnel Monitoring)
-        - Second Prize, 8th National Student Optoelectronic Design Competition (Tunnel Monitoring, 国奖)
+        - Second Prize, 8th National Student Optoelectronic Design Competition (Tunnel Monitoring)
 
 - title: Academic Interests
   type: nested_list

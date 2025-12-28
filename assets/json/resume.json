@@ -86,7 +86,7 @@
       "studyType": "Master of Science",
       "startDate": "2024-01-01",
       "endDate": "2025-12-31",
-      "score": "4.5/5.0",
+      "score": "4.6/5.0",
       "courses": ["AI & Machine Learning", "Applied Statistics", "High-Performance Computing", "Human Genomics", "Proteomics and Metabolomics", "Precision Biomarker", "Precision Diagnosis"]
     },
     {
@@ -150,13 +150,14 @@
       "keywords": [
         "Python (pandas, scikit-learn, PyTorch, PyTorch Geometric)",
         "R, MATLAB",
-        "SVM, GBM, Logistic Regression, Random Forest",
-        "CNN (U-Net), GNN (RGCN)",
+        "SVM, GBM, XGBoost, Logistic Regression, Random Forest",
+        "CNN (U-Net), GNN (RGCN), VAE, Transformers",
         "Knowledge graphs, link prediction",
-        "Participant-wise 5-fold CV, Bayesian optimization",
-        "SMOTE-Tomek imbalanced learning",
+        "Participant-wise 5-fold CV, stratified CV, Bayesian optimization",
+        "SMOTE-Tomek, balanced class weights for imbalanced learning",
         "ROC-AUC, Hits@K, MRR metrics",
-        "Model interpretability"
+        "Model interpretability, feature importance analysis",
+        "Apple Silicon MPS acceleration"
       ]
     },
     {
@@ -182,6 +183,8 @@
         "α-opic/SPD conversion",
         "Log/L2 normalization",
         "Cyclic time features",
+        "Behavioral feature extraction (GPS, app usage, communication patterns)",
+        "Digital phenotyping from smartphone sensors",
         "Config-driven pipelines",
         "Audit-ready workflows",
         "Multi-sensor fusion",
@@ -264,6 +267,8 @@
         "Config-driven experiments",
         "Seeded reproducible runs",
         "Audit-ready artifacts",
+        "Performance optimization (embedding caching, vectorization)",
+        "GPU acceleration (NVIDIA CUDA, Apple MPS)",
         "HPC, Nextflow workflows",
         "AWS/Cloud computing"
       ]
@@ -422,14 +427,29 @@
       "url": "https://arnold117.github.io/projects/biomarker-depression/"
     },
     {
-      "name": "PrimeKG-RGCN Drug-Disease Link Prediction",
-      "summary": "Graph neural networks for computational drug discovery. Independent research implementing RGCN for drug repurposing on PrimeKG knowledge graph.",
+      "name": "Multimodal Depression Detection via Smartphone Sensing",
+      "summary": "Research-stage ML pipeline for depression biomarker discovery using passive smartphone sensor data from StudentLife dataset (46 college students).",
       "highlights": [
-        "0.978 AUC-ROC for drug-disease link prediction on PrimeKG",
-        "RGCN on 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes) with 849,456 edges",
-        "3 relation types: drug-gene, gene-gene, gene-disease interactions",
-        "Complete pipeline: preprocessing → training → evaluation → validation",
-        "Hits@10: 0.041, MRR: 0.019 ranking metrics",
+        "76.2% AUC-ROC with interpretable behavioral biomarkers",
+        "50 features across 4 modalities: GPS, app usage, communication, physical activity",
+        "Top biomarker: app usage diversity variability (reflects anhedonia)",
+        "Identified and corrected data leakage for robust evaluation",
+        "Stratified 5-fold CV with balanced class weights for severe imbalance (4:42)",
+        "Apple Silicon MPS acceleration for deep learning models"
+      ],
+      "startDate": "2025-11-01",
+      "endDate": "2025-12-31",
+      "url": "https://arnold117.github.io/projects/multimodal-depression-detection/"
+    },
+    {
+      "name": "PrimeKG-RGCN Drug-Disease Link Prediction",
+      "summary": "Graph neural networks for computational drug discovery. Independent research with Phase 1 optimization achieving significant performance improvements.",
+      "highlights": [
+        "Phase 1: 0.9985 AUC-ROC (baseline 0.9696, +2.98% improvement)",
+        "88% reduction in mean rank (493.53 → 58.75), 75× evaluation speedup",
+        "MRR improved 19.73% (0.8027 → 0.9611), Hits@10 up 11.89% (49.1% → 61.0%)",
+        "Architecture: LayerNorm, skip connections, embedding caching, vectorized ops",
+        "RGCN on 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes), 849,456 edges",
         "GPU-accelerated with PyTorch Geometric (NVIDIA GTX 1070)"
       ],
       "startDate": "2025-10-25",
