@@ -1,8 +1,8 @@
-# Arnold Zhou's Academic Website
+# Yanuo (Arnold) Zhou's Academic Website
 
 [![Deployment Status](https://github.com/arnold117/arnold117.github.io/workflows/deploy/badge.svg)](https://github.com/arnold117/arnold117.github.io/actions)
 
-Personal academic website of Arnold Zhou (周亚诺), showcasing research in ML for Digital Phenotyping, Wearable Sensing, and Light & Health.
+Personal academic website of Yanuo (Arnold) Zhou (周亚诺), showcasing research in ML for Digital Phenotyping, Wearable Sensing, and Light & Health.
 
 🌐 **Live Site**: [https://arnold117.github.io](https://arnold117.github.io)
 
@@ -66,7 +66,7 @@ Key configuration is in `_config.yml`. See [CUSTOMIZE.md](CUSTOMIZE.md) for deta
 
 The theme is available as open source under the terms of the [MIT License](LICENSE).
 
-The content (blog posts, projects, etc.) is © Arnold Zhou.
+The content (blog posts, projects, etc.) is © Yanuo (Arnold) Zhou.
 
 ---
 

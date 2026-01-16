@@ -9,7 +9,7 @@ profile:
   image: portrait_corped.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>(Arnold) Yanuo Zhou (周亚诺)</p>
+    <p>Yanuo (Arnold) Zhou (周亚诺)</p>
     <p>AI for Health & Biomedicine</p>
     <p>AIDD • Precision Medicine • Biomedical Engineering</p>
 
@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I'm (Arnold) Yanuo Zhou (周亚诺), a Researcher and ML Engineer specializing in AI for health, drug discovery, and digital phenotyping. I recently defended my MSc thesis in Precision Health and Medicine at the National University of Singapore.
+Hi! I'm Yanuo (Arnold) Zhou (周亚诺), a Researcher and ML Engineer specializing in AI for health, drug discovery, and digital phenotyping. I recently defended my MSc thesis in Precision Health and Medicine at the National University of Singapore.
 
 I am actively seeking **Research Associate (RA) and PhD opportunities** to advance AI-driven innovations in biomedicine and precision health.
 

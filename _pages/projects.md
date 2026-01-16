@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: STILL UNDERCONSTRUCTION! INFO NOT CORRECTLY DISPLAYED YET
+description: A collection of my research projects in AI for health, wearable sensing, and signal processing.
 nav: true
 nav_order: 3
 display_categories: [ai-health, wearable-sensing, signal-processing, instrumentation, other]

@@ -3,12 +3,12 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: (Arnold) Yanuo
+first_name: Yanuo
 middle_name:
 last_name: Zhou
 email: yanuo.zhou@outlook.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Academic website of (Arnold) Yanuo Zhou (周亚诺). Research interests in ML for Digital Phenotyping, Wearable Sensing, and Light & Health.
+  Academic website of Yanuo (Arnold) Zhou (周亚诺). Research interests in ML for Digital Phenotyping, Wearable Sensing, and Light & Health.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -62,8 +62,8 @@ max_width: 930px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
