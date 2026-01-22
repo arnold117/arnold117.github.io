@@ -38,19 +38,6 @@
       ]
     },
     {
-      "name": "National University of Singapore (NUS), Yong Loo Lin School of Medicine",
-      "position": "Course-based Research Project",
-      "startDate": "2024-08-01",
-      "endDate": "2024-12-01",
-      "summary": "Machine Learning-Based Biomarker Discovery for Suicide Risk in Depression using RNA-seq data.",
-      "highlights": [
-        "Psychiatric biomarker discovery using RNA-seq and imbalanced learning",
-        "Cross-cohort validation and reproducible ML workflows",
-        "Pathway-based interpretation and clinical relevance analysis",
-        "Supervisor: A/Prof. Caroline Lee (Vice Dean & Programme Director, NUS Graduate School)"
-      ]
-    },
-    {
       "name": "Key Laboratory of Non-Destructive Testing, Ministry of Education, China",
       "position": "Research Assistant",
       "startDate": "2019-10-01",
