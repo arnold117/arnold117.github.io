@@ -3,7 +3,7 @@ layout: page
 title: Machine Learning Biomarkers for Suicide Risk Assessment in Depression
 description: Identifying NR3C1a and HSPA1B as genetic biomarkers for suicide risk in MDD using machine learning and gene expression analysis
 # img: assets/img/biomarker.jpg
-importance: 3
+importance: 5
 category: ai-health
 toc:
   sidebar: left

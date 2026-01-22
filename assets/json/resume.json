@@ -138,12 +138,12 @@
         "Python (pandas, scikit-learn, PyTorch, PyTorch Geometric)",
         "R, MATLAB",
         "Classical ML: SVM, XGBoost, Logistic Regression, Random Forest",
-        "Deep learning: CNN (U-Net), GNN (RGCN), VAE, Transformers",
+        "Deep learning: CNN (U-Net), Large-scale Autoencoders (545M params), GNN (RGCN, bipartite GNN), VAE, Transformers",
         "Knowledge graphs, drug-disease link prediction",
         "Participant-wise 5-fold CV, stratified CV, Bayesian optimization",
         "Imbalanced learning: SMOTE-Tomek, balanced class weights",
-        "Evaluation: ROC-AUC, Hits@K, MRR, F1, precision/recall",
-        "Model interpretability & feature importance analysis",
+        "Evaluation: ROC-AUC, Hits@K, MRR, F1, precision/recall, Spearman correlation",
+        "Model interpretability, feature importance, embedding analysis (t-SNE, UMAP)",
         "GPU acceleration: NVIDIA CUDA, Apple Silicon MPS"
       ]
     },
@@ -152,14 +152,17 @@
       "level": "Advanced",
       "icon": "fa-solid fa-dna",
       "keywords": [
+        "Multi-omics integration: transcriptomics + metabolomics (132K genes × 7K metabolites)",
+        "Ultra-high-dimensional data: 6,619:1 feature-to-sample ratio handling",
+        "Large-scale autoencoders: dual-modality architecture (545M + 30.8M params)",
+        "Nonlinear dimensionality reduction & latent space analysis",
+        "Gene-metabolite association discovery (Spearman + FDR correction)",
         "RNA-seq analysis (GEO cohorts, differential expression)",
-        "KNN imputation, feature selection, dimensionality reduction",
         "Cross-cohort validation for biomarker discovery",
-        "KEGG pathway enrichment analysis",
-        "Psychiatric biomarkers (NR3C1a, HSPA1B)",
+        "KEGG pathway enrichment & biological validation",
         "Knowledge graphs (PrimeKG): 30K+ nodes, 849K+ edges",
         "Drug repurposing & therapeutic indication prediction",
-        "NGS pipelines (extending to full workflows)"
+        "Privacy-preserving collaborative research & data anonymization"
       ]
     },
     {
@@ -434,6 +437,23 @@
       "startDate": "2026-01-01",
       "endDate": "present",
       "url": "https://arnold117.github.io/projects/litscribe/"
+    },
+    {
+      "name": "Multi-Omics Data Integration Framework with Autoencoders and Graph Neural Networks (ONGOING)",
+      "summary": "Open-source framework for multi-omics integration using large-scale dual autoencoders (545M params) and GNN. Handles ultra-high-dimensional data with extreme feature-to-sample ratios. Privacy-preserving collaborative research.",
+      "highlights": [
+        "Ultra-high-dimensional integration: 132K genes × 7K metabolites (6,619:1 feature-to-sample ratio)",
+        "Large-scale dual autoencoders: Gene AE (545M params, 132K→64), Metabolite AE (30.8M params, 7K→64)",
+        "Bipartite GNN (79.9K params) for gene-metabolite association refinement",
+        "Extensive regularization: Dropout, early stopping, cross-validation for small-sample regime (n=21)",
+        "Latent space correlation: Spearman + FDR correction for association discovery",
+        "Privacy-preserving: Full biological data anonymization for collaborative research",
+        "Open-source contribution: GitHub repository with framework generalizability",
+        "Biological validation: Known enzyme family associations confirmed"
+      ],
+      "startDate": "2025-12-01",
+      "endDate": "present",
+      "url": "https://arnold117.github.io/projects/omics-ae-gnn/"
     },
     {
       "name": "Wearable Optical Sweat Analytics",

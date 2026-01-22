@@ -3,7 +3,7 @@ layout: page
 title: Multimodal Depression Detection via Smartphone Sensing
 description: Machine learning biomarker discovery for depression using passive smartphone sensor data
 # img: assets/img/depression-detection.jpg
-importance: 1
+importance: 2
 category: ai-health
 toc:
   sidebar: left

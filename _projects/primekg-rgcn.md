@@ -3,7 +3,7 @@ layout: page
 title: PrimeKG-RGCN Drug-Disease Link Prediction
 description: Graph neural networks for computational drug discovery
 # img: assets/img/primekg.jpg
-importance: 2
+importance: 3
 category: ai-health
 toc:
   sidebar: left
