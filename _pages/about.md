@@ -35,9 +35,9 @@ I am actively seeking **Research Associate (RA) and PhD opportunities** to advan
 
 I'm currently engaged in cutting-edge AI and health research:
 
+- **LitScribe - Academic Synthesis Engine** (2026-present): Building an autonomous literature review system using Model Context Protocol and multi-agent architecture for deep cross-paper synthesis and gap analysis.
+- **Multimodal Depression Detection** (2025-present): Digital biomarker discovery combining passive smartphone sensor data achieving 76.2% AUC-ROC.
 - **PrimeKG-RGCN Drug Discovery** (2025-present): Implementing relational graph convolutional networks for drug-disease link prediction using biomedical knowledge graphs, with GPU-accelerated processing and attention visualization.
-- **Circadian Health AI** (TUM-CREATE, 2024-2025): Developing ML models for wearable spectral data classification achieving AUC 0.93+ with 288-configuration grid search and audit-ready pipelines.
-- **Psychiatric Biomarker Discovery** (NUS, 2024): RNA-seq analysis for suicide risk biomarkers in depression with cross-cohort validation and KEGG pathway enrichment.
 
 ## Key Technical Skills
 

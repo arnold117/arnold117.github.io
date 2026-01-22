@@ -137,14 +137,14 @@
       "keywords": [
         "Python (pandas, scikit-learn, PyTorch, PyTorch Geometric)",
         "R, MATLAB",
-        "SVM, GBM, XGBoost, Logistic Regression, Random Forest",
-        "CNN (U-Net), GNN (RGCN), VAE, Transformers",
-        "Knowledge graphs, link prediction",
+        "Classical ML: SVM, XGBoost, Logistic Regression, Random Forest",
+        "Deep learning: CNN (U-Net), GNN (RGCN), VAE, Transformers",
+        "Knowledge graphs, drug-disease link prediction",
         "Participant-wise 5-fold CV, stratified CV, Bayesian optimization",
-        "SMOTE-Tomek, balanced class weights for imbalanced learning",
-        "ROC-AUC, Hits@K, MRR metrics",
-        "Model interpretability, feature importance analysis",
-        "Apple Silicon MPS acceleration"
+        "Imbalanced learning: SMOTE-Tomek, balanced class weights",
+        "Evaluation: ROC-AUC, Hits@K, MRR, F1, precision/recall",
+        "Model interpretability & feature importance analysis",
+        "GPU acceleration: NVIDIA CUDA, Apple Silicon MPS"
       ]
     },
     {
@@ -152,14 +152,29 @@
       "level": "Advanced",
       "icon": "fa-solid fa-dna",
       "keywords": [
-        "RNA-seq analysis (GEO cohorts)",
-        "KNN imputation, feature selection",
-        "Cross-cohort validation",
-        "KEGG pathway enrichment",
-        "Biomarker discovery (NR3C1a, HSPA1B)",
-        "Knowledge graphs (PrimeKG)",
-        "Drug repurposing",
-        "NGS pipelines"
+        "RNA-seq analysis (GEO cohorts, differential expression)",
+        "KNN imputation, feature selection, dimensionality reduction",
+        "Cross-cohort validation for biomarker discovery",
+        "KEGG pathway enrichment analysis",
+        "Psychiatric biomarkers (NR3C1a, HSPA1B)",
+        "Knowledge graphs (PrimeKG): 30K+ nodes, 849K+ edges",
+        "Drug repurposing & therapeutic indication prediction",
+        "NGS pipelines (extending to full workflows)"
+      ]
+    },
+    {
+      "name": "Data Quality & Responsible AI",
+      "level": "Advanced",
+      "icon": "fa-solid fa-shield-halved",
+      "keywords": [
+        "Data leakage detection & correction (PHQ-9 label contamination)",
+        "Ground truth validation & label quality assessment",
+        "Transparent limitation reporting (clinical readiness)",
+        "Negative evidence documentation (PCA, SMOTE failures)",
+        "Model bias detection & fairness evaluation",
+        "Reproducible validation protocols",
+        "Ethical AI practices & scientific integrity",
+        "Study protocol design & data collection SOPs"
       ]
     },
     {
@@ -167,80 +182,14 @@
       "level": "Advanced",
       "icon": "fa-solid fa-sliders",
       "keywords": [
-        "α-opic/SPD conversion",
-        "Log/L2 normalization",
-        "Cyclic time features",
-        "Behavioral feature extraction (GPS, app usage, communication patterns)",
-        "Digital phenotyping from smartphone sensors",
-        "Config-driven pipelines",
-        "Audit-ready workflows",
-        "Multi-sensor fusion",
-        "Circadian timing analysis"
-      ]
-    },
-    {
-      "name": "Signal Processing & Computer Vision",
-      "level": "Advanced",
-      "icon": "fa-solid fa-waveform-lines",
-      "keywords": [
-        "Wavelet/FFT filtering",
-        "Anomaly detection",
-        "U-Net segmentation",
-        "Data augmentation",
-        "Mean IoU, pixel accuracy, precision/recall metrics",
-        "Image preprocessing",
-        "Medical image analysis"
-      ]
-    },
-    {
-      "name": "Embedded Systems & Sensing",
-      "level": "Advanced",
-      "icon": "fa-solid fa-microchip",
-      "keywords": [
-        "STM32 microcontrollers",
-        "Android development (Kotlin)",
-        "Real-time signal processing",
-        "ECG/EEG acquisition",
-        "Sensor integration & calibration",
-        "IoT applications",
-        "Latency optimization (<50ms)"
-      ]
-    },
-    {
-      "name": "Microfluidics & Prototyping",
-      "level": "Intermediate",
-      "icon": "fa-solid fa-flask",
-      "keywords": [
-        "Microfluidic device design",
-        "RGB colorimetry",
-        "Tesla valve optimization",
-        "PCB layout and validation",
-        "Rapid prototyping"
-      ]
-    },
-    {
-      "name": "Software & Front-End Development",
-      "level": "Intermediate",
-      "icon": "fa-solid fa-code",
-      "keywords": [
-        "Qt/QML dashboards",
-        "HTML/JavaScript visualization",
-        "Web development",
-        "Cross-browser compatibility",
-        "Statistics & peak analysis",
-        "Curve fitting visualization"
-      ]
-    },
-    {
-      "name": "Quantitative & Financial Analysis",
-      "level": "Intermediate",
-      "icon": "fa-solid fa-chart-line",
-      "keywords": [
-        "Investment strategy analysis",
-        "Cryptocurrency markets",
-        "Backtesting",
-        "Risk-return optimization",
-        "Technical analysis"
+        "α-opic/SPD spectral conversion",
+        "L2/log normalization, hour-medoid aggregation",
+        "Cyclic time features (circadian analysis)",
+        "Behavioral features: GPS, app usage, communication patterns",
+        "Digital phenotyping from passive smartphone sensors",
+        "Config-driven pipelines with parameter sweeps",
+        "Audit-ready workflows with environment hashes",
+        "Multi-sensor fusion & signal synchronization"
       ]
     },
     {
@@ -248,29 +197,58 @@
       "level": "Expert",
       "icon": "fa-solid fa-code-branch",
       "keywords": [
-        "Git version control",
-        "Jupyter notebooks",
-        "Docker containers",
-        "Config-driven experiments",
-        "Seeded reproducible runs",
-        "Audit-ready artifacts",
-        "Performance optimization (embedding caching, vectorization)",
-        "GPU acceleration (NVIDIA CUDA, Apple MPS)",
-        "HPC, Nextflow workflows",
-        "AWS/Cloud computing"
+        "Git version control & collaborative workflows",
+        "Jupyter notebooks for literate programming",
+        "Docker containers for environment reproducibility",
+        "Config-driven experiments (YAML, JSON)",
+        "Seeded reproducible runs with deterministic pipelines",
+        "Performance optimization: embedding caching, vectorization",
+        "HPC & Nextflow workflows (extending to cloud)",
+        "AWS/Cloud computing (learning)"
       ]
     },
     {
-      "name": "Study Operations & Clinical",
+      "name": "LLM & Multi-Agent Systems",
       "level": "Intermediate",
-      "icon": "fa-solid fa-hospital",
+      "icon": "fa-solid fa-robot",
       "keywords": [
-        "Study protocol design",
-        "Data collection & management",
-        "Controlled & free-living settings",
-        "Protocol adherence",
-        "Quality assurance",
-        "Clinical SOPs"
+        "LangGraph orchestration & state management",
+        "FastMCP 2.0 (Model Context Protocol)",
+        "Multi-agent architectures & agent debate",
+        "Hybrid local/cloud LLM: Qwen 3 (MLX) + Claude",
+        "Apple Silicon MLX optimization",
+        "Prompt engineering & chain-of-thought",
+        "Hallucination mitigation & citation traceability",
+        "RAG (Retrieval-Augmented Generation) pipelines",
+        "Vector search integration (semantic retrieval)"
+      ]
+    },
+    {
+      "name": "Biomedical Signal Processing & Embedded Systems",
+      "level": "Advanced",
+      "icon": "fa-solid fa-wave-square",
+      "keywords": [
+        "Wavelet/FFT filtering for ECG/EEG signals",
+        "Real-time signal processing (<50ms latency)",
+        "U-Net segmentation for medical images",
+        "STM32 microcontrollers & embedded firmware",
+        "Android development (Kotlin) for health apps",
+        "Sensor integration: ECG/EEG/SpO2/temperature acquisition",
+        "Anomaly detection & signal quality assessment",
+        "Data augmentation & preprocessing pipelines",
+        "IoT applications & wireless sensor networks"
+      ]
+    },
+    {
+      "name": "Microfluidics & Prototyping",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-flask",
+      "keywords": [
+        "Microfluidic device design (Tesla valve, Dean vortex)",
+        "RGB colorimetry for biomarker detection",
+        "Sweat collection & concentration gradient chips",
+        "PCB layout, validation & rapid prototyping",
+        "Optical sensing & fluorescence-based detection"
       ]
     }
   ],
@@ -414,33 +392,48 @@
       "url": "https://arnold117.github.io/projects/biomarker-depression/"
     },
     {
-      "name": "Multimodal Depression Detection via Smartphone Sensing",
-      "summary": "Research-stage ML pipeline for depression biomarker discovery using passive smartphone sensor data from StudentLife dataset (46 college students).",
+      "name": "Multimodal Depression Detection via Smartphone Sensing (ONGOING)",
+      "summary": "Ongoing ML research for depression biomarker discovery from passive smartphone sensing. Core baseline completed; currently adding new features and models.",
       "highlights": [
-        "76.2% AUC-ROC with interpretable behavioral biomarkers",
-        "50 features across 4 modalities: GPS, app usage, communication, physical activity",
-        "Top biomarker: app usage diversity variability (reflects anhedonia)",
-        "Identified and corrected data leakage for robust evaluation",
-        "Stratified 5-fold CV with balanced class weights for severe imbalance (4:42)",
-        "Apple Silicon MPS acceleration for deep learning models"
+        "Core finding: Classical ML (Logistic Regression) outperformed deep learning (76.2% AUC-ROC)",
+        "Critical data quality work: Detected and corrected PHQ-9 label contamination",
+        "7 models compared: Logistic Regression, Random Forest, XGBoost, VAE, GNN, Contrastive Learning, Transformer",
+        "50 behavioral features across GPS, app usage, communication, physical activity",
+        "Top biomarker: app usage diversity variability (behavioral activation/anhedonia proxy)",
+        "Responsible AI: Transparent limitation reporting (NOT clinically ready)"
       ],
-      "startDate": "2025-11-01",
-      "endDate": "2025-12-31",
+      "startDate": "2024-11-01",
+      "endDate": "present",
       "url": "https://arnold117.github.io/projects/multimodal-depression-detection/"
     },
     {
-      "name": "PrimeKG-RGCN Drug-Disease Link Prediction",
-      "summary": "Graph neural networks for computational drug discovery. Independent research with Phase 1 optimization achieving significant performance improvements.",
+      "name": "PrimeKG-RGCN Drug-Disease Link Prediction (Phase 1 Optimized)",
+      "summary": "Graph neural networks for computational drug discovery. Phase 1 optimization achieved substantial gains through architectural improvements and computational efficiency enhancements.",
       "highlights": [
-        "Phase 1: 0.9985 AUC-ROC (baseline 0.9696, +2.98% improvement)",
-        "88% reduction in mean rank (493.53 → 58.75), 75× evaluation speedup",
-        "MRR improved 19.73% (0.8027 → 0.9611), Hits@10 up 11.89% (49.1% → 61.0%)",
-        "Architecture: LayerNorm, skip connections, embedding caching, vectorized ops",
-        "RGCN on 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes), 849,456 edges",
-        "GPU-accelerated with PyTorch Geometric (NVIDIA GTX 1070)"
+        "Phase 1 Results: AUC-ROC 0.9985 (+2.98%), F1 0.9877 (+2.90%)",
+        "Ranking: MRR 0.2707 (+19.73%), mean rank 58.75 (88.10% reduction from 493.53)",
+        "Computational: 75× evaluation speedup (300s → 4s), Hits@10 61.0% (+11.89%)",
+        "Architecture optimizations: LayerNorm, skip connections, embedding caching, vectorized ranking",
+        "Phase 2 planning: Deeper RGCN layers, RotatE embeddings, attention mechanisms",
+        "RGCN on PrimeKG: 30,926 nodes (6,282 drugs, 5,593 diseases), 849,456 edges across 20 databases"
       ],
       "startDate": "2025-10-25",
       "url": "https://arnold117.github.io/projects/primekg-rgcn/"
+    },
+    {
+      "name": "LitScribe - Autonomous Academic Literature Synthesis Engine (ONGOING)",
+      "summary": "Multi-agent system for automated literature review with hybrid local/cloud LLM architecture. MVP in development using LangGraph orchestration and FastMCP 2.0.",
+      "highlights": [
+        "Multi-agent architecture: LangGraph orchestration + FastMCP 2.0 (Model Context Protocol)",
+        "Hybrid models: Qwen 3 (MLX/Apple Silicon local) + Claude Opus/Sonnet (cloud)",
+        "Multi-source search: arXiv, PubMed, Google Scholar, Zotero integration",
+        "Pipeline: Deduplication → PDF-to-Markdown → Vector search → Synthesis",
+        "Planned: Multi-agent debate, hallucination controls, citation traceability",
+        "Target: Responsible AI for literature synthesis with transparent limitations"
+      ],
+      "startDate": "2026-01-01",
+      "endDate": "present",
+      "url": "https://arnold117.github.io/projects/litscribe/"
     },
     {
       "name": "Wearable Optical Sweat Analytics",

@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A collection of my research projects in AI for health, wearable sensing, and signal processing.
+description: A collection of my research projects in AI for health, AI tools, wearable sensing, and signal processing.
 nav: true
 nav_order: 3
-display_categories: [ai-health, wearable-sensing, signal-processing, instrumentation, other]
+display_categories: [ai-health, ai-tools, wearable-sensing, signal-processing, instrumentation, other]
 horizontal: false
 ---
 
