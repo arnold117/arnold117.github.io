@@ -333,15 +333,11 @@
   "references": [
     {
         "name": "Prof Dr Manuel Spitschan",
-        "reference": "Current TUM-CREATE supervisor. Guided wearable spectral data analysis and circadian health research."
+        "reference": "Former TUM-CREATE supervisor. Guided wearable spectral data analysis and circadian health research."
     },
     {
         "name": "A/Prof Caroline Lee",
         "reference": "NUS course supervisor. Supervised RNA-seq biomarker discovery for psychiatric applications."
-    },
-    {
-        "name": "Prof Zhang Weiwei",
-        "reference": "Undergraduate research supervisor. Led Intelligent Tunnel Monitoring and Wearable Cortisol Detection projects."
     },
     {
         "name": "A/Prof Shi Huanhuan",
@@ -350,6 +346,10 @@
     {
         "name": "Prof Jiang Shaofeng",
         "reference": "Undergraduate mentor. Observed academic growth over 4 years; endorsed for PhD in biomedical engineering."
+    },
+    {
+        "name": "Prof Zhang Weiwei",
+        "reference": "Undergraduate research supervisor. Led Intelligent Tunnel Monitoring and Wearable Cortisol Detection projects."
     }
   ],
   "projects": [
