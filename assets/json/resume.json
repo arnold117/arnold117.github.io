@@ -399,15 +399,15 @@
       "url": "https://arnold117.github.io/projects/multimodal-depression-detection/"
     },
     {
-      "name": "PrimeKG-RGCN Drug-Disease Link Prediction (Phase 1 Optimized)",
-      "summary": "Graph neural networks for computational drug discovery. Phase 1 optimization achieved substantial gains through architectural improvements and computational efficiency enhancements.",
+      "name": "PrimeKG GNN Drug-Disease Link Prediction",
+      "summary": "Multi-architecture GNN benchmark (6 models) for drug repurposing on PrimeKG. V2.0 with data leakage fix (71.5%→0%) and strict hard-negative evaluation. GAT best at 0.9866 AUC-ROC.",
       "highlights": [
-        "Phase 1 Results: AUC-ROC 0.9985 (+2.98%), F1 0.9877 (+2.90%)",
-        "Ranking: MRR 0.2707 (+19.73%), mean rank 58.75 (88.10% reduction from 493.53)",
-        "Computational: 75× evaluation speedup (300s → 4s), Hits@10 61.0% (+11.89%)",
-        "Architecture optimizations: LayerNorm, skip connections, embedding caching, vectorized ranking",
-        "Phase 2 planning: Deeper RGCN layers, RotatE embeddings, attention mechanisms",
-        "RGCN on PrimeKG: 30,926 nodes (6,282 drugs, 5,593 diseases), 849,456 edges across 20 databases"
+        "6-model comparison: GAT (best), RGCN, GIN, GraphSAGE, GCN, MLP on 30,926-node PrimeKG graph",
+        "GAT: 0.9866 AUC-ROC, 0.7955 AP, 0.9831 Hits@10, 0.9031 MRR (strict eval, 50 hard negatives)",
+        "V2.0: Data leakage fix via undirected-edge-aware splitting (71.5% → 0% leakage)",
+        "Key finding: Attention mechanisms outperform explicit relation-type modeling (GAT > RGCN)",
+        "Advanced analyses: path-based explanations, case studies, embedding viz, biological validation",
+        "Modular encoder registry with CUDA/MPS/CPU auto-detection"
       ],
       "startDate": "2025-10-25",
       "url": "https://arnold117.github.io/projects/primekg-rgcn/"
