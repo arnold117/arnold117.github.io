@@ -11,40 +11,40 @@ profile:
   more_info: >
     <p>Yanuo (Arnold) Zhou (周亚诺)</p>
     <p>AI for Health & Biomedicine</p>
-    <p>AIDD • Precision Medicine • Biomedical Engineering</p>
+    <p>AI Agents • LLM+GraphRAG• Precision Medicine</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I'm Yanuo (Arnold) Zhou (周亚诺), a Researcher and ML Engineer specializing in AI for health, drug discovery, and digital phenotyping. I recently defended my MSc thesis in Precision Health and Medicine at the National University of Singapore.
+Hi! I'm Yanuo (Arnold) Zhou (周亚诺), a Researcher and ML Engineer building multi-agent systems and AI applications for health and biomedicine. I hold an MSc in Precision Health and Medicine from the National University of Singapore.
 
-I am actively seeking **Research Associate (RA) and PhD opportunities** to advance AI-driven innovations in biomedicine and precision health.
+I am actively seeking **PhD opportunities** to advance AI-driven innovations in biomedicine and precision health.
 
 ## Research Interests
 
+- **AI Agents & LLM Applications**: Multi-agent orchestration with LangGraph and GraphRAG for autonomous scientific workflows, knowledge synthesis, and literature review.
 - **AI for Health (AI4Health)**: Applying machine learning to healthcare challenges, from digital phenotyping to drug discovery and precision medicine.
-- **AI-Driven Drug Discovery (AIDD)**: Graph neural networks for drug-disease link prediction and repurposing using biomedical knowledge graphs.
-- **Digital Phenotyping & Wearable Sensing**: ML models for continuous health monitoring, circadian rhythm analysis, and behavioral pattern recognition from wearable devices.
-- **Bioinformatics & Omics Analysis**: RNA-seq biomarker discovery, pathway enrichment, and cross-cohort validation for precision health.
+- **Digital Phenotyping & Wearable Sensing**: ML models for continuous health monitoring, circadian rhythm analysis, and behavioral pattern recognition from wearable and smartphone sensors.
+- **Bioinformatics & Multi-Omics**: Multi-evidence integration of transcriptomics and metabolomics for biosynthetic pathway gene discovery; RNA-seq biomarker identification.
+- **AI-Driven Drug Discovery (AIDD)**: Multi-architecture GNN benchmarking for drug-disease link prediction and repurposing using biomedical knowledge graphs.
 - **Biomedical Signal Processing**: Real-time physiological signal analysis (ECG, EEG) with embedded systems and sensor fusion.
-- **Wearable Non-Invasive Diagnosis & Therapeutics**: Developing wearable biosensors and microfluidic devices for real-time health monitoring and point-of-care diagnostics.
 
 ## Current Work
 
-I'm currently engaged in cutting-edge AI and health research:
-
-- **LitScribe - Academic Synthesis Engine** (2026-present): Building an autonomous literature review system using Model Context Protocol and multi-agent architecture for deep cross-paper synthesis and gap analysis.
-- **Multimodal Depression Detection** (2025-present): Digital biomarker discovery combining passive smartphone sensor data achieving 76.2% AUC-ROC.
-- **PrimeKG-RGCN Drug Discovery** (2025-present): Implementing relational graph convolutional networks for drug-disease link prediction using biomedical knowledge graphs, with GPU-accelerated processing and attention visualization.
+- **LitScribe - Academic Synthesis Engine** (2026-present): 7-agent LangGraph system with GraphRAG for autonomous literature review. Produces 24-paper reviews with 100% citation grounding in 15 min at $0.098. 272 tests, multi-language support, 5 citation styles.
+- **PrimeKG GNN Drug Discovery** (2025-present): 6-architecture GNN benchmark (GAT, RGCN, GIN, GraphSAGE, GCN, MLP) on PrimeKG. V2.0 with data leakage fix (71.5%→0%), GAT best at 0.9866 AUC-ROC under strict hard-negative evaluation.
+- **Multi-Omics AE-GNN** (2025-present): 5-stage pipeline for biosynthetic pathway gene discovery. Dual autoencoders (545M params) + GAT with multi-evidence ranking across 132K genes × 7K metabolites.
+- **Multimodal Depression Detection** (2025): Behavioral biomarker discovery from smartphone sensors (GPS, app usage, communication, activity). 76.2% AUC-ROC identifying digital phenotypes for mental health.
 
 ## Key Technical Skills
 
-**AI/ML**: PyTorch • PyTorch Geometric • scikit-learn • GNN (RGCN) • CNN (U-Net) • Bayesian Optimization  
-**Bioinformatics**: RNA-seq • Knowledge Graphs (PrimeKG) • KEGG Enrichment • NGS Pipelines  
-**Signal Processing**: Wearable Sensors • ECG/EEG • Multi-sensor Fusion • Real-time Processing  
-**Reproducibility**: Git • Docker • Config-driven Experiments • HPC • Audit-ready Workflows
+- **AI/ML**: PyTorch • PyTorch Geometric • scikit-learn • GNN (GAT, RGCN, GIN) • CNN (U-Net) • VAE • Transformers
+- **AI Agents**: LangGraph • GraphRAG • sentence-transformers • asyncio • Qwen/Claude/DeepSeek
+- **Bioinformatics**: RNA-seq • Knowledge Graphs (PrimeKG) • Multi-Omics Integration • KEGG Enrichment
+- **Signal Processing**: Wearable Sensors • ECG/EEG • Multi-sensor Fusion • Real-time Processing
+- **Reproducibility**: Git • Docker • YAML Config Pipelines • HPC • Audit-ready Workflows
 
 ## Selected Awards
 
