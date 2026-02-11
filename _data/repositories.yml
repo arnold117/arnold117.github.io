@@ -4,8 +4,9 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - arnold117/multimodal-depression-detection
+  - arnold117/LitScribe
   - arnold117/PrimeKG-RGCN-LinkPrediction
+  - arnold117/omics-ae-gnn
+  - arnold117/multimodal-depression-detection
   - arnold117/nus_phm_thesis
   - arnold117/arnold117.github.io
-  - arnold117/NCHU_Bachelor_Thesis_Template
