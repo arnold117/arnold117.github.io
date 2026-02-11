@@ -1,7 +1,7 @@
 ---
 layout: page
 title: LitScribe - Autonomous Academic Synthesis Engine
-description: Multi-agent literature review system using Model Context Protocol for deep cross-paper synthesis and gap analysis
+description: LangGraph multi-agent system with GraphRAG for deep cross-paper literature synthesis and gap analysis
 # img: assets/img/litscribe.jpg
 importance: 1
 category: ai-tools
@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-LitScribe is an autonomous academic synthesis engine designed to transform how researchers conduct literature reviews. Using the Model Context Protocol (MCP) and multi-agent architecture, it goes beyond simple summarization to provide deep cross-paper synthesis and gap analysis. The system acts as a "Digital Scribe" that faithfully organizes knowledge while minimizing hallucinations common in standard LLM outputs.
+LitScribe is an autonomous academic synthesis engine that transforms literature review workflows using a LangGraph multi-agent architecture with GraphRAG knowledge synthesis. Rather than simple summarization, it delivers deep cross-paper analysis and gap identification. A recent benchmark produced a 24-paper CHO metabolism review (7,679 words, 100% citation grounding) in 15 minutes at $0.098 total cost.
 
 ## Problem Statement
 
@@ -19,58 +19,84 @@ Traditional literature reviews are time-consuming and mentally exhausting. Resea
 
 ## Architecture
 
-### Multi-Agent Design
+### Multi-Agent System (7 Agents)
 
-**Agent Roles** (Planned):
-- **Discovery Agent**: Multi-source literature search and intelligent deduplication
-- **Critical Reading Agent**: Deep analysis of individual papers with citation extraction
-- **Synthesis Agent**: Cross-paper analysis, conflict resolution, and gap identification
+- **Planning Agent**: Complexity assessment (1-5 scale), sub-topic decomposition, domain detection across arXiv categories, Semantic Scholar fields, and PubMed MeSH terms; supports interactive plan revision (up to 3 rounds)
+- **Discovery Agent**: Per-sub-topic searching with domain-aware query expansion, two-stage abstract screening (keyword + LLM), multi-round snowball with co-citation analysis, and tiered review system (standard/large/massive)
+- **Critical Reading Agent**: PDF parsing, 5-8 key findings extraction, methodology analysis, LLM-assessed relevance scoring, and pre-synthesis filtering
+- **GraphRAG Agent**: Knowledge graph construction with entity extraction (methods, datasets, metrics, concepts), entity linking via embeddings, and Leiden community detection for multi-level summarization
+- **Synthesis Agent**: GraphRAG-enhanced theme identification, gap analysis, citation name normalization via fuzzy matching, and auto-generated review titles
+- **Self-Review Agent**: Automated quality scoring (relevance, coverage, coherence, argumentation), irrelevant paper removal, and incremental loop-back to Discovery for targeted re-search
+- **Refinement Agent**: Iterative review modification through natural language instructions with session version tracking and rollback support
 
-### Model Context Protocol Integration
+### Workflow
 
-**MCP Servers**:
-- Academic database connectors (arXiv, PubMed, Google Scholar)
-- Zotero library integration for reference management
-- PDF processing pipeline with LaTeX support
+Planning → Discovery → Critical Reading → GraphRAG → Synthesis → Self-Review (loop-back if needed) → Session creation with interactive refinement
 
 ## Features
 
-### Current MVP
+### Multi-Source Search
+- Unified search across arXiv, PubMed, and Semantic Scholar with domain-aware filtering
+- Word-boundary keyword matching to prevent false positives
+- Zotero integration for personal library management
+- Unpaywall open-access PDF acquisition
+- Local-first prioritization: SQLite cache → Zotero library → external APIs
 
-- **Multi-source Literature Search**: Query arXiv, PubMed, and Google Scholar simultaneously
-- **Intelligent Deduplication**: Automatically identify and merge duplicate papers from different sources
-- **PDF-to-Markdown Conversion**: Extract text with LaTeX equation support using marker-pdf
-- **Vector-based Semantic Search**: Search within your Zotero library using embeddings
-- **MCP Integration**: Standardized tool interface for academic databases
+### GraphRAG Knowledge Synthesis
+- Automatic entity extraction (methods, datasets, metrics, concepts)
+- Entity linking with deduplication across papers using embeddings
+- NetworkX-based knowledge graphs with Leiden community detection
+- Multi-level summarization: entity → community → global scope
 
-### Planned Features
+### Export & Citations
+- BibTeX export with auto-detected entry types
+- Five citation styles: APA, MLA, IEEE, Chicago, GB/T 7714
+- Multi-format export: Word, PDF, HTML, LaTeX, Markdown
 
-- **Multi-agent Debate Mechanism**: Resolve conflicting claims through structured agent debate
-- **Citation Traceability**: Every claim backed by source PDF evidence with page references
-- **Apple Silicon Optimization**: Local inference acceleration via MLX on M4 chips
-- **Structured Output**: Generate publication-ready literature review sections
+### Quality Assurance
+- 100% citation grounding verification (every citation maps to actual papers)
+- Automated scoring across relevance, coverage, coherence, and argumentation
+- Citation normalization via fuzzy matching
+- Token tracking with per-agent cost breakdown
+
+### Multi-Language Support
+- Direct generation in target languages (not post-translation)
+- CJK-aware word counting
+- Language mismatch detection with automatic correction suggestions
+
+### Caching & Persistence
+- SQLite cache for search results, PDF parses, and GraphRAG data
+- Checkpointing enables resuming interrupted reviews via thread_id
+- Incremental updates reuse cached entities
+- Session management with version tracking and rollback
+
+### PDF Processing
+- High-fidelity PDF-to-Markdown conversion with LaTeX equation preservation
+- Dual backend: pymupdf4llm (fast) or marker-pdf (OCR-capable)
 
 ## Technical Stack
-
-### Core Technologies
 
 | Component | Technology |
 |-----------|------------|
 | Language | Python 3.12+ |
-| Package Management | Mamba |
-| Agent Framework | LangGraph |
-| MCP Implementation | FastMCP 2.0 |
-| Local LLM | Qwen 3 (32B/14B) |
-| Cloud LLM | Claude Opus/Sonnet 4.5 |
-| PDF Processing | marker-pdf |
-| Vector Store | Zotero + embeddings |
+| Agent Orchestration | LangGraph with state management |
+| Async Processing | asyncio with concurrent batching and semaphore control |
+| Cloud LLM | Qwen3-Max (default), DeepSeek Chat, Claude Opus |
+| Knowledge Graph | NetworkX + graspologic (Leiden community detection) |
+| Embeddings | sentence-transformers for entity linking |
+| PDF Processing | pymupdf4llm (default) / marker-pdf (OCR) |
+| Storage | SQLite (caching, checkpointing, GraphRAG) |
+| Interface | CLI with optional MCP server |
 
-### Design Principles
+## Results & Benchmarks
 
-- **Hallucination Minimization**: All claims traceable to source documents
-- **Hybrid Inference**: Local models for routine tasks, cloud models for complex synthesis
-- **Extensible MCP**: Easy addition of new academic database connectors
-- **Privacy-First**: Option for fully local processing of sensitive research
+**24-paper CHO Metabolism Review**:
+- 7,679 words generated in 15 minutes
+- 100% citation grounding (every claim traceable to source)
+- $0.098 total cost
+- Scales to 50-500 papers via tiered review system
+
+**Test Coverage**: 272 tests across 20 test files covering search quality, citation grounding, GraphRAG pipeline, export functionality, Zotero integration, and more
 
 ## Use Cases
 
@@ -87,20 +113,18 @@ Traditional literature reviews are time-consuming and mentally exhausting. Resea
 **Industry R&D**:
 - Technical due diligence on emerging technologies
 - Competitive landscape analysis from academic publications
-- Patent prior art searches
 
 ## Limitations & Future Work
 
 **Current Limitations**:
-- MVP phase with core features still in development
 - Requires API keys for cloud LLM functionality
 - PDF extraction quality varies with document formatting
+- No web UI yet (CLI only)
 
-**Future Directions**:
-- Integration with more academic databases (Semantic Scholar, IEEE)
-- Collaborative features for research teams
-- Export to popular reference managers beyond Zotero
-- Fine-tuned models for specific research domains
+**Planned**:
+- Phase 11: Local LLM support (Ollama/MLX/vLLM)
+- Phase 12: Subscription system and daily digest
+- Phase 13: Web UI (React + FastAPI)
 
 ## GitHub Repository
 
@@ -108,4 +132,4 @@ Traditional literature reviews are time-consuming and mentally exhausting. Resea
 
 ## Timeline
 
-**Status**: MVP Development (January 2025 - Present)
+**Status**: Active Development (January 2026 - Present, 10+ phases completed)

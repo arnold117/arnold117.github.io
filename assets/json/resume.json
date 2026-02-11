@@ -50,17 +50,6 @@
         "Intelligent tunnel multi-parameter monitoring systems",
         "Signal processing, computer vision, and embedded systems development"
       ]
-    },
-    {
-      "name": "SEECEN TECHNOLOGY CO., LTD.",
-      "position": "Front-End Engineer (Intern)",
-      "startDate": "2023-02-01",
-      "endDate": "2023-03-01",
-      "location": "China",
-      "summary": "Front-end web development with focus on cross-browser compatibility.",
-      "highlights": [
-        "Front-end web development and cross-browser compatibility"
-      ]
     }
   ],
   "volunteer": [],
@@ -71,8 +60,8 @@
       "url": "https://www.nus.edu.sg/",
       "area": "Precision Health and Medicine",
       "studyType": "Master of Science",
-      "startDate": "2024-01-01",
-      "endDate": "2025-12-31",
+      "startDate": "2024-01-15",
+      "endDate": "2026-01-31",
       "score": "4.6/5.0",
       "courses": ["AI & Machine Learning", "Applied Statistics", "High-Performance Computing", "Human Genomics", "Proteomics and Metabolomics", "Precision Biomarker", "Precision Diagnosis"]
     },
@@ -365,34 +354,36 @@
   ],
   "projects": [
     {
-      "name": "AI-Driven Light Exposure Classification",
-      "summary": "ML framework for circadian health phenotyping from wearable sensors. MSc Capstone project achieving 88.1% accuracy (AUC 0.938) in distinguishing natural from artificial light.",
+      "name": "LitScribe - Autonomous Academic Literature Synthesis Engine",
+      "summary": "LangGraph multi-agent system with GraphRAG for deep cross-paper literature synthesis. 7-agent architecture producing 24-paper reviews with 100% citation grounding in 15 min at $0.098.",
       "highlights": [
-        "88.1% accuracy (AUC 0.938) for natural vs. artificial light classification",
-        "288-configuration grid search with participant-wise generalization",
-        "Spectral shape prioritization over absolute intensity",
-        "L2 normalization with hour-medoid aggregation",
-        "Reproducible pipeline with fixed seeds and environment hashes",
-        "Transparent negative evidence reporting (PCA, SMOTE-Tomek limitations)"
+        "7-agent architecture: Planning, Discovery, Critical Reading, GraphRAG, Synthesis, Self-Review, Refinement",
+        "GraphRAG knowledge synthesis: entity extraction, Leiden community detection, multi-level summarization",
+        "Benchmark: 24-paper CHO review, 7,679 words, 100% citation grounding, 15 min, $0.098",
+        "Multi-source search: arXiv, PubMed, Semantic Scholar with domain-aware filtering and Zotero integration",
+        "272 tests across 20 files; scales to 50-500 papers via tiered review system",
+        "Multi-format export (Word/PDF/HTML/LaTeX) with 5 citation styles; multi-language generation with CJK support"
       ],
-      "startDate": "2024-08-01",
-      "endDate": "2025-10-01",
-      "url": "https://arnold117.github.io/projects/light-exposure-ml/"
+      "startDate": "2026-01-01",
+      "endDate": "present",
+      "url": "https://arnold117.github.io/projects/litscribe/"
     },
     {
-      "name": "Machine Learning Biomarkers for Suicide Risk Assessment in Depression",
-      "summary": "Course-based research identifying psychiatric biomarkers (NR3C1a, HSPA1B) from RNA-seq with cross-cohort validation and imbalanced learning.",
+      "name": "Multi-Omics Data Integration Framework with Autoencoders and Graph Neural Networks (ONGOING)",
+      "summary": "Open-source framework for multi-omics integration using large-scale dual autoencoders (545M params) and GNN. Handles ultra-high-dimensional data with extreme feature-to-sample ratios. Privacy-preserving collaborative research.",
       "highlights": [
-        "NR3C1a, HSPA1B as top biomarkers for suicide risk in depression",
-        "Cross-cohort validation (primary + 3 external cohorts)",
-        "Imbalanced learning with SMOTE-Tomek",
-        "KEGG pathway enrichment analysis",
-        "4-class to binary mapping for clinical relevance",
-        "Reproducible ML workflow with audit-ready artifacts"
+        "Ultra-high-dimensional integration: 132K genes × 7K metabolites (6,619:1 feature-to-sample ratio)",
+        "Large-scale dual autoencoders: Gene AE (545M params, 132K→64), Metabolite AE (30.8M params, 7K→64)",
+        "Bipartite GNN (79.9K params) for gene-metabolite association refinement",
+        "Extensive regularization: Dropout, early stopping, cross-validation for small-sample regime (n=21)",
+        "Latent space correlation: Spearman + FDR correction for association discovery",
+        "Privacy-preserving: Full biological data anonymization for collaborative research",
+        "Open-source contribution: GitHub repository with framework generalizability",
+        "Biological validation: Known enzyme family associations confirmed"
       ],
-      "startDate": "2024-08-01",
-      "endDate": "2024-12-01",
-      "url": "https://arnold117.github.io/projects/biomarker-depression/"
+      "startDate": "2025-12-01",
+      "endDate": "present",
+      "url": "https://arnold117.github.io/projects/omics-ae-gnn/"
     },
     {
       "name": "Multimodal Depression Detection via Smartphone Sensing (ONGOING)",
@@ -424,36 +415,34 @@
       "url": "https://arnold117.github.io/projects/primekg-rgcn/"
     },
     {
-      "name": "LitScribe - Autonomous Academic Literature Synthesis Engine (ONGOING)",
-      "summary": "Multi-agent system for automated literature review with hybrid local/cloud LLM architecture. MVP in development using LangGraph orchestration and FastMCP 2.0.",
+      "name": "AI-Driven Light Exposure Classification",
+      "summary": "ML framework for circadian health phenotyping from wearable sensors. MSc Capstone project achieving 88.1% accuracy (AUC 0.938) in distinguishing natural from artificial light.",
       "highlights": [
-        "Multi-agent architecture: LangGraph orchestration + FastMCP 2.0 (Model Context Protocol)",
-        "Hybrid models: Qwen 3 (MLX/Apple Silicon local) + Claude Opus/Sonnet (cloud)",
-        "Multi-source search: arXiv, PubMed, Google Scholar, Zotero integration",
-        "Pipeline: Deduplication → PDF-to-Markdown → Vector search → Synthesis",
-        "Planned: Multi-agent debate, hallucination controls, citation traceability",
-        "Target: Responsible AI for literature synthesis with transparent limitations"
+        "88.1% accuracy (AUC 0.938) for natural vs. artificial light classification",
+        "288-configuration grid search with participant-wise generalization",
+        "Spectral shape prioritization over absolute intensity",
+        "L2 normalization with hour-medoid aggregation",
+        "Reproducible pipeline with fixed seeds and environment hashes",
+        "Transparent negative evidence reporting (PCA, SMOTE-Tomek limitations)"
       ],
-      "startDate": "2026-01-01",
-      "endDate": "present",
-      "url": "https://arnold117.github.io/projects/litscribe/"
+      "startDate": "2024-08-01",
+      "endDate": "2025-10-01",
+      "url": "https://arnold117.github.io/projects/light-exposure-ml/"
     },
     {
-      "name": "Multi-Omics Data Integration Framework with Autoencoders and Graph Neural Networks (ONGOING)",
-      "summary": "Open-source framework for multi-omics integration using large-scale dual autoencoders (545M params) and GNN. Handles ultra-high-dimensional data with extreme feature-to-sample ratios. Privacy-preserving collaborative research.",
+      "name": "Machine Learning Biomarkers for Suicide Risk Assessment in Depression",
+      "summary": "Course-based research identifying psychiatric biomarkers (NR3C1a, HSPA1B) from RNA-seq with cross-cohort validation and imbalanced learning.",
       "highlights": [
-        "Ultra-high-dimensional integration: 132K genes × 7K metabolites (6,619:1 feature-to-sample ratio)",
-        "Large-scale dual autoencoders: Gene AE (545M params, 132K→64), Metabolite AE (30.8M params, 7K→64)",
-        "Bipartite GNN (79.9K params) for gene-metabolite association refinement",
-        "Extensive regularization: Dropout, early stopping, cross-validation for small-sample regime (n=21)",
-        "Latent space correlation: Spearman + FDR correction for association discovery",
-        "Privacy-preserving: Full biological data anonymization for collaborative research",
-        "Open-source contribution: GitHub repository with framework generalizability",
-        "Biological validation: Known enzyme family associations confirmed"
+        "NR3C1a, HSPA1B as top biomarkers for suicide risk in depression",
+        "Cross-cohort validation (primary + 3 external cohorts)",
+        "Imbalanced learning with SMOTE-Tomek",
+        "KEGG pathway enrichment analysis",
+        "4-class to binary mapping for clinical relevance",
+        "Reproducible ML workflow with audit-ready artifacts"
       ],
-      "startDate": "2025-12-01",
-      "endDate": "present",
-      "url": "https://arnold117.github.io/projects/omics-ae-gnn/"
+      "startDate": "2024-08-01",
+      "endDate": "2024-12-01",
+      "url": "https://arnold117.github.io/projects/biomarker-depression/"
     },
     {
       "name": "Wearable Optical Sweat Analytics",
