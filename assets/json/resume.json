@@ -369,17 +369,15 @@
       "url": "https://arnold117.github.io/projects/litscribe/"
     },
     {
-      "name": "Multi-Omics Data Integration Framework with Autoencoders and Graph Neural Networks (ONGOING)",
-      "summary": "Open-source framework for multi-omics integration using large-scale dual autoencoders (545M params) and GNN. Handles ultra-high-dimensional data with extreme feature-to-sample ratios. Privacy-preserving collaborative research.",
+      "name": "Multi-Omics Integration with Autoencoders and Graph Neural Networks (ONGOING)",
+      "summary": "Multi-evidence framework for biosynthetic pathway gene discovery. Triangulates AE feature importance, GAT validation, and sequence homology into unified gene ranking across 132K genes × 7K metabolites.",
       "highlights": [
-        "Ultra-high-dimensional integration: 132K genes × 7K metabolites (6,619:1 feature-to-sample ratio)",
-        "Large-scale dual autoencoders: Gene AE (545M params, 132K→64), Metabolite AE (30.8M params, 7K→64)",
-        "Bipartite GNN (79.9K params) for gene-metabolite association refinement",
-        "Extensive regularization: Dropout, early stopping, cross-validation for small-sample regime (n=21)",
-        "Latent space correlation: Spearman + FDR correction for association discovery",
-        "Privacy-preserving: Full biological data anonymization for collaborative research",
-        "Open-source contribution: GitHub repository with framework generalizability",
-        "Biological validation: Known enzyme family associations confirmed"
+        "5-stage pipeline: Data Prep → AE Training → Visualization → Feature Importance → Multi-Evidence Ranking",
+        "Dual autoencoders: Gene AE (545M params, 132K→64) + Metabolite AE (30.8M params, 7K→64)",
+        "GAT validates biological signal: classification accuracy confirms AE importance scores are meaningful",
+        "Multi-evidence ranking: 0.4 correlation + 0.3 AE importance + 0.2 GNN importance + 0.1 BLAST bonus",
+        "Gene family batch processing with BLAST/HMM integration and configurable YAML weights",
+        "Hardware abstraction: MPS (Apple Silicon) / CUDA / CPU with checkpoint system"
       ],
       "startDate": "2025-12-01",
       "endDate": "present",
