@@ -159,7 +159,7 @@
       "level": "Advanced",
       "icon": "fa-solid fa-shield-halved",
       "keywords": [
-        "Data leakage detection & correction (PHQ-9 label contamination)",
+        "Label leakage detection & correction in behavioral ML datasets",
         "Ground truth validation & label quality assessment",
         "Transparent limitation reporting (clinical readiness)",
         "Negative evidence documentation (PCA, SMOTE failures)",
@@ -204,7 +204,7 @@
       "level": "Intermediate",
       "icon": "fa-solid fa-robot",
       "keywords": [
-        "LangGraph orchestration & state management",
+        "LangGraph & DeepAgents orchestration, state management",
         "FastMCP 2.0 (Model Context Protocol)",
         "Multi-agent architectures & agent debate",
         "Hybrid local/cloud LLM: Qwen 3 (MLX) + Claude",
@@ -340,6 +340,10 @@
         "reference": "NUS course supervisor. Supervised RNA-seq biomarker discovery for psychiatric applications."
     },
     {
+        "name": "Asst Prof Cyrus Ho Su Hui",
+        "reference": "NUS Department of Psychological Medicine (Yong Loo Lin School of Medicine); Assistant Dean (Student Life and Wellbeing), NUS Graduate School; Senior Consultant Psychiatrist at NUH; Clarivate Highly Cited Researcher (2021-2023). Supervising the three-study head-to-head comparison of passive sensing vs. personality questionnaires for mental health prediction (manuscript under review at IEEE JBHI)."
+    },
+    {
         "name": "A/Prof Shi Huanhuan",
         "reference": "Undergraduate research supervisor. Co-authored Talanta Q1 paper on sweat analytics; supervised National Innovation Project."
     },
@@ -354,15 +358,15 @@
   ],
   "projects": [
     {
-      "name": "LitScribe - Autonomous Academic Literature Synthesis Engine",
-      "summary": "LangGraph multi-agent system with GraphRAG for deep cross-paper literature synthesis. 7-agent architecture producing 24-paper reviews with 100% citation grounding in 15 min at $0.098.",
+      "name": "LitScribe - AI Literature Review with Citation Grounding & Contradiction Detection",
+      "summary": "DeepAgents supervisor + 11-step deterministic pipeline producing verified, contradiction-aware literature reviews in ~2 minutes. Citation grounding 83-100%; arXiv preprint drafted.",
       "highlights": [
-        "7-agent architecture: Planning, Discovery, Critical Reading, GraphRAG, Synthesis, Self-Review, Refinement",
-        "GraphRAG knowledge synthesis: entity extraction, Leiden community detection, multi-level summarization",
-        "Benchmark: 24-paper CHO review, 7,679 words, 100% citation grounding, 15 min, $0.098",
-        "Multi-source search: arXiv, PubMed, Semantic Scholar with domain-aware filtering and Zotero integration",
-        "272 tests across 20 files; scales to 50-500 papers via tiered review system",
-        "Multi-format export (Word/PDF/HTML/LaTeX) with 5 citation styles; multi-language generation with CJK support"
+        "DeepAgents supervisor (7 tools) routing natural-language requests to an 11-step deterministic pipeline",
+        "Three novel contributions: contradiction-aware synthesis, metacognitive quality loop, search-augmented refinement",
+        "Multi-agent debate (reviewer ↔ synthesizer, 2 rounds) plus per-claim citation grounding against source PDFs",
+        "6-database parallel search (OpenAlex, Semantic Scholar, CrossRef, Europe PMC, PubMed, arXiv) + Unpaywall OA enrichment",
+        "Benchmark across 5 domains: scores 0.55-0.82, 83-100% grounding, ~2 min/review",
+        "CLI (12 commands), FastAPI Web UI with 16 SSE-streaming endpoints, cross-lingual (EN/ZH), local paper modes (draft/outline/augment)"
       ],
       "startDate": "2026-01-01",
       "endDate": "present",
@@ -384,19 +388,20 @@
       "url": "https://arnold117.github.io/projects/omics-ae-gnn/"
     },
     {
-      "name": "Multimodal Depression Detection via Smartphone Sensing (ONGOING)",
-      "summary": "Ongoing ML research for depression biomarker discovery from passive smartphone sensing. Core baseline completed; currently adding new features and models.",
+      "name": "Passive Sensing vs. Personality Questionnaires for Mental Health Prediction (UNDER REVIEW)",
+      "summary": "Three-study head-to-head comparison (N=1,559, 3 universities, 15 outcomes) showing personality questionnaires win 14/15 outcomes vs. weeks of continuous passive sensing. Manuscript under review at IEEE JBHI.",
       "highlights": [
-        "Core finding: Classical ML (Logistic Regression) outperformed deep learning (76.2% AUC-ROC)",
-        "Critical data quality work: Detected and corrected PHQ-9 label contamination",
-        "7 models compared: Logistic Regression, Random Forest, XGBoost, VAE, GNN, Contrastive Learning, Transformer",
-        "50 behavioral features across GPS, app usage, communication, physical activity",
-        "Top biomarker: app usage diversity variability (behavioral activation/anhedonia proxy)",
-        "Responsible AI: Transparent limitation reporting (NOT clinically ready)"
+        "3 datasets unified: StudentLife (Dartmouth, N=28), NetHealth (Notre Dame, N=722), GLOBEM (UW, N=809)",
+        "Headline result: 2 BFI items (10 sec) outperform 28 sensing features (weeks); personality R²=0.126 vs. sensing R²=-0.153",
+        "Deep learning baselines confirm signal-not-model: 1D-CNN R²=-0.03 to -0.10; MOMENT foundation model R²=-1.0 to -1.7",
+        "Reframed sensing as idiographic (17% of individuals R²>0.3) not nomothetic; 8 conditions where sensing adds value identified",
+        "44 robustness analyses (FDR-corrected): reliability ICC=0.73-0.98, dose-response, prospective change, residualized prediction, cross-study transfer",
+        "Manuscript submitted to IEEE Journal of Biomedical and Health Informatics (JBHI); currently under review",
+        "Supervisor: Asst Prof Cyrus Ho Su Hui (NUS Dept of Psychological Medicine; NUH Senior Consultant Psychiatrist)"
       ],
       "startDate": "2025-11-01",
       "endDate": "present",
-      "url": "https://arnold117.github.io/projects/multimodal-depression-detection/"
+      "url": "https://arnold117.github.io/projects/sensing-vs-questionnaires-analysis/"
     },
     {
       "name": "PrimeKG GNN Drug-Disease Link Prediction",
