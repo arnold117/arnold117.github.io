@@ -41,7 +41,8 @@ I am actively seeking **PhD opportunities** to advance AI-driven innovations in 
 ## Key Technical Skills
 
 - **AI/ML**: PyTorch • PyTorch Geometric • scikit-learn • GNN (GAT, RGCN, GIN) • CNN (U-Net) • VAE • Transformers
-- **AI Agents**: LangGraph • GraphRAG • sentence-transformers • asyncio • Qwen/Claude/DeepSeek
+- **AI Agents**: LangGraph • GraphRAG • FastMCP (Model Context Protocol) • sentence-transformers • asyncio • Qwen/Claude/DeepSeek
+- **Trustworthy AI**: Cheat-free LLM evaluation design • Lens-diverse LLM-as-judge QC • Multi-stage pipeline auditing
 - **Bioinformatics**: RNA-seq • Knowledge Graphs (PrimeKG) • Multi-Omics Integration • KEGG Enrichment
 - **Signal Processing**: Wearable Sensors • ECG/EEG • Multi-sensor Fusion • Real-time Processing
 - **Reproducibility**: Git • Docker • YAML Config Pipelines • HPC • Audit-ready Workflows

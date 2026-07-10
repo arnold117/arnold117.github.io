@@ -25,6 +25,30 @@
   },
   "work": [
     {
+      "name": "Hangzhou Tigermed Consulting Co., Ltd. (AI Clinical Research Business Unit - Algorithm Department)",
+      "position": "Algorithm Engineer",
+      "startDate": "2026-03-01",
+      "endDate": "present",
+      "summary": "Sole engineer building an LLM-based regulatory document comparison system from scratch, focused on cheat-free evaluation design and multi-agent quality control for high-stakes document generation.",
+      "highlights": [
+        "Diagnosed evaluation leakage in an LLM document-comparison system (97.2% reported vs ~17% true accuracy) and built a cheat-free k-vote semantic judgment primitive to fix it",
+        "Found that an 81% downstream comparison-accuracy metric was masking a 17% upstream extraction-accuracy problem in a multi-stage LLM pipeline; redesigned the audit process to check pipeline stages in causal order",
+        "Redesigned LLM-as-judge redundancy around lens diversity (one evaluator per rubric dimension) instead of repeated runs of a single evaluator, to catch blind spots a generalist judge would miss"
+      ]
+    },
+    {
+      "name": "Department of Psychological Medicine, Yong Loo Lin School of Medicine, National University of Singapore",
+      "position": "Research Assistant (Part-time)",
+      "startDate": "2026-01-01",
+      "endDate": "present",
+      "summary": "Part-time research assistant alongside a full-time algorithm engineer role, supporting mental-health digital phenotyping research.",
+      "highlights": [
+        "Owned the end-to-end data analysis for a three-institution comparative study (N=1,559) on passive sensing vs. personality questionnaires for mental-health prediction; first-author manuscript under review at IEEE JBHI",
+        "Built and maintained a large-scale public data-acquisition pipeline (10M+ records) for an active, IRB-approved mental-health research program",
+        "Supervisor: Asst Prof Cyrus Su Hui Ho (NUS Dept of Psychological Medicine; NUH Senior Consultant Psychiatrist)"
+      ]
+    },
+    {
       "name": "TUM-CREATE (NRF Singapore research centre, collaborating with TUM, NUS and NTU)",
       "position": "Research Assistant",
       "startDate": "2024-08-01",
@@ -201,18 +225,22 @@
     },
     {
       "name": "LLM & Multi-Agent Systems",
-      "level": "Intermediate",
+      "level": "Advanced",
       "icon": "fa-solid fa-robot",
       "keywords": [
         "LangGraph & DeepAgents orchestration, state management",
         "FastMCP 2.0 (Model Context Protocol)",
         "Multi-agent architectures & agent debate",
-        "Hybrid local/cloud LLM: Qwen 3 (MLX) + Claude",
+        "Cheat-free LLM evaluation design (k-vote semantic judgment)",
+        "Multi-stage pipeline error-propagation auditing",
+        "Lens-diverse LLM-as-judge QC architecture design",
+        "Hybrid local/cloud LLM: Qwen 3 (MLX), DeepSeek, Claude",
         "Apple Silicon MLX optimization",
         "Prompt engineering & chain-of-thought",
         "Hallucination mitigation & citation traceability",
         "RAG (Retrieval-Augmented Generation) pipelines",
-        "Vector search integration (semantic retrieval)"
+        "Vector search integration (semantic retrieval)",
+        "Open-source: maintainer, TayaIntelligence/skills; contributor, qiushi-skill (3,300+ stars)"
       ]
     },
     {
@@ -257,6 +285,18 @@
     }
   ],
   "interests": [
+    {
+      "name": "Trustworthy AI & LLM Evaluation",
+      "icon": "fa-solid fa-robot",
+      "keywords": [
+        "Cheat-free evaluation design",
+        "LLM-as-judge architectures",
+        "Multi-agent QC systems",
+        "Regulatory document AI",
+        "Hallucination & faithfulness auditing",
+        "Pipeline error-propagation analysis"
+      ]
+    },
     {
       "name": "AI for Health (AI4Health)",
       "icon": "fa-solid fa-heartbeat",

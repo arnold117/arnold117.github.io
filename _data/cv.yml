@@ -17,10 +17,10 @@
   contents:
     - title: Master of Science in Precision Health and Medicine
       institution: National University of Singapore (NUS)
-      year: 2024 - Present
+      year: 2024 - 2026
       description:
         - Yong Loo Lin School of Medicine
-        - GPA; 4.5/5.0
+        - GPA; 4.6/5.0
         - Scholarship; PRECISE Scholarship
         - title: Core Modules
           contents:
@@ -55,6 +55,23 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Algorithm Engineer
+      institution: Hangzhou Tigermed Consulting Co., Ltd. (AI Clinical Research Business Unit - Algorithm Department)
+      year: 2026 - Present
+      description:
+        - Sole engineer building an LLM-based regulatory document comparison system from scratch
+        - Diagnosed evaluation leakage in an LLM document-comparison system (97.2% reported vs ~17% true accuracy) and built a cheat-free k-vote semantic judgment primitive to fix it
+        - Found that an 81% downstream comparison-accuracy metric was masking a 17% upstream extraction-accuracy problem in a multi-stage LLM pipeline; redesigned the audit process to check pipeline stages in causal order
+        - Redesigned LLM-as-judge redundancy around lens diversity (one evaluator per rubric dimension) instead of repeated runs of a single evaluator
+
+    - title: Research Assistant (Part-time)
+      institution: Department of Psychological Medicine, Yong Loo Lin School of Medicine, National University of Singapore
+      year: 2026 - Present
+      description:
+        - Supervisor; Asst Prof. Cyrus Su Hui Ho (NUS Dept of Psychological Medicine; NUH Senior Consultant Psychiatrist)
+        - Owned the end-to-end data analysis for a three-institution comparative study (N=1,559) on passive sensing vs. personality questionnaires for mental-health prediction; first-author manuscript under review at IEEE JBHI
+        - Built and maintained a large-scale public data-acquisition pipeline (10M+ records) for an active, IRB-approved mental-health research program
+
     - title: Research Assistant
       institution: TUM-CREATE (NRF Singapore research centre, collaborating with TUM, NUS and NTU)
       year: 2024 - 2025
@@ -74,6 +91,43 @@
         - U-Net segmentation for dermatology imaging
         - Intelligent tunnel multi-parameter monitoring systems
         - Signal processing, computer vision, and embedded systems development
+
+- title: Skills
+  type: nested_list
+  contents:
+    - title: Machine Learning & Data Science
+      items:
+        - Python (pandas, scikit-learn, PyTorch, PyTorch Geometric), R, MATLAB
+        - "Classical ML: SVM, XGBoost, Logistic Regression, Random Forest"
+        - "Deep Learning: CNN (U-Net), Large-scale Autoencoders (545M params), GNN (RGCN, bipartite), VAE, Transformers"
+        - Knowledge graphs, drug-disease link prediction
+        - Participant-wise 5-fold CV, stratified CV, Bayesian optimization
+        - "Evaluation: ROC-AUC, Hits@K, MRR, F1, precision/recall"
+    - title: Bioinformatics & Omics
+      items:
+        - Multi-omics integration (transcriptomics + metabolomics, 132K genes × 7K metabolites)
+        - Dual autoencoder architectures (545M + 30.8M parameters)
+        - RNA-seq analysis (GEO cohorts), KEGG pathway enrichment
+        - Biomedical knowledge graphs (PrimeKG), drug repurposing analysis
+    - title: LLM & Multi-Agent Systems
+      items:
+        - LangGraph & DeepAgents orchestration, FastMCP 2.0 (Model Context Protocol)
+        - "Cheat-free LLM evaluation design (k-vote semantic judgment)"
+        - Multi-stage pipeline error-propagation auditing
+        - Lens-diverse LLM-as-judge QC architecture design
+        - RAG pipelines, citation traceability, hallucination mitigation
+        - "Open-source: maintainer, TayaIntelligence/skills; contributor, qiushi-skill (3,300+ stars)"
+    - title: Signal Processing & Embedded Systems
+      items:
+        - Wavelet/FFT filtering for ECG/EEG signals, real-time processing (<50ms latency)
+        - STM32 microcontrollers and embedded firmware
+        - U-Net segmentation for medical images
+        - Android development (Kotlin) for health apps
+    - title: Reproducibility & Tooling
+      items:
+        - Git, Jupyter notebooks, Docker
+        - Config-driven, seeded, audit-ready experiment pipelines
+        - HPC and Nextflow workflows
 
 - title: Open Source Projects
   type: time_table
@@ -105,16 +159,17 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Trustworthy AI & LLM Evaluation
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Cheat-free evaluation design and LLM-as-judge architectures for high-stakes domains
+        - Multi-agent QC systems and hallucination/faithfulness auditing for regulatory and medical document AI
+    - title: Digital Phenotyping & Precision Medicine
       items:
-        - Description 1.
-        - Description 2.
+        - Wearable and mobile sensing for circadian health and mental-health prediction
+        - Multi-omics integration and biomarker discovery for precision diagnosis
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Reading (deep re-reads of technical and non-fiction books), Cycling, Swimming, Shooting
+    - <u>Music:</u> Classical, Jazz
