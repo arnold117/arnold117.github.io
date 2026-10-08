@@ -88,7 +88,6 @@
       description:
         - Wearable optical sweat analytics with microfluidics and colourimetry
         - ECG & EEG real-time signal detection systems
-        - U-Net segmentation for dermatology imaging
         - Intelligent tunnel multi-parameter monitoring systems
         - Signal processing, computer vision, and embedded systems development
 
@@ -100,7 +99,7 @@
         - Python (pandas, scikit-learn, PyTorch, PyTorch Geometric), R, MATLAB
         - "Classical ML: SVM, XGBoost, Logistic Regression, Random Forest"
         - "Deep Learning: CNN (U-Net), Large-scale Autoencoders (545M params), GNN (RGCN, bipartite), VAE, Transformers"
-        - Knowledge graphs, drug-disease link prediction
+        - Knowledge graphs, drug–target link prediction
         - Participant-wise 5-fold CV, stratified CV, Bayesian optimization
         - "Evaluation: ROC-AUC, Hits@K, MRR, F1, precision/recall"
     - title: Bioinformatics & Omics
@@ -108,7 +107,7 @@
         - Multi-omics integration (transcriptomics + metabolomics, 132K genes × 7K metabolites)
         - Dual autoencoder architectures (545M + 30.8M parameters)
         - RNA-seq analysis (GEO cohorts), KEGG pathway enrichment
-        - Biomedical knowledge graphs (PrimeKG), drug repurposing analysis
+        - Biomedical knowledge graphs (PrimeKG)
     - title: LLM & Multi-Agent Systems
       items:
         - LangGraph & DeepAgents orchestration, FastMCP 2.0 (Model Context Protocol)
@@ -121,7 +120,6 @@
       items:
         - Wavelet/FFT filtering for ECG/EEG signals, real-time processing (<50ms latency)
         - STM32 microcontrollers and embedded firmware
-        - U-Net segmentation for medical images
         - Android development (Kotlin) for health apps
     - title: Reproducibility & Tooling
       items:

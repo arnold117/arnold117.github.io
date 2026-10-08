@@ -28,13 +28,13 @@ I am actively seeking **PhD opportunities** to advance AI-driven innovations in 
 - **AI for Health (AI4Health)**: Applying machine learning to healthcare challenges, from digital phenotyping to drug discovery and precision medicine.
 - **Digital Phenotyping & Wearable Sensing**: ML models for continuous health monitoring, circadian rhythm analysis, and behavioral pattern recognition from wearable and smartphone sensors.
 - **Bioinformatics & Multi-Omics**: Multi-evidence integration of transcriptomics and metabolomics for biosynthetic pathway gene discovery; RNA-seq biomarker identification.
-- **AI-Driven Drug Discovery (AIDD)**: Multi-architecture GNN benchmarking for drug-disease link prediction and repurposing using biomedical knowledge graphs.
+- **AI-Driven Drug Discovery (AIDD)**: Multi-architecture GNN benchmarking for drug–target link prediction on biomedical knowledge graphs.
 - **Biomedical Signal Processing**: Real-time physiological signal analysis (ECG, EEG) with embedded systems and sensor fusion.
 
 ## Current Work
 
 - **LitScribe - Academic Synthesis Engine** (2026-present): 7-agent LangGraph system with GraphRAG for autonomous literature review. Produces 24-paper reviews with 100% citation grounding in 15 min at $0.098. 272 tests, multi-language support, 5 citation styles.
-- **PrimeKG GNN Drug Discovery** (2025-present): 6-architecture GNN benchmark (GAT, RGCN, GIN, GraphSAGE, GCN, MLP) on PrimeKG. V2.0 with data leakage fix (71.5%→0%), GAT best at 0.9866 AUC-ROC under strict hard-negative evaluation.
+- **PrimeKG GNN Drug Discovery** (2025-present): drug–target link prediction benchmark of five GNNs (GAT, RGCN, GIN, GraphSAGE, GCN) and an MLP baseline on PrimeKG. V2.0 fixed split-level leakage (71.5%→0%), GAT best at 0.9866 AUC-ROC under strict hard-negative evaluation.
 - **Multi-Omics AE-GNN** (2025-present): 5-stage pipeline for biosynthetic pathway gene discovery. Dual autoencoders (545M params) + GAT with multi-evidence ranking across 132K genes × 7K metabolites.
 - **Multimodal Depression Detection** (2025): Behavioral biomarker discovery from smartphone sensors (GPS, app usage, communication, activity). 76.2% AUC-ROC identifying digital phenotypes for mental health.
 

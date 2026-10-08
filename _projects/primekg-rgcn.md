@@ -1,7 +1,7 @@
 ---
 layout: page
-title: PrimeKG GNN Drug-Disease Link Prediction
-description: Multi-architecture GNN benchmark for computational drug repurposing on biomedical knowledge graphs
+title: PrimeKG GNN Drug–Target Link Prediction
+description: Multi-architecture GNN benchmark for drug–target (drug–gene) link prediction on a biomedical knowledge graph
 # img: assets/img/primekg.jpg
 importance: 3
 category: ai-health
@@ -11,20 +11,20 @@ toc:
 
 ## Overview
 
-Comprehensive biomedical link prediction framework comparing 6 GNN architectures (RGCN, GCN, GAT, GraphSAGE, GIN, MLP) on the PrimeKG knowledge graph for predicting drug-disease therapeutic indications. Version 2.0 features a critical data leakage fix (71.5% → 0% leakage) with undirected-edge-aware splitting and hard negative evaluation. Best model (GAT) achieves 0.9866 AUC-ROC under strict evaluation.
+Comprehensive biomedical link prediction framework comparing five GNN architectures (RGCN, GCN, GAT, GraphSAGE, GIN) and an MLP baseline on a PrimeKG subgraph for predicting drug–target (drug–gene) links. Version 2.0 features a critical data leakage fix (71.5% → 0% leakage) with undirected-edge-aware splitting and hard negative evaluation. Best model (GAT) achieves 0.9866 AUC-ROC under strict evaluation.
 
-**Key Finding**: Attention mechanisms (GAT) outperform explicit relation-type modeling (RGCN) for drug-disease link prediction.
+**Key Finding**: Attention mechanisms (GAT) outperform explicit relation-type modeling (RGCN) for drug–target link prediction.
 
 ## Problem Statement
 
-Drug discovery is time-consuming and expensive. Knowledge graph-based link prediction can identify novel drug-disease associations by analyzing multi-hop relationships between drugs, diseases, genes, and proteins, accelerating drug repurposing and precision medicine.
+Drug discovery is time-consuming and expensive. Knowledge graph-based link prediction can identify candidate drug–target associations by analyzing multi-hop relationships between drugs, diseases, genes, and proteins, accelerating drug repurposing and precision medicine.
 
 ## Methodology
 
 ### PrimeKG Knowledge Graph
 - **Source**: 4.5M relationships from 20+ biomedical databases (DrugBank, OMIM, UniProt, Reactome)
 - **Processed Graph**: 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes/proteins)
-- **Edges**: 849,456 across 3 relation types (drug-gene, gene-gene, gene-disease)
+- **Edges**: 854,278 across 3 relation types (drug-gene, gene-gene, gene-disease)
 - **Split**: 70% train (838,882) / 15% val (7,688) / 15% test (7,708)
 
 ### Model Architectures
@@ -38,7 +38,7 @@ Drug discovery is time-consuming and expensive. Knowledge graph-based link predi
 **Shared Configuration**: 128-dim hidden, 64-dim embeddings, DistMult decoder, dropout 0.5, 50 epochs, batch size 2048
 
 ### Data Integrity
-- **Version 2.0**: Undirected-edge-aware splitting eliminates data leakage (71.5% → 0%)
+- **Version 2.0**: Undirected-edge-aware splitting removes split-level leakage (71.5% of test edges had their reverse in training → 0%)
 - **Hard Negative Sampling**: 50 negatives per positive for strict evaluation
 
 ## Results
@@ -62,10 +62,10 @@ Drug discovery is time-consuming and expensive. Knowledge graph-based link predi
 ## Advanced Analyses
 
 - **Path-based explanations** with NLP-generated summaries for interpretability
-- **Disease-specific case studies** with drug repurposing predictions
+- **Exploratory disease case studies** ranking drugs by embedding similarity (not a trained drug–disease predictor)
 - **Embedding visualization** (t-SNE/UMAP) with clustering analysis
 - **Error pattern analysis** and failure mode characterization
-- **Biological plausibility validation** with evidence gathering
+- **Graph-based plausibility heuristics** (exploratory)
 - **Baseline comparisons** (random, degree-based, TransE)
 - **Confidence calibration** and performance breakdowns by node type
 
@@ -99,7 +99,7 @@ src/
 
 ## Applications
 
-- Drug repurposing for new therapeutic indications
+- Drug–target prioritisation as an input to downstream repurposing studies
 - Disease mechanism identification via multi-hop reasoning
 - Drug-target interaction prediction
 - Experimental candidate prioritization
