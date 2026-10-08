@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Android Sleep Quality Monitoring System
-description: BEng thesis, 80% accurate sleep quality monitoring using phone sensors with volunteer validation
+description: BEng thesis — sleep quality monitoring with built-in phone sensors, reaching about 80% of commercial-wearable monitoring level in a 20-volunteer study
 # img: assets/img/sleep-monitoring.jpg
 importance: 6
 category: signal-processing
@@ -21,7 +21,7 @@ Poor sleep quality affects cognitive function, increases chronic disease risk (d
 
 ### Sensor-Based Monitoring
 - **Accelerometer**: Body movement tracking for sleep vs. awake detection, posture analysis
-- **Light Sensor**: Environment adequacy assessment (target <10 lux), disruption monitoring
+- **Light Sensor**: Environment adequacy assessment (threshold 5 lux), disruption monitoring
 - **Microphone**: Noise level detection (target <32 dB), snoring identification, respiratory pattern analysis
 
 ### Sleep Quality Metrics
@@ -70,7 +70,7 @@ Poor sleep quality affects cognitive function, increases chronic disease risk (d
 - <5% battery drain per night, on-device privacy
 
 ### Technical Stack
-Kotlin, Android (multi-threading, background services), sensor fusion algorithms
+Kotlin, Android (multi-threading, background services), threshold-based movement / snoring detection
 
 ## Team & Collaboration
 

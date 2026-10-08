@@ -14,7 +14,7 @@ toc:
 
 Computational framework for identifying biosynthetic pathway genes by integrating transcriptomic and metabolomic data through deep learning. The system triangulates three independent evidence sources—statistical correlation, autoencoder feature importance, and sequence homology—into a unified multi-evidence ranking to reduce false positives in candidate gene discovery.
 
-**Key Innovation**: GNN classification accuracy validates that autoencoder-derived importance scores reflect genuine biological signal rather than noise.
+**Key Idea**: combine several kinds of evidence — correlation, autoencoder importance, graph-attention importance and gene-family evidence — into one candidate ranking, rather than relying on a single method.
 
 ## Problem Statement
 
@@ -59,14 +59,12 @@ Produces ranked gene lists with supporting documentation per gene family.
 ### Dual Autoencoder Architecture
 
 **Gene Autoencoder (545M parameters)**:
-- Encoder: 132,129 → 8,192 → 1,024 → 128 → 64
-- Decoder: 64 → 128 → 1,024 → 8,192 → 132,129
-- Regularization: Dropout (0.3), Early Stopping (patience=10), 5-fold CV
+- Encoder: ~132K → 2,048 → 512 → 128 → 64 (symmetric decoder)
+- Regularization: latent L2 penalty, early stopping (patience 15) on a single 80/20 split
 
 **Metabolite Autoencoder (30.8M parameters)**:
-- Encoder: 6,980 → 1,024 → 256 → 64
-- Decoder: 64 → 256 → 1,024 → 6,980
-- Regularization: Dropout (0.3), Early Stopping (patience=10), 5-fold CV
+- Encoder: ~7K → 2,048 → 512 → 128 → 64 (symmetric decoder)
+- Regularization: latent L2 penalty, early stopping (patience 15) on a single 80/20 split
 
 ### Graph Attention Network
 - Operates on concatenated 128-dim latent vectors (64 gene + 64 metabolite)
@@ -92,13 +90,12 @@ Produces ranked gene lists with supporting documentation per gene family.
 ### Model Performance
 - Gene AE captures major transcriptomic variation despite 6,619:1 feature-to-sample ratio
 - Metabolite AE successfully compresses metabolomic profiles into meaningful latent space
-- GAT classification validates biological signal in learned representations
+- Sample-level GAT uses the latents for auxiliary tissue / origin classification
 
 ### Key Findings
 1. **Large-scale autoencoders** handle extreme feature-to-sample ratios (6,619:1) through extensive regularization
 2. **Multi-evidence triangulation** reduces false positives compared to single-method approaches
-3. **GNN validation** confirms that learned representations capture genuine biological structure
-4. **Rank-based fusion** fairly combines heterogeneous evidence types
+3. **Rank-based fusion** fairly combines heterogeneous evidence types
 
 ## Technical Stack
 
@@ -109,7 +106,7 @@ Produces ranked gene lists with supporting documentation per gene family.
 | Graph Networks | Graph Attention Network (GAT) |
 | Hardware | MPS (Apple Silicon) / CUDA / CPU |
 | Configuration | YAML-based pipeline management |
-| Analysis | scikit-learn, scipy.stats (Spearman + FDR) |
+| Analysis | scikit-learn, scipy.stats (Pearson correlation) |
 | Visualization | t-SNE, UMAP, PCA (publication-quality) |
 
 ## Privacy & Ethics

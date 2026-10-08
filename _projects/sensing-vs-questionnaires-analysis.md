@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Can Passive Sensing Replace Questionnaires for Mental Health Prediction?
-description: Three-study head-to-head comparison (N=1,559) of personality questionnaires vs. continuous passive smartphone/wearable sensing across 15 mental health and academic outcomes
+description: Three-study head-to-head comparison (N=1,559) of personality questionnaires vs. continuous passive smartphone/wearable sensing across 15 study–outcome combinations (mental health and academic)
 # img: assets/img/sensing-vs-questionnaires.jpg
 importance: 2
 category: ai-health
@@ -30,14 +30,14 @@ Despite a decade of investment in passive sensing for mental health, the field's
 | **MH outcomes** | PHQ-9, PSS, Loneliness, Flourishing, PANAS | CES-D, STAI, BAI | BDI-II, STAI, PSS-10, CESD, UCLA |
 | **Academic** | GPA | GPA | — |
 
-Together: 3 universities, 3 time periods (2013–2021), 15 outcomes, 4 ML algorithms plus deep learning, and 41 robustness analyses.
+Together: 3 universities, 3 time periods (2013–2021), 15 study–outcome combinations, 4 ML algorithms plus deep learning, and 44 robustness analyses.
 
 ## Key Results
 
 ### Questionnaires dominate at the population level
 
-- Personality wins **14/15 outcome comparisons (93%)**, mean R² = 0.126 vs. sensing mean R² = −0.153
-- **Two BFI items** (10 seconds, R² = 0.36 for CES-D) outperform **28 sensing features** collected over weeks (R² = −0.16)
+- Personality wins **all 11 primary comparisons (14/15 including the exploratory 28-person sample)**, mean R² = 0.126 vs. sensing mean R² = −0.153
+- **Two BFI items** (10 seconds, R² = 0.36 for CES-D) outperform **28 sensing features** collected over weeks (R² = −0.12) — a ceiling of construct proximity, not a screening protocol
 - **Neuroticism** ranks #1 SHAP feature in **28/28** mental health models across all three studies
 - **Conscientiousness** ranks #1 for GPA in **8/8** models
 - Deep learning cannot rescue sensing: 1D-CNN R² = −0.03 to −0.10; MOMENT foundation-model embeddings R² = −1.0 to −1.7
@@ -63,7 +63,7 @@ Within-person centered R² ≈ 0 across 3,149 person-weeks of weekly PHQ-4 and E
 ### Pipeline
 - **Feature extraction** across 13 modalities for Study 1 (87 features); Fitbit + communication for Study 2 (28); Fitbit + phone + GPS for Study 3 (19 curated + 2,597 RAPIDS)
 - **4 ML algorithms** in parallel: Elastic Net, Ridge, Random Forest, SVR; plus MLP with Optuna, 1D-CNN, MOMENT foundation model, and stacking ensembles
-- **5-fold cross-validation** with nested CV for hyperparameter tuning; FDR correction across all tests
+- **5-fold cross-validation** with nested CV for hyperparameter tuning; Benjamini–Hochberg FDR on incremental-validity and AUC tests
 - **SHAP analysis** for cross-model feature importance; LPA, mediation, and PLS-SEM for Study 1 supplementary
 
 ### Robustness
@@ -98,7 +98,7 @@ Five-layer script organization: shared utilities → data preparation → core a
 - All three datasets are college-age cohorts; generalization to clinical or older populations is untested
 - "Personality wins" reflects between-person prediction at the population level; idiographic deployment remains an open opportunity
 - Sensing modalities are heterogeneous across studies (different devices, sampling rates, derived features)
-- 28-person Study 1 result for PHQ-9 (sensing R² = 0.468) does not replicate at scale — small-N overfitting cautionary tale
+- 27-person Study 1 result for PHQ-9 (sensing R² = 0.20) does not replicate at scale — small-N overfitting cautionary tale
 
 ## Supervision
 

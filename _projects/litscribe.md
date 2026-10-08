@@ -1,7 +1,7 @@
 ---
 layout: page
 title: LitScribe — AI Literature Review with Citation Grounding & Contradiction Detection
-description: A deterministic 11-step pipeline with a DeepAgents supervisor that produces verified, contradiction-aware literature reviews from a research question in about two minutes
+description: A deterministic multi-stage pipeline with a DeepAgents supervisor that produces verified, contradiction-aware literature reviews from a research question in about two minutes
 # img: assets/img/litscribe.jpg
 importance: 1
 category: ai-tools
@@ -13,6 +13,8 @@ toc:
 ---
 
 ## Overview
+
+> LitScribe is now continued as **[Cui](https://github.com/arnold117/Cui)** (v5, Sep 2026); this page describes v4.0.0 (June 2026).
 
 LitScribe is an AI literature review engine that takes a research question and returns a 1,500–2,000 word review with verified citations, methodology comparison, research timeline, and BibTeX export — typically in about two minutes. Unlike chat-based tools that hallucinate citations, every `[@key]` reference is verified against the source paper. Unlike summarizers, the system detects contradictions across papers and presents them as critical analysis.
 
@@ -28,7 +30,7 @@ Three contributions not present in any existing tool (ChatGPT, Elicit, PaperQA2,
 
 ### DeepAgents Supervisor + Deterministic Pipeline
 
-A natural-language supervisor (built on DeepAgents, 7 tools) interprets user intent, then dispatches a deterministic 10-step pipeline with a metacognitive quality loop:
+A natural-language supervisor (built on DeepAgents, 7 tools) interprets user intent, then dispatches a deterministic multi-stage pipeline with a metacognitive quality loop:
 
 ```mermaid
 sequenceDiagram
@@ -113,7 +115,7 @@ Domain-aware routing auto-skips arXiv for biology/medicine; LLM-based selection 
 ## Features
 
 ### Citation Grounding
-Every `[@key]` is verified against the source paper's actual findings. Unsupported claims are auto-detected and rewritten. Grounding accuracy: **83–100%** across benchmark domains.
+Every `[@key]` is verified against the source paper's actual findings. Unsupported claims are auto-detected and rewritten. LLM-checked citation-support rate: **62–100%** across benchmark domains.
 
 ### Contradiction Detection
 Pairwise comparison surfaces opposing findings, which are then injected into the review as critical commentary:
@@ -159,7 +161,7 @@ Every generated review includes:
 ## Interfaces
 
 - **CLI** — 12 commands (`chat`, `review`, `draft`, `outline`, `augment`, `sessions`, `export`, `evaluate`, `serve`, `skills`, …)
-- **Web UI + REST API** — 16 endpoints including SSE streaming for the review pipeline
+- **Web UI + REST API** — ~20 endpoints including SSE streaming for the review pipeline
 - **Sessions + Knowledge Base** — persistent across reviews; supports diff-based refinement
 
 ## Benchmark
@@ -186,7 +188,7 @@ Every generated review includes:
 | PDF Processing | pymupdf4llm (default), marker-pdf (OCR) |
 | Storage | SQLite (sessions, knowledge base with HMAC, vectors) |
 | Backend | FastAPI + SSE streaming |
-| Codebase | 86 files, 10,300 lines, 49 tests |
+| Codebase | ~12.5K lines Python + ~4.3K TypeScript, 49 unit tests (v4.0.0) |
 
 ## Use Cases
 

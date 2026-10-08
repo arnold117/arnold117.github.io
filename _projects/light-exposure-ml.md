@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-An MSc Capstone project developing a reproducible deep learning pipeline for classifying biologically relevant light exposure contexts from wearable spectral data. Current circadian health research relies on simplistic intensity thresholds that fail to capture meaningful differences in exposure contexts (natural vs. artificial light; indoor vs. outdoor). This work introduces a transparent, participant-wise generalized framework that prioritizes spectral shape over absolute intensity, enabling robust classification of light exposure contexts as potential digital biomarkers for circadian health monitoring. The system achieved 88.1% accuracy (AUC 0.938) in distinguishing natural from artificial light using ActLumus wearable spectroradiometer data from 26 participants.
+An MSc Capstone project developing a reproducible machine-learning (MLP) pipeline for classifying biologically relevant light exposure contexts from wearable spectral data. Current circadian health research relies on simplistic intensity thresholds that fail to capture meaningful differences in exposure contexts (natural vs. artificial light; indoor vs. outdoor). This work introduces a transparent, participant-wise generalized framework that prioritizes spectral shape over absolute intensity, enabling robust classification of light exposure contexts as potential digital biomarkers for circadian health monitoring. The system achieved 88.1% accuracy (AUC 0.938) in distinguishing natural from artificial light using ActLumus wearable spectroradiometer data from 26 participants.
 
 ## Problem Statement
 
@@ -41,13 +41,13 @@ An MSc Capstone project developing a reproducible deep learning pipeline for cla
 5. **Cyclic Hour Encoding**: Sin/cos features to capture circadian priors without midnight discontinuities
 6. **Model Training**: MLP with Bayesian hyperparameter optimization (288 configurations tested)
 
-**Key Innovation**: L2 normalization with absolute intensity **excluded** prioritizes spectral shape, outperforming magnitude-based approaches. Raw sensor domain preserves broadband/NIR information, matching or exceeding α-opic projections.
+**Key Design**: L2 normalization with absolute intensity **excluded** focuses the model on spectral shape. The raw sensor domain preserves broadband/NIR information and matched or exceeded α-opic projections (median test AUC 0.880 vs 0.862).
 
 ## Results
 
 **Primary Task (Natural vs. Artificial Light)**:
-- **Test Performance**: AUC 0.938, Accuracy 88.1%, Precision 91.4%, Recall 88.7%
-- **Generalization**: All Top-20 CV-selected configurations achieved test AUC > 0.93 across held-out participants
+- **Test Performance** (best of 288 configurations, held-out participants): AUC 0.938, Accuracy 88.1%, Precision 91.4%, Recall 88.7%
+- **Across configurations**: median test AUC ≈ 0.88 over all 288 configurations; time-of-day encoding was the dominant signal
 - **288-Configuration Grid Search**: Systematic evaluation showing robustness to preprocessing variations
 
 **Feature Importance**:
@@ -71,7 +71,7 @@ An MSc Capstone project developing a reproducible deep learning pipeline for cla
 
 ## Achievements & Recognition
 
-**Academic Contribution**: First systematic application of deep learning to ActLumus wearable spectra for contextual light exposure classification, challenging intensity-centric assumptions in circadian research.
+**Academic Contribution**: A systematic, participant-wise ML evaluation on ActLumus wearable spectra for contextual light exposure classification, challenging intensity-centric assumptions in circadian research.
 
 **Methodological Innovation**:
 - Reproducible pipeline with transparent preprocessing and participant-wise generalization preventing data leakage

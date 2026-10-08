@@ -59,25 +59,24 @@
       institution: Hangzhou Tigermed Consulting Co., Ltd. (AI Clinical Research Business Unit - Algorithm Department)
       year: 2026 - Present
       description:
-        - Sole engineer building an LLM-based regulatory document comparison system from scratch
-        - Diagnosed evaluation leakage in an LLM document-comparison system (97.2% reported vs ~17% true accuracy) and built a cheat-free k-vote semantic judgment primitive to fix it
-        - Found that an 81% downstream comparison-accuracy metric was masking a 17% upstream extraction-accuracy problem in a multi-stage LLM pipeline; redesigned the audit process to check pipeline stages in causal order
-        - Redesigned LLM-as-judge redundancy around lens diversity (one evaluator per rubric dimension) instead of repeated runs of a single evaluator
+        - Founding engineer of an LLM system for regulatory document writing and comparison (CER, CTD), built from the first commit
+        - Audited the system item by item against gold-standard documents, uncovering an inflated evaluation and a downstream metric that masked upstream extraction errors; established upstream-first auditing
+        - Measured an LLM review panel against real defects and moved release gating to deterministic no-fabrication and provenance checks with human review
 
     - title: Research Assistant (Part-time)
       institution: Department of Psychological Medicine, Yong Loo Lin School of Medicine, National University of Singapore
       year: 2026 - Present
       description:
         - Supervisor; Asst Prof. Cyrus Su Hui Ho (NUS Dept of Psychological Medicine; NUH Senior Consultant Psychiatrist)
-        - Owned the end-to-end data analysis for a three-institution comparative study (N=1,559) on passive sensing vs. personality questionnaires for mental-health prediction; first-author manuscript under review at IEEE JBHI
-        - Built and maintained a large-scale public data-acquisition pipeline (10M+ records) for an active, IRB-approved mental-health research program
+        - Owned the end-to-end data analysis for a comparative study across three public university datasets (N=1,559) on passive sensing vs. personality questionnaires for mental-health prediction; first- and co-corresponding-author manuscript under review at IEEE JBHI
+        - Built and maintained a large-scale public data-acquisition pipeline for an active, IRB-approved mental-health research program
 
     - title: Research Assistant
       institution: TUM-CREATE (NRF Singapore research centre, collaborating with TUM, NUS and NTU)
       year: 2024 - 2025
       description:
         - Supervisor; Prof. Dr. Manuel Spitschan (Technical University of Munich)
-        - Multi-sensor fusion and feature engineering for wearable spectral data
+        - Feature engineering and participant-wise ML pipelines for wearable spectral data
         - Circadian health digital phenotyping and biomarker discovery
         - Reproducible ML pipelines with audit-ready workflows
         - Associated project; AI-Driven Classification of Biologically Relevant Light Exposure
@@ -87,9 +86,9 @@
       year: 2019 - 2023
       description:
         - Wearable optical sweat analytics with microfluidics and colourimetry
-        - ECG & EEG real-time signal detection systems
+        - Physiological monitoring software (ECG, respiration, SpO2) with real-time waveform display
         - Intelligent tunnel multi-parameter monitoring systems
-        - Signal processing, computer vision, and embedded systems development
+        - Signal processing and embedded systems development
 
 - title: Skills
   type: nested_list
@@ -98,7 +97,7 @@
       items:
         - Python (pandas, scikit-learn, PyTorch, PyTorch Geometric), R, MATLAB
         - "Classical ML: SVM, XGBoost, Logistic Regression, Random Forest"
-        - "Deep Learning: CNN (U-Net), Large-scale Autoencoders (545M params), GNN (RGCN, bipartite), VAE, Transformers"
+        - "Deep Learning: CNN (U-Net), Large-scale Autoencoders (545M params), GNN (GAT, RGCN, GCN, GraphSAGE, GIN), VAE, Transformers"
         - Knowledge graphs, drug–target link prediction
         - Participant-wise 5-fold CV, stratified CV, Bayesian optimization
         - "Evaluation: ROC-AUC, Hits@K, MRR, F1, precision/recall"
@@ -110,29 +109,21 @@
         - Biomedical knowledge graphs (PrimeKG)
     - title: LLM & Multi-Agent Systems
       items:
-        - LangGraph & DeepAgents orchestration, FastMCP 2.0 (Model Context Protocol)
-        - "Cheat-free LLM evaluation design (k-vote semantic judgment)"
+        - LangGraph & DeepAgents orchestration; LLM pipelines (DeepSeek, GLM, Qwen, Claude)
+        - LLM evaluation design (item-level audits against gold standards)
         - Multi-stage pipeline error-propagation auditing
-        - Lens-diverse LLM-as-judge QC architecture design
-        - RAG pipelines, citation traceability, hallucination mitigation
-        - "Open-source: maintainer, TayaIntelligence/skills; contributor, qiushi-skill (3,300+ stars)"
+        - LLM-as-judge panel design and recall measurement; deterministic release gates
+        - Retrieval pipelines and LLM-checked citation support
+        - "Open-source: collaborator (write access), TayaIntelligence/skills; merged PR to qiushi-skill (3.8K stars)"
     - title: Signal Processing & Embedded Systems
       items:
-        - Wavelet/FFT filtering for ECG/EEG signals, real-time processing (<50ms latency)
-        - STM32 microcontrollers and embedded firmware
+        - Physiological signal processing (ECG) and wearable sensor data
         - Android development (Kotlin) for health apps
     - title: Reproducibility & Tooling
       items:
         - Git, Jupyter notebooks, Docker
         - Config-driven, seeded, audit-ready experiment pipelines
         - HPC and Nextflow workflows
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 
 - title: Honors and Awards
   type: time_table
@@ -159,8 +150,8 @@
   contents:
     - title: Trustworthy AI & LLM Evaluation
       items:
-        - Cheat-free evaluation design and LLM-as-judge architectures for high-stakes domains
-        - Multi-agent QC systems and hallucination/faithfulness auditing for regulatory and medical document AI
+        - Evaluation and audit methodology for LLM systems in high-stakes domains
+        - Faithfulness and no-fabrication checking for regulatory and medical document AI
     - title: Digital Phenotyping & Precision Medicine
       items:
         - Wearable and mobile sensing for circadian health and mental-health prediction

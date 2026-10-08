@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Multi-Parameter Physiological Monitoring System
-description: Real-time monitoring of ECG, SpO2, respiration, temperature, and blood pressure with Qt/QML desktop and web interfaces
+title: Bedside-Monitor Signal Viewer
+description: Course project — Python/PySide6 + QML desktop viewer that decodes a bedside-monitor packet protocol and plots ECG, respiration, temperature, SpO2 and blood pressure in real time
 # img: assets/img/ecg-eeg.jpg
 importance: 5
 category: signal-processing
@@ -11,51 +11,22 @@ toc:
 
 ## Overview
 
-Real-time 5-parameter physiological monitoring system (ECG, SpO2, respiration, temperature, blood pressure) with STM32 hardware and dual interface (Qt/QML desktop + HTML/JavaScript web). Achieves <50ms latency with Python+QML architecture for improved maintainability over traditional C++/XML.
+Team project in the Biomedical Engineering skills-training course (software track) at Nanchang Hangkong University: a desktop viewer that decodes a bedside-monitor packet protocol and displays five physiological parameters — ECG, respiration, temperature, SpO2 and non-invasive blood pressure — as real-time waveforms.
 
-## Problem Statement
+## Implementation
 
-Clinical monitoring requires simultaneous multi-parameter tracking with complex UIs and cross-platform deployment. Traditional C++/XML approaches are difficult to maintain and port across diverse medical hardware/OS environments.
+- **Protocol decoding**: parses the monitor's packet format into per-parameter streams
+- **Desktop UI**: PySide6 + QML front end with QtCharts real-time plotting
+- **Data source**: recorded monitor data (CSV) replayed in real time
 
-## Methodology
+## Related coursework
 
-### Hardware Architecture
-- **STM32 Microcontroller**: 16-bit ADC, 100-1000 Hz sampling, 5-channel input (ECG 2-lead, SpO2, respiration, temperature, BP)
-- **Signal Conditioning**: Analog filtering, amplification, impedance matching
+- QML serial-port assistant and waveform-drawing exercises (Medical Software Design course, 2022)
 
-### Software Architecture
-- **Desktop**: Qt/QML frontend with Python backend, QtCharts real-time plotting
-- **Web**: HTML/JavaScript with WebSocket streaming for remote access
-- **Signal Processing**: Wavelet/FFT filtering, IIR filters (Butterworth/Chebyshev), QRS detection, HRV calculation
+## Technical Stack
 
-## Results
-
-**Performance Metrics**:
-- QRS detection accuracy: >98%
-- Multi-signal display latency: <50ms
-- Successful 5-parameter simultaneous acquisition
-- Cross-platform validated (Windows, Linux)
-- Multi-user web access functional
-
-## Applications
-
-- ICU patient monitoring (5-parameter tracking)
-- Cardiac rehabilitation (ECG + SpO2)
-- Respiratory assessment centers
-- Ambulatory monitoring systems
-- Research-grade signal acquisition
-
-## Achievements & Recognition
-
-### Key Metrics
-- 5 physiological parameters monitored simultaneously
-- <50ms real-time processing latency
-- Dual interface deployment (desktop + web)
-- Cross-platform compatibility (Windows, Linux, macOS)
-
-### Technical Stack
-Qt/QML, Python, HTML/JavaScript, WebSocket, STM32
+Python, PySide6, Qt/QML, QtCharts
 
 ## Timeline
 
-**Duration**: February - July 2022 (6 months)
+**Duration**: May – June 2022 (course project)
