@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-Android-based sleep quality monitoring system using built-in smartphone sensors (accelerometer, light sensor, microphone) without external devices. Achieves 80% agreement with commercial wearables across 20-volunteer validation, with demonstrable sleep quality improvement over 2-week monitoring.
+Android-based sleep quality monitoring system using built-in smartphone sensors (accelerometer, light sensor, microphone) without external devices. In a one-week, 20-volunteer study, the app reached about 80% of the monitoring level of commercial wearables (judged on the 10 volunteers with usable comparison data), with a slight sleep-quality improvement after in-app suggestions in week two.
 
 ## Problem Statement
 
@@ -37,13 +37,13 @@ Poor sleep quality affects cognitive function, increases chronic disease risk (d
 ## Results
 
 **Validation (20 volunteers, 1-week monitoring)**:
-- 80% agreement with commercial wearables
+- About 80% of the monitoring level of commercial wearables (Huawei Band 7, Mi Band 6, Apple Watch SE), an overall judgement on 10 volunteers' data, not a per-night agreement rate
 - Sleep onset/offset timing: ±15-20 minutes difference (button press vs. sensor detection)
 - Battery drain: 4-5% per 8-hour session, <3% CPU, <50 MB memory
 
 **Sleep Quality Improvement**:
 - Week 1: Poor quality despite adequate duration (stress-related irregular sleep, poor breathing)
-- Week 2 (after behavioral recommendations): Improved deep sleep balance and breathing quality
+- Week 2 (after in-app suggestions): slight improvement in sleep quality
 
 ## Applications
 
@@ -65,8 +65,8 @@ Poor sleep quality affects cognitive function, increases chronic disease risk (d
 ## Achievements & Recognition
 
 ### Key Metrics
-- 80% accuracy vs. commercial wearables
-- 20-volunteer validation with measurable QoL improvement
+- About 80% of commercial-wearable monitoring level
+- 20-volunteer study with a slight improvement after suggestions
 - <5% battery drain per night, on-device privacy
 
 ### Technical Stack

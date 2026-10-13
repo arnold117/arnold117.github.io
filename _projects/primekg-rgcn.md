@@ -11,9 +11,9 @@ toc:
 
 ## Overview
 
-Comprehensive biomedical link prediction framework comparing five GNN architectures (RGCN, GCN, GAT, GraphSAGE, GIN) and an MLP baseline on a PrimeKG subgraph for predicting drug–target (drug–gene) links. Version 2.0 features a critical data leakage fix (71.5% → 0% leakage) with undirected-edge-aware splitting and hard negative evaluation. Best model (GAT) achieves 0.9866 AUC-ROC under strict evaluation.
+Reproducible GNN link-prediction pipeline comparing five GNN architectures (RGCN, GCN, GAT, GraphSAGE, GIN) and an MLP baseline on a PrimeKG subgraph for predicting drug–target (drug–gene) links. Early scores that looked too good were traced to a split-level leak (71.5% of test edges had their reverse edge in training) and easy random negatives; Version 2.0 rebuilt the split to be undirected-edge-aware, dropped the inflated numbers, and adopted a standard degree-matched hard-negative protocol.
 
-**Key Finding**: Attention mechanisms (GAT) outperform explicit relation-type modeling (RGCN) for drug–target link prediction.
+**Key Finding**: Under this protocol (each test edge ranked against 50 negatives), GAT ranked best of the six models (AUC-ROC 0.9866).
 
 ## Problem Statement
 
@@ -22,10 +22,10 @@ Drug discovery is time-consuming and expensive. Knowledge graph-based link predi
 ## Methodology
 
 ### PrimeKG Knowledge Graph
-- **Source**: 4.5M relationships from 20+ biomedical databases (DrugBank, OMIM, UniProt, Reactome)
+- **Source**: 4.5M relationships from 20 biomedical sources (DrugBank, OMIM, UniProt, Reactome)
 - **Processed Graph**: 30,926 nodes (6,282 drugs, 5,593 diseases, 19,051 genes/proteins)
 - **Edges**: 854,278 across 3 relation types (drug-gene, gene-gene, gene-disease)
-- **Split**: 70% train (838,882) / 15% val (7,688) / 15% test (7,708)
+- **Split**: 70/15/15 split of the drug–gene edges only (25,468 unique undirected edges); all other relations stay in the training graph for message passing
 
 ### Model Architectures
 - **GAT**: Graph Attention Network — learned attention weights
@@ -39,11 +39,13 @@ Drug discovery is time-consuming and expensive. Knowledge graph-based link predi
 
 ### Data Integrity
 - **Version 2.0**: Undirected-edge-aware splitting removes split-level leakage (71.5% of test edges had their reverse in training → 0%)
-- **Hard Negative Sampling**: 50 negatives per positive for strict evaluation
+- **Hard Negative Sampling**: standard degree-matched protocol, 50 same-type negatives per positive (51-way ranking) for strict evaluation
 
 ## Results
 
 ### Strict Evaluation (Hard Negatives, 50 per positive)
+
+Ranking among 51 candidates; these numbers are not comparable with full-entity-ranking results in the literature.
 
 | Model | AUC-ROC | AP | Hits@10 | MRR |
 |-------|---------|-----|---------|-----|
@@ -55,9 +57,9 @@ Drug discovery is time-consuming and expensive. Knowledge graph-based link predi
 | MLP | 0.6592 | 0.0314 | 0.5234 | 0.2710 |
 
 ### Key Insights
-1. **Graph structure is critical**: All GNNs vastly outperform MLP baseline
-2. **Attention > Relation modeling**: GAT outperforms RGCN across all metrics
-3. **Principled evaluation matters**: Data leakage fix revealed true model capabilities masked by loose protocols
+1. **GNNs outperform the MLP baseline** (AUC > 0.96 vs. 0.66), though part of this gap may come from test edges being present in the message-passing graph (see Limitations)
+2. **GAT ranked best**: higher than RGCN on all metrics under this protocol
+3. **Evaluation design matters**: fixing the split-level leak and adopting hard negatives replaced inflated Phase-1 numbers
 
 ## Advanced Analyses
 
@@ -66,7 +68,7 @@ Drug discovery is time-consuming and expensive. Knowledge graph-based link predi
 - **Embedding visualization** (t-SNE/UMAP) with clustering analysis
 - **Error pattern analysis** and failure mode characterization
 - **Graph-based plausibility heuristics** (exploratory)
-- **Baseline comparisons** (random, degree-based, TransE)
+- **Baseline comparisons** (random, degree-based)
 - **Confidence calibration** and performance breakdowns by node type
 
 ## Technical Stack
@@ -89,7 +91,7 @@ src/
 ├── strict_evaluation.py      # Hard negative sampling
 ├── case_studies.py           # Disease-specific predictions
 ├── explain_predictions.py    # Path-based reasoning
-├── medical_validation.py     # Biological plausibility
+├── medical_validation.py     # Graph-structure plausibility heuristics (exploratory)
 ├── visualize_embeddings.py   # t-SNE/UMAP
 ├── error_analysis.py         # Error patterns
 ├── compare_methods.py        # Baseline comparison
@@ -100,17 +102,14 @@ src/
 ## Applications
 
 - Drug–target prioritisation as an input to downstream repurposing studies
-- Disease mechanism identification via multi-hop reasoning
 - Drug-target interaction prediction
-- Experimental candidate prioritization
-- Precision medicine research
 
 ## Limitations & Future Work
 
 **Current Limitations**:
-- Strict evaluation reveals ranking challenges masked by loose protocols
+- Strict evaluation runs message passing over the full graph, which still contains the test edges; this likely favours the GNNs over the MLP baseline. Not yet re-run with a training-only graph
 - Limited to 3 relation types from PrimeKG subset
-- Case study validation limited to literature evidence
+- Disease case studies are exploratory (embedding similarity), with no literature or experimental validation
 
 **Future Directions**:
 - Full PrimeKG integration (all relation types)
@@ -124,6 +123,6 @@ src/
 
 ## Timeline
 
-**Duration**: October 2025 - Present (Independent research project)
+**Duration**: October 2025 - February 2026 (Independent research project)
 - Phase 1: Single RGCN model with optimization (Oct-Nov 2025)
 - Phase 2: Multi-architecture comparison, data leakage fix, strict evaluation (2026)

@@ -57,7 +57,7 @@ Traditional blood/urine tests are invasive, require 24-72 hour lab turnaround, a
 - **National Innovation Project** - Completed with prototype
 
 ### Publications
-**Talanta** (Q1 journal, IF ~6.0) - peer-reviewed publication on sweat biomarker detection
+**Talanta** (2022) - co-author (4th of 8) of a peer-reviewed paper on a wearable Tesla-valve sweat-collection device with glucose / pH colorimetry
 
 ### Key Metrics
 - ~90% detection accuracy
@@ -68,7 +68,7 @@ Traditional blood/urine tests are invasive, require 24-72 hour lab turnaround, a
 
 **Principal Investigators**: A/Prof. Shi Huanhuan (石环环), Prof. Zhang Weiwei (张巍巍)  
 **Institution**: Department of Biomedical Engineering, Nanchang Hangkong University  
-**Core Contributors**: Zhou Yanuo (system integration, AI development), Xie Zhihao (circuit design), Cao Yu (data analysis, Talanta co-author)  
+**Core Contributors**: Zhou Yanuo (system integration, colour-recognition pipeline and AI development, experimental design, data analysis), Xie Zhihao (circuit design), Cao Yu (data analysis, Talanta co-author)  
 **Collaborators**: Nie Daosheng, Xin Jiliang, Yan Yuwei, Liu Yujie  
 **Funding**: Outstanding Young Scientist Project (20192BCB23011)
 

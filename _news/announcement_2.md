@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2025-12-12 00:00:00-0400
+date: 2026-04-23 00:00:00-0400
 inline: true
 related_posts: false
 ---
 
-Completed research project on **Multimodal Depression Detection** using smartphone sensor data (GPS, app usage, communication patterns)! 🧠📱
+Submitted our head-to-head comparison of passive smartphone sensing and personality questionnaires for mental-health prediction (three university samples, N = 1,559) to *IEEE JBHI*; now under review.

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Multi-Omics Integration with Autoencoders and Graph Neural Networks
-description: Multi-evidence framework for biosynthetic pathway gene discovery via dual autoencoders and Graph Attention Networks
+description: Multi-evidence framework for ranking candidate biosynthetic-pathway genes via dual autoencoders and Graph Attention Networks
 # img: assets/img/omics-ae-gnn.jpg
 importance: 4
 category: ai-health
@@ -12,7 +12,7 @@ toc:
 
 ## Overview
 
-Computational framework for identifying biosynthetic pathway genes by integrating transcriptomic and metabolomic data through deep learning. The system triangulates three independent evidence sources—statistical correlation, autoencoder feature importance, and sequence homology—into a unified multi-evidence ranking to reduce false positives in candidate gene discovery.
+Open-source computational framework for ranking candidate biosynthetic-pathway genes by integrating transcriptomic and metabolomic data through deep learning, with very few samples (n = 21). The system combines statistical correlation, autoencoder and graph-attention importance, and gene-family homology into one multi-evidence ranking to reduce false positives among candidates.
 
 **Key Idea**: combine several kinds of evidence — correlation, autoencoder importance, graph-attention importance and gene-family evidence — into one candidate ranking, rather than relying on a single method.
 
@@ -62,14 +62,14 @@ Produces ranked gene lists with supporting documentation per gene family.
 - Encoder: ~132K → 2,048 → 512 → 128 → 64 (symmetric decoder)
 - Regularization: latent L2 penalty, early stopping (patience 15) on a single 80/20 split
 
-**Metabolite Autoencoder (30.8M parameters)**:
+**Metabolite Autoencoder (30.9M parameters)**:
 - Encoder: ~7K → 2,048 → 512 → 128 → 64 (symmetric decoder)
 - Regularization: latent L2 penalty, early stopping (patience 15) on a single 80/20 split
 
 ### Graph Attention Network
 - Operates on concatenated 128-dim latent vectors (64 gene + 64 metabolite)
 - Multi-task classification for tissue/geographic metadata
-- **Validation logic**: High classification accuracy → latent representations capture real biological variation → AE importance scores are biologically meaningful
+- Classification accuracy is training accuracy on a transductive graph, so it does not by itself validate the latent representations
 
 ### Multi-Evidence Scoring
 - Rank-based normalization ensures fair contribution from evidence types at different scales
@@ -88,14 +88,14 @@ Produces ranked gene lists with supporting documentation per gene family.
 ## Results
 
 ### Model Performance
-- Gene AE captures major transcriptomic variation despite 6,619:1 feature-to-sample ratio
-- Metabolite AE successfully compresses metabolomic profiles into meaningful latent space
+- Gene AE compresses ~132K genes to a 64-d latent under a ~6.6K:1 feature-to-sample ratio
+- Metabolite AE compresses ~7K metabolites to a 64-d latent
 - Sample-level GAT uses the latents for auxiliary tissue / origin classification
 
-### Key Findings
-1. **Large-scale autoencoders** handle extreme feature-to-sample ratios (6,619:1) through extensive regularization
-2. **Multi-evidence triangulation** reduces false positives compared to single-method approaches
-3. **Rank-based fusion** fairly combines heterogeneous evidence types
+### Design Rationale
+1. **Large-scale autoencoders** with a latent L2 penalty and early stopping for an extreme feature-to-sample ratio (~6.6K:1)
+2. **Multi-evidence triangulation** to reduce false positives relative to any single method
+3. **Rank-based fusion** to combine heterogeneous evidence types
 
 ## Technical Stack
 
@@ -138,6 +138,6 @@ Produces ranked gene lists with supporting documentation per gene family.
 
 ---
 
-**Project Status**: Ongoing (December 2025 - Present)
+**Project Status**: Completed (December 2025 - February 2026)
 **Technologies**: PyTorch, GAT, Python
-**Category**: AI for Health, Computational Biology, Biosynthetic Pathway Discovery
+**Category**: AI for Health, Computational Biology, Biosynthetic Pathway Gene Ranking

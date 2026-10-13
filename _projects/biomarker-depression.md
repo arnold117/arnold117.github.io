@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Machine Learning Biomarkers for Suicide Risk Assessment in Depression
-description: Identifying NR3C1a and HSPA1B as genetic biomarkers for suicide risk in MDD using machine learning and gene expression analysis
+title: Machine-Learning Screening of Inflammation-Gene Expression for Suicide-Risk Stratification in Depression
+description: NUS MSc course project comparing ten ML models on inflammation-gene expression; the models did not generalise to an independent test set
 # img: assets/img/biomarker.jpg
 importance: 5
 category: ai-health
@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-Machine learning approach to identify genetic biomarkers for suicide risk assessment in major depressive disorder (MDD). Analyzed RNA expression data from 197 MDD patients and 151 controls using 10 ML models, identifying NR3C1a and HSPA1B as consistent biomarkers across multiple experimental configurations.
+NUS MSc course project on whether inflammation-gene expression can stratify suicide risk in major depressive disorder (MDD). Compared 10 ML models on expression data from 197 MDD patients and 151 controls: training-set CV accuracy reached ≈ 0.77, but accuracy on an independent test set was 0.44–0.61, so the models did not generalise. NR3C1a and HSPA1B recurred as important features across models.
 
 ## Problem Statement
 
@@ -38,19 +38,12 @@ Suicide claims over 700,000 lives globally each year. Current diagnostic methods
 ## Results
 
 **Training Performance**: Best configuration achieved 0.77 CV accuracy (Set 1)  
-**Identified Biomarkers**:
+**Highlighted Genes**:
 - **NR3C1a** (log-fold change 0.374): Glucocorticoid receptor signaling, stress hormone regulation
 - **HSPA1B** (log-fold change 0.427): Heat shock protein, cellular stress response
 - **ABL1** (log-fold change 0.519): Signal transduction in stress pathways
 
 **Test Set Performance**: External validation showed 0.44-0.61 accuracy (limited generalizability due to small sample size and dataset heterogeneity)
-
-## Applications
-
-- Objective suicide risk assessment in clinical psychiatry
-- Biomarker-guided treatment stratification for MDD patients
-- Early intervention identification for high-risk individuals
-- Complement to existing subjective screening tools
 
 ## Limitations & Future Work
 
@@ -65,8 +58,8 @@ Suicide claims over 700,000 lives globally each year. Current diagnostic methods
 
 ### Key Metrics
 - 10 ML models evaluated across 8 experimental combinations
-- Identified 2 primary biomarkers (NR3C1a, HSPA1B) with consistent upregulation
-- 0.77 training accuracy, differential expression validation with Bonferroni correction
+- NR3C1a and HSPA1B recurred as top features across models
+- 0.77 CV accuracy on the training set; 0.44–0.61 on the independent test set
 
 ## Team & Collaboration
 

@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-An MSc Capstone project developing a reproducible machine-learning (MLP) pipeline for classifying biologically relevant light exposure contexts from wearable spectral data. Current circadian health research relies on simplistic intensity thresholds that fail to capture meaningful differences in exposure contexts (natural vs. artificial light; indoor vs. outdoor). This work introduces a transparent, participant-wise generalized framework that prioritizes spectral shape over absolute intensity, enabling robust classification of light exposure contexts as potential digital biomarkers for circadian health monitoring. The system achieved 88.1% accuracy (AUC 0.938) in distinguishing natural from artificial light using ActLumus wearable spectroradiometer data from 26 participants.
+An MSc Capstone project developing a reproducible machine-learning (MLP) pipeline for classifying biologically relevant light exposure contexts from wearable spectral data. Current circadian health research relies on simplistic intensity thresholds that fail to capture meaningful differences in exposure contexts (natural vs. artificial light; indoor vs. outdoor). This work introduces a transparent, participant-wise generalized framework that prioritizes spectral shape over absolute intensity, enabling robust classification of light exposure contexts as potential digital biomarkers for circadian health monitoring. The best of 288 configurations reached a held-out AUC of 0.938 (accuracy 88.1%; participant-wise split) in distinguishing natural from artificial light using ActLumus wearable spectroradiometer data from 26 participants; time of day was the dominant signal.
 
 ## Problem Statement
 
@@ -39,7 +39,7 @@ An MSc Capstone project developing a reproducible machine-learning (MLP) pipelin
 3. **L2 Normalization**: Per-channel normalization prioritizing spectral shape over absolute intensity
 4. **Hour-Medoid Aggregation**: Robust temporal summarization resistant to outliers and non-wear periods
 5. **Cyclic Hour Encoding**: Sin/cos features to capture circadian priors without midnight discontinuities
-6. **Model Training**: MLP with Bayesian hyperparameter optimization (288 configurations tested)
+6. **Model Training**: MLP with Bayesian hyperparameter optimization (288 pipeline configurations tested)
 
 **Key Design**: L2 normalization with absolute intensity **excluded** focuses the model on spectral shape. The raw sensor domain preserves broadband/NIR information and matched or exceeded α-opic projections (median test AUC 0.880 vs 0.862).
 
@@ -48,22 +48,22 @@ An MSc Capstone project developing a reproducible machine-learning (MLP) pipelin
 **Primary Task (Natural vs. Artificial Light)**:
 - **Test Performance** (best of 288 configurations, held-out participants): AUC 0.938, Accuracy 88.1%, Precision 91.4%, Recall 88.7%
 - **Across configurations**: median test AUC ≈ 0.88 over all 288 configurations; time-of-day encoding was the dominant signal
-- **288-Configuration Grid Search**: Systematic evaluation showing robustness to preprocessing variations
+- **288-Configuration Grid**: feature domain, transforms, encoding, split policy and resampling
 
 **Feature Importance**:
-- **Top predictors**: IR.LIGHT, CLEAR (broadband), cyclic hour features
+- **Top predictors**: cyclic hour encoding (hour_cos dominates); hour_sin, IR and CLEAR (broadband) contribute much less
 - **Spectral patterns**: Mid-bands (550-630nm) differentiate artificial sources; short/long wavelengths elevate for natural light
-- **Temporal priors**: Time-of-day does not act alone; spectral channels provide complementary discriminative power
+- **Temporal priors**: Time of day is the dominant signal; spectral channels add a smaller contribution
 
-**Exploratory Task (Indoor vs. Outdoor)**: Test AUC ~0.663, demonstrating that spectral data alone provide insufficient evidence without contextual sensors (GPS, accelerometry). Indoor daylight (window-filtered) mimics outdoor spectra, causing classification challenges.
+**Exploratory Task (Indoor vs. Outdoor)**: median test AUC ≈ 0.66 (best ≈ 0.75), feasibility only, demonstrating that spectral data alone provide insufficient evidence without contextual sensors (GPS, accelerometry). Indoor daylight (window-filtered) mimics outdoor spectra, causing classification challenges.
 
-**Negative Evidence** (transparent reporting): PCA aids interpretation but not required for optimal performance; SMOTE-Tomek underperforms under real-world priors compared to participant-wise evaluation without aggressive resampling.
+**Negative Evidence** (transparent reporting): PCA (tested as an ablation) was not required for optimal performance; SMOTE-Tomek underperforms under real-world priors compared to participant-wise evaluation without aggressive resampling.
 
 ## Applications
 
 **Digital Biomarker Development**: Framework enables derivation of natural light dose profiles, light regularity indices (phase stability/variability), and exposure timing metrics as potential correlates for sleep quality, mood, and metabolic health outcomes.
 
-**Clinical & mHealth**: Real-time exposure classification enables personalized light intervention adherence monitoring, dose quantification for circadian therapies, and integration into LightSPAN-style mobile health applications.
+**Clinical & mHealth**: Real-time exposure classification enables personalized light intervention adherence monitoring, dose quantification for circadian therapies, and integration into mobile health applications.
 
 **Evidence-Based Policy**: Informs urban planning (outdoor space design), workplace lighting standards, and educational environment optimization based on quantified natural vs. artificial light exposure patterns.
 
@@ -78,19 +78,17 @@ An MSc Capstone project developing a reproducible machine-learning (MLP) pipelin
 - Systematic comparison of raw sensor vs. α-opic vs. SPD domains, L2 normalization variants, and dimensionality reduction approaches
 - Negative evidence reporting (PCA, SMOTE-Tomek limitations) to guide future research
 
-**Publications**:
-- **MSc Thesis** (expected submission Nov 2025): Zhou, Y. "AI-Driven Light Exposure Classification: A Reproducible Deep Learning Pipeline for Circadian Health Phenotyping from Wearable Spectral Data." *MSc Precision Health and Medicine, National University of Singapore*, 2025
-- **Keywords**: Circadian Physiology, Light Exposure Classification, Wearable Sensors, Deep Learning, Digital Biomarkers, Reproducible Research
+**Thesis**:
+- **MSc Capstone Thesis** (Oct 2025): Zhou, Y. "AI-Driven Classification of Biologically Relevant Light Exposure from Wearable Spectral Data." *MSc Precision Health and Medicine, National University of Singapore*, 2025
+- **Keywords**: Circadian Physiology, Light Exposure Classification, Wearable Sensors, Machine Learning, Digital Biomarkers, Reproducible Research
 
 **Key Metrics**:
-- 88.1% classification accuracy with 0.938 AUC
+- Held-out AUC 0.938, accuracy 88.1% (best of 288 configurations, participant-wise split)
 - 26 participants, 7-day recordings per subject
-- 288 hyperparameter configurations evaluated
+- 288 pipeline configurations evaluated
 - 10-second temporal resolution spectral data
 
-## Team & Collaboration
-
-**Principal Supervisor**: Prof. Dr. Manuel Spitschan (Technical University of Munich, Head of LightSPAN Group, TUM-CREATE Principal Investigator)
+## Context
 
 **Institution**: TUM-CREATE (National Research Foundation Singapore, collaborating with Technical University of Munich, National University of Singapore, Nanyang Technological University)
 

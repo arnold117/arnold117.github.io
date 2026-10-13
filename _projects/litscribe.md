@@ -1,7 +1,7 @@
 ---
 layout: page
-title: LitScribe — AI Literature Review with Citation Grounding & Contradiction Detection
-description: A deterministic multi-stage pipeline with a DeepAgents supervisor that produces verified, contradiction-aware literature reviews from a research question in about two minutes
+title: Cui (formerly LitScribe) — Evidence-Grounded Literature Review and Research-Judgment Tool
+description: LitScribe v4 (Jan–Jun 2026), a 9-stage literature-review pipeline with LLM-checked citation support, continued as Cui, which supports the researcher's judgment instead of generating reviews
 # img: assets/img/litscribe.jpg
 importance: 1
 category: ai-tools
@@ -12,19 +12,19 @@ toc:
   sidebar: left
 ---
 
-## Overview
+## Now: Cui (June 2026 – present)
 
-> LitScribe is now continued as **[Cui](https://github.com/arnold117/Cui)** (v5, Sep 2026); this page describes v4.0.0 (June 2026).
+Fluent LLM reviews mostly summarise and agree with the user, so Cui supports the researcher's judgment instead of generating documents: question workspace → user-written claims → immutable review rounds in which an LLM challenges the claims → evidence marked supports / contradicts / silent / cannot-assess → human adjudication → landscape / gap view → related-work draft. Event-sourced (FastAPI, Postgres, React / TypeScript). Early development.
 
-LitScribe is an AI literature review engine that takes a research question and returns a 1,500–2,000 word review with verified citations, methodology comparison, research timeline, and BibTeX export — typically in about two minutes. Unlike chat-based tools that hallucinate citations, every `[@key]` reference is verified against the source paper. Unlike summarizers, the system detects contradictions across papers and presents them as critical analysis.
+## LitScribe v4 (January – June 2026)
 
-## What Makes It Different
+LitScribe is an AI literature review engine that takes a research question and returns a 1,500–2,000 word review with LLM-checked citations, methodology comparison, research timeline, and BibTeX export — typically in about two minutes. Each `[@key]` citation is checked by an LLM against the source paper, and the system detects contradictions across papers and presents them as critical analysis.
 
-Three contributions not present in any existing tool (ChatGPT, Elicit, PaperQA2, SurveyG):
+## Design Choices
 
-1. **Contradiction-aware synthesis** — existing tools either generate reviews (ignoring contradictions) or detect contradictions (without writing reviews). LitScribe does both end-to-end: detect → inject into narrative → present as critical analysis.
+1. **Contradiction-aware synthesis** — contradictions detected across papers are injected into the narrative and presented as critical analysis.
 2. **Metacognitive quality loop** — after self-review, the system evaluates *which* pipeline steps failed and autonomously re-runs them with adjusted strategy. Strategy decisions are persisted to a knowledge base for future reviews.
-3. **Search-augmented refinement** — when users say "add a section about X", LitScribe searches for new papers on X first, analyzes them, then writes the section with real citations from the newly found papers — never hallucinating.
+3. **Search-augmented refinement** — when users say "add a section about X", LitScribe searches for new papers on X first, analyzes them, then writes the section with citations from the newly found papers.
 
 ## Architecture
 
@@ -45,15 +45,14 @@ sequenceDiagram
     rect rgb(240, 248, 255)
         Note over P: Deterministic Pipeline
         P->>P: 1. Plan (decompose sub-topics)
-        P->>P: 2. Search (6 academic databases)
-        P->>P: 3. Unpaywall (OA full-text lookup)
-        P->>P: 4. Read (analyze each paper)
-        P->>P: 5. Contradictions (pairwise)
-        P->>P: 6. GraphRAG (knowledge graph)
-        P->>P: 7. Synthesize (parallel sections)
-        P->>P: 8. Debate (reviewer ↔ synthesizer)
-        P->>P: 9. Ground (verify citations)
-        P->>P: 10. Self-review (quality score)
+        P->>P: 2. Search (6 academic databases + OA lookup)
+        P->>P: 3. Read (analyze each paper)
+        P->>P: 4. Contradictions (pairwise)
+        P->>P: 5. Graph analysis (≥5 papers)
+        P->>P: 6. Synthesize (parallel sections)
+        P->>P: 7. Debate (reviewer ↔ synthesizer)
+        P->>P: 8. Ground (LLM citation check)
+        P->>P: 9. Review (self-review score)
     end
 
     alt Score < 0.65
@@ -65,7 +64,7 @@ sequenceDiagram
     S-->>User: 1,500-word review, score 0.82
 ```
 
-Each numbered step is independently testable and persists to a SQLite knowledge base, so reviews can resume after interruption and downstream steps reuse upstream results across sessions.
+Each numbered step persists to a SQLite knowledge base, so reviews can resume after interruption and downstream steps reuse upstream results across sessions.
 
 ### Six-Source Academic Search
 
@@ -115,7 +114,7 @@ Domain-aware routing auto-skips arXiv for biology/medicine; LLM-based selection 
 ## Features
 
 ### Citation Grounding
-Every `[@key]` is verified against the source paper's actual findings. Unsupported claims are auto-detected and rewritten. LLM-checked citation-support rate: **62–100%** across benchmark domains.
+Every `[@key]` is checked by an LLM against the source paper; claims it judges unsupported are flagged and rewritten. LLM-checked citation-support rate: **62–100%** across five benchmark queries.
 
 ### Contradiction Detection
 Pairwise comparison surfaces opposing findings, which are then injected into the review as critical commentary:
@@ -166,7 +165,7 @@ Every generated review includes:
 
 ## Benchmark
 
-| Domain | Score | Papers | Words | Grounding | Time |
+| Domain | Score | Papers | Words | Citation support | Time |
 |--------|-------|--------|-------|-----------|------|
 | Biology (CHO CRISPR) | **0.82** | 9 | 1,649 | 83% | 106 s |
 | CS (LLM reasoning) | 0.72 | 12 | 1,535 | 63% | 121 s |
@@ -174,7 +173,7 @@ Every generated review includes:
 | CS (transformer attention) | 0.55 | 12 | 1,643 | 62% | 153 s |
 | Chemistry (sesquiterpene) | 0.55 | 3 | 1,338 | 100% | 103 s |
 
-*Self-review score 0–1; grounding = % citations verified against source paper.*
+*LLM self-review score 0–1, one run per query (about ±0.10 between runs); citation support = % of citations an LLM judged supported by the source paper, not accuracy against human labels. Model: DeepSeek V4 Flash.*
 
 ## Technical Stack
 
@@ -182,36 +181,28 @@ Every generated review includes:
 |-----------|------------|
 | Language | Python 3.12+ |
 | Supervisor | DeepAgents (7 tools) |
-| LLM | Any OpenAI-compatible endpoint (DeepSeek, Qwen, Claude, …) |
+| LLM | OpenAI-compatible API (DeepSeek by default); Anthropic / Ollama optional |
 | Knowledge Graph | NetworkX + Leiden community detection |
 | Embeddings | sentence-transformers |
-| PDF Processing | pymupdf4llm (default), marker-pdf (OCR) |
+| PDF Processing | pymupdf4llm |
 | Storage | SQLite (sessions, knowledge base with HMAC, vectors) |
 | Backend | FastAPI + SSE streaming |
 | Codebase | ~12.5K lines Python + ~4.3K TypeScript, 49 unit tests (v4.0.0) |
-
-## Use Cases
-
-- **Researchers** — rapid literature surveys; contradiction-aware systematic review preparation; gap identification
-- **Graduate students** — thesis literature chapters; state-of-the-art mapping; seminal paper discovery
-- **Industry R&D** — technical due diligence; competitive landscape from academic publications
 
 ## Limitations & Roadmap
 
 - Requires API keys for cloud LLM functionality
 - PDF extraction quality varies with document formatting
-- Grounding accuracy degrades in highly technical domains (62–68% in some CS/medicine cases)
+- LLM-checked citation-support rate is lower in some CS / medicine queries (62–68%)
+- The 49 unit tests do not cover the core pipeline, grounding, debate or search
 
-**Planned**: local LLM support (Ollama/MLX/vLLM); subscription system with daily digest; richer Web UI.
+LitScribe is frozen at v4.0.0; development continues as Cui.
 
-## Publication
+## GitHub Repositories
 
-arXiv preprint (NeurIPS-style template, 10 pages): case study, ablation, algorithm details, discussion. Draft available in the repository.
-
-## GitHub Repository
-
-[LitScribe](https://github.com/arnold117/LitScribe)
+[Cui](https://github.com/arnold117/Cui) · [LitScribe](https://github.com/arnold117/LitScribe) (v4, frozen)
 
 ## Timeline
 
-**Status**: Active development (January 2026 – present)
+**LitScribe**: January – June 2026 (frozen at v4.0.0)  
+**Cui**: June 2026 – present (early development)

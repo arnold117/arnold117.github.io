@@ -11,7 +11,7 @@ toc:
 
 ## Overview
 
-Microfluidic concentration gradient chip using Dean vortex secondary flow mixing for rapid drug susceptibility testing. Reduces mixing length to 1/3 of traditional methods (12mm → 4mm) via lateral elliptical protrusions on channel sidewalls, enabling high-throughput antimicrobial resistance detection.
+Microfluidic concentration gradient chip using Dean vortex secondary flow mixing for rapid drug susceptibility testing. Shortens the required mixing length to about one third of a conventional channel via protrusions on the channel sidewalls, for microbial drug-susceptibility testing.
 
 ## Problem Statement
 
@@ -26,14 +26,14 @@ Traditional microbial drug susceptibility testing requires 24-72 hours, large sa
 
 ### Dean Vortex Mixing
 - **Innovation**: Semicircular protrusions (50-100 μm radius) on sidewalls generate Dean vortex
-- **Efficiency**: 1/3 mixing length of straight channels (4mm vs. 12mm)
+- **Efficiency**: about 1/3 of the mixing length of a conventional straight channel
 - **Staggered distribution**: Alternating protrusions maximize flow disturbance
 - **CFD Validation**: Computational fluid dynamics verified concentration distribution
 
 ## Results
 
 **Performance**:
-- Mixing length reduced by 67% (12mm → 4mm)
+- Mixing length about 1/3 of a conventional channel
 - 6-level concentration gradients generated
 - Channel dimensions: 50-200 μm width, 50-200 μm depth
 - CFD-validated pressure drop and concentration uniformity
@@ -49,16 +49,16 @@ Traditional microbial drug susceptibility testing requires 24-72 hours, large sa
 ## Achievements & Recognition
 
 ### Patents
-**Invention Patent** (CN112473758A): "Equivalent Circuit Microfluidic Concentration Gradient Chip with Simplified Channel" (Filed Nov 2020, Published Mar 2021, Under examination)
+**Invention Patent** (CN112473758A): "Equivalent Circuit Microfluidic Concentration Gradient Chip with Simplified Channel" (Filed Nov 2020, Published Mar 2021, deemed withdrawn Oct 2025; co-inventor, 2nd)
 
-**Utility Model Patent** (CN214159656U): "Microfluidic Chip Based on Dean Vortex Secondary Flow Mixing" (Filed Nov 2020, **Granted Sep 2021**)
+**Utility Model Patent** (CN214159656U): "Microfluidic Chip Based on Dean Vortex Secondary Flow Mixing" (Filed Nov 2020, Granted Sep 2021, lapsed Nov 2025; co-inventor, 4th)
 
 ### Publications
 Shi, H., Cao, Y., **Zhou, Y.**, et al. "Development and Application of Microfluidic Concentration Gradient Chip." *Chinese Journal of Medical Physics*, 2021.
 
 ### Key Metrics
 - 2 patents filed
-- 67% mixing length reduction
+- Mixing length about 1/3 of a conventional channel
 - 1 peer-reviewed publication
 
 ## Team & Collaboration

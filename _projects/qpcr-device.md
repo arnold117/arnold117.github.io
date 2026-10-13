@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Thermal Cycling Device for Fluorescence Quantitative PCR
-description: Research project on thermal cycling system design for qPCR instrumentation
+description: Competition project on thermal cycling system design for qPCR instrumentation
 # img: assets/img/qpcr.jpg
 importance: 10
 category: instrumentation
@@ -9,7 +9,7 @@ category: instrumentation
 
 ## Overview
 
-Research project on precision thermal cycling systems for fluorescence quantitative PCR (qPCR) instrumentation. Focused on thermal control optimization and temperature management essential for reproducible PCR applications.
+Competition project on precision thermal cycling systems for fluorescence quantitative PCR (qPCR) instrumentation. Focused on thermal control optimization and temperature management essential for reproducible PCR applications.
 
 **Note**: Detailed documentation unavailable due to file loss.
 

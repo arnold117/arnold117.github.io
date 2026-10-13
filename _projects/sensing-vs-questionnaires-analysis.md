@@ -13,11 +13,11 @@ toc:
 
 ## Overview
 
-A three-study head-to-head comparison across three universities (N=1,559) testing whether weeks of continuous passive smartphone and wearable sensing can replace brief personality questionnaires for predicting mental health and academic performance. The central finding: **two BFI items (10 seconds) outperform 28 sensing features collected over weeks**, and personality questionnaires win 14 of 15 outcome comparisons (93%). The result holds across traditional ML, deep learning (1D-CNN), and time-series foundation models (MOMENT).
+A three-study head-to-head comparison across three universities (N=1,559) testing whether weeks of continuous passive smartphone and wearable sensing can replace brief personality questionnaires for predicting mental health and academic performance. The central finding: **personality beats sensing in all 11 primary comparisons**, and sensing adds almost nothing beyond personality. The result holds across traditional ML, deep learning (MLP, 1D-CNN), and time-series foundation-model embeddings (MOMENT).
 
 ## Research Question
 
-Despite a decade of investment in passive sensing for mental health, the field's central premise — that behavioral signals from phones and wearables can replace or augment self-report — has never been rigorously stress-tested at scale against the strongest available baseline. This project asks the head-to-head question: under what conditions, if any, does passive sensing add value beyond a brief personality questionnaire?
+Despite a decade of investment in passive sensing for mental health, the premise that behavioral signals from phones and wearables can replace or augment self-report has rarely been tested against a brief questionnaire in the same people. This project asks the head-to-head question: under what conditions, if any, does passive sensing add value beyond a brief personality questionnaire?
 
 ## Studies
 
@@ -27,7 +27,7 @@ Despite a decade of investment in passive sensing for mental health, the field's
 | **N** | 28 | 722 | 809 |
 | **Personality** | BFI-44 | BFI-44 | BFI-10 |
 | **Sensing** | 13 modalities, 87 features | Fitbit + comm logs, 28 features | Fitbit + phone + GPS, 19 features + 2,597 RAPIDS |
-| **MH outcomes** | PHQ-9, PSS, Loneliness, Flourishing, PANAS | CES-D, STAI, BAI | BDI-II, STAI, PSS-10, CESD, UCLA |
+| **MH outcomes** | PHQ-9, PSS, Loneliness | CES-D, STAI, BAI, Loneliness, Self-esteem | BDI-II, STAI, PSS-10, CESD, UCLA |
 | **Academic** | GPA | GPA | — |
 
 Together: 3 universities, 3 time periods (2013–2021), 15 study–outcome combinations, 4 ML algorithms plus deep learning, and 44 robustness analyses.
@@ -36,47 +36,35 @@ Together: 3 universities, 3 time periods (2013–2021), 15 study–outcome combi
 
 ### Questionnaires dominate at the population level
 
-- Personality wins **all 11 primary comparisons (14/15 including the exploratory 28-person sample)**, mean R² = 0.126 vs. sensing mean R² = −0.153
-- **Two BFI items** (10 seconds, R² = 0.36 for CES-D) outperform **28 sensing features** collected over weeks (R² = −0.12) — a ceiling of construct proximity, not a screening protocol
-- **Neuroticism** ranks #1 SHAP feature in **28/28** mental health models across all three studies
-- **Conscientiousness** ranks #1 for GPA in **8/8** models
-- Deep learning cannot rescue sensing: 1D-CNN R² = −0.03 to −0.10; MOMENT foundation-model embeddings R² = −1.0 to −1.7
+- Personality wins **all 11 primary comparisons** (14/15 including the exploratory 28-person sample; the one exception, Study 1 PHQ-9, is attributed to small-sample overfitting). Personality-only R² = .08–.54; sensing-only R² ≤ .01 in every primary comparison
+- Two BFI Neuroticism items, selected inside nested CV, reach R² = .36 for Study 2 depression (CES-D) vs. −.12 for 28 raw sensing features. One of the items overlaps almost completely with depression-scale content, so this marks the ceiling of personality's construct-proximity advantage, not a recommended screening protocol
+- **Neuroticism** is the top SHAP predictor in all **8** mental-health study–outcome–model combinations of Studies 2–3
+- **Conscientiousness** is the top SHAP predictor of GPA across all four model types in the two samples with registrar GPA (Studies 1–2)
+- Deep learning does not rescue sensing: MLP, 1D-CNN and MOMENT never beat Ridge; MOMENT foundation-model embeddings R² = −1.0 to −1.7
 - Sensing features are **highly reliable** (ICC(3,k) = 0.73–0.98) — the problem is construct relevance, not measurement quality
 
-### Sensing has value under specific conditions
+### Sensing adds little beyond personality
 
-| Condition | Evidence | Effect size |
-|-----------|----------|-------------|
-| Lagged early warning | Autoregressive + sensing beats autoregressive alone | +0.031 R² |
-| Communication metadata | SMS/call logs improve depression prediction (S2) | +0.030 R² |
-| Sleep + nonlinear models | RF captures sleep–anxiety link (S2) | +0.055 R² |
-| Idiographic monitoring | 17% of individuals show person-specific R² > 0.3 | Variable |
-| Engagement signal | Device non-wear correlates with anxiety | r = −0.12 |
-| Clinical classification | Pers + Beh AUC over Pers-only (S2) | +0.06–0.08 AUC |
+- Sensing added significant value in **1/8** incremental-validity tests (Study 3 BDI-II, ΔR² = .024) and **0/5** DeLong AUC tests after Benjamini–Hochberg FDR
+- None of the 44 robustness analyses changed the result; results stayed flat across 7–92-day windows
 
-### Reframing passive sensing
+### Within-person signal
 
-Within-person centered R² ≈ 0 across 3,149 person-weeks of weekly PHQ-4 and EMA. But per-person mean |r| = 0.33–0.35 between mood and concurrent sensing, with 17% of individuals showing idiographic R² > 0.3. The implication: passive sensing is not a **nomothetic** screening tool (one model fits all) but a potential **idiographic** monitoring tool requiring individual calibration — fundamentally changing the field's value proposition.
+In a time-aligned panel (weekly PHQ-4 matched to 7-day sensing windows; 3,149 person-weeks), sensing reached R² = .011 vs. personality .072. Within person, however, 17% of participants (N = 392) had a person-specific sensing–mood R² > .30, so sensing may still be useful for individually calibrated monitoring.
 
 ## Methodology
 
 ### Pipeline
 - **Feature extraction** across 13 modalities for Study 1 (87 features); Fitbit + communication for Study 2 (28); Fitbit + phone + GPS for Study 3 (19 curated + 2,597 RAPIDS)
-- **4 ML algorithms** in parallel: Elastic Net, Ridge, Random Forest, SVR; plus MLP with Optuna, 1D-CNN, MOMENT foundation model, and stacking ensembles
-- **5-fold cross-validation** with nested CV for hyperparameter tuning; Benjamini–Hochberg FDR on incremental-validity and AUC tests
+- **4 ML algorithms** in parallel: Elastic Net, Ridge, Random Forest, SVR; plus MLP, 1D-CNN and MOMENT foundation-model embeddings
+- **Repeated 5-fold cross-validation** (5 × 5; leave-one-out for Study 1) with permutation tests; nested F-tests for incremental validity and DeLong tests for AUC, each with Benjamini–Hochberg FDR
 - **SHAP analysis** for cross-model feature importance; LPA, mediation, and PLS-SEM for Study 1 supplementary
 
 ### Robustness
 44 supplementary checks covering reliability, ablation, RAPIDS comparison, idiographic prediction, missingness-as-signal, dose–response (7–92 days), within-person tracking, prospective change, cross-study transfer, residualized prediction, reverse prediction, demographic controls, COVID exclusion, and more.
 
 ### Reproducibility
-Three universities, four cohorts (GLOBEM INS-W_1 through INS-W_4), two BFI variants, seven mental health instruments — convergent findings across every dimension tested.
-
-## Practical Implication
-
-> Screen with a brief questionnaire (2–5 items, 10 seconds–1 minute); deploy sensing only for high-risk individuals where personalized monitoring may add idiographic value.
-
-This inverts the dominant deployment model in digital mental health, which treats sensing as the primary signal and questionnaires as ground truth.
+Three universities, four cohorts (GLOBEM INS-W_1 through INS-W_4), two BFI variants, seven mental health instruments.
 
 ## Technical Stack
 
@@ -100,9 +88,9 @@ Five-layer script organization: shared utilities → data preparation → core a
 - Sensing modalities are heterogeneous across studies (different devices, sampling rates, derived features)
 - 27-person Study 1 result for PHQ-9 (sensing R² = 0.20) does not replicate at scale — small-N overfitting cautionary tale
 
-## Supervision
+## Authors
 
-**Supervisor**: Asst Prof Cyrus Ho Su Hui, Department of Psychological Medicine, Yong Loo Lin School of Medicine, National University of Singapore. Assistant Dean (Student Life and Wellbeing), NUS Graduate School; Senior Consultant Psychiatrist, NUH; Clarivate Highly Cited Researcher (2021–2023).
+Yanuo Zhou (first and co-corresponding author) and Cyrus Su Hui Ho (co-corresponding author), Department of Psychological Medicine, Yong Loo Lin School of Medicine, National University of Singapore.
 
 ## GitHub Repository
 
